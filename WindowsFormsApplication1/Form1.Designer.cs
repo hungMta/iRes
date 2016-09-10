@@ -73,7 +73,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(1074, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.UseWaitCursor = true;
             // 
             // quảnLýToolStripMenuItem
             // 
@@ -232,14 +231,14 @@
             // 
             // tabHienThi
             // 
-            this.tabHienThi.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.tabHienThi.ContextMenuStrip = this.ctxtTabHienThi;
+            this.tabHienThi.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tabHienThi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabHienThi.Location = new System.Drawing.Point(0, 24);
             this.tabHienThi.Name = "tabHienThi";
             this.tabHienThi.SelectedIndex = 0;
             this.tabHienThi.Size = new System.Drawing.Size(1074, 503);
             this.tabHienThi.TabIndex = 2;
-            this.tabHienThi.UseWaitCursor = true;
             // 
             // frmMain
             // 
@@ -249,13 +248,12 @@
             this.ClientSize = new System.Drawing.Size(1074, 527);
             this.Controls.Add(this.tabHienThi);
             this.Controls.Add(this.menuStrip1);
-            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "iRes Phần mềm quản lý nhà hàng";
-            this.UseWaitCursor = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
