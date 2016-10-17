@@ -22,7 +22,6 @@ namespace Login.Test
             int resConnect = Database.Database.Connect("Account");
             DataTable dataTable = Database.Database.Read("Account");
             Console.WriteLine(dataTable.Rows.Count);
-
         }
 
         public void TestReadTablesTable()
@@ -30,6 +29,13 @@ namespace Login.Test
             DataTable dataTable = Database.Database.Read("Tables");
             Console.WriteLine(dataTable.Rows.Count);
             Debug.Assert(dataTable.Rows.Count > 3);
+        }
+
+        public void TestUpdateTablesTable()
+        {
+            string query = "INSERT INTO Tables (Status, OrderId, BookId) VALUES('busy', 1, null)";
+            int res = Database.Database.Update(query, "Tables");
+            Debug.Assert(res == 1);
         }
 
 

@@ -113,5 +113,25 @@ namespace Login.Database
             return dataTable;
         }
 
+        public static int Update(string query, string tableName)
+        {
+            SqlConnection conn = DBUtils.GetDBConnection(config.GetDatabaseName());
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = query;
+            int res = 1;
+            try
+            {
+                conn.Open();
+                command.ExecuteNonQuery();
+
+            }
+            catch (Exception e)
+            {
+                Console.Write(e.Message);
+                res = -1;
+            }
+            return res;
+        }
+
     }
 }

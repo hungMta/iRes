@@ -13,9 +13,7 @@ namespace Login.Modal.Entities
         public int OrderId { get; set; }
         public int BookId { get; set; }
 
-        public Table() {
-
-        }
+        public Table() { }
 
         public Table(int id, string status, int orderId, int bookId)
         {
@@ -24,7 +22,6 @@ namespace Login.Modal.Entities
             this.OrderId = orderId;
             this.BookId = bookId;
         }
-
 
     }
 }

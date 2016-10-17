@@ -49,11 +49,16 @@ namespace Login
             DatabaseTest testDb = new DatabaseTest();
             //testDb.TestConnect();
             //testDb.TestReadAccountTable();
-            testDb.TestReadTablesTable();
+            //testDb.TestReadTablesTable();
+            testDb.TestUpdateTablesTable();
 
             ConfigurationTest testConfig = new ConfigurationTest();
-            //testConfig.TestGetDatabaseName();                
+            //testConfig.TestGetDatabaseName();             
+
+            TableApiTest testTableApi = new TableApiTest();
+            //testTableApi.TestCreateTable();   
         
+
         }
     }
 }

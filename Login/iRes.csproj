@@ -59,6 +59,7 @@
     <Compile Include="Modal\Repository\TableRepository.cs" />
     <Compile Include="Test\ConfigurationTest.cs" />
     <Compile Include="Test\DatabaseTest.cs" />
+    <Compile Include="Test\TableApiTest.cs" />
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
     </Compile>
