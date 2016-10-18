@@ -50,14 +50,15 @@ namespace Login
             //testDb.TestConnect();
             //testDb.TestReadAccountTable();
             //testDb.TestReadTablesTable();
-            testDb.TestUpdateTablesTable();
+            //testDb.TestUpdateTablesTable();
 
             ConfigurationTest testConfig = new ConfigurationTest();
             //testConfig.TestGetDatabaseName();             
 
             TableApiTest testTableApi = new TableApiTest();
             //testTableApi.TestCreateTable();   
-        
+            //testTableApi.TestUpdateTable();
+            testTableApi.TestReadTable();
 
         }
     }
