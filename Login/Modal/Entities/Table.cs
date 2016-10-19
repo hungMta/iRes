@@ -22,6 +22,5 @@ namespace Login.Modal.Entities
             this.OrderId = orderId;
             this.BookId = bookId;
         }
-
     }
 }

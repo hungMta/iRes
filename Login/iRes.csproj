@@ -55,10 +55,13 @@
     <Compile Include="Modal\Database\Database.cs" />
     <Compile Include="Modal\Database\DBSQLServerUtils.cs" />
     <Compile Include="Modal\Database\DBUtils.cs" />
+    <Compile Include="Modal\Entities\Employee.cs" />
     <Compile Include="Modal\Entities\Table.cs" />
+    <Compile Include="Modal\Repository\EmployeeRepository.cs" />
     <Compile Include="Modal\Repository\TableRepository.cs" />
     <Compile Include="Test\ConfigurationTest.cs" />
     <Compile Include="Test\DatabaseTest.cs" />
+    <Compile Include="Test\EmployeeApiTest.cs" />
     <Compile Include="Test\TableApiTest.cs" />
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>

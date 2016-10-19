@@ -28,5 +28,9 @@ namespace iRes.Configuration
             return "Tables";
         }
 
+        public String GetEmployeeTableName()
+        {
+            return "Employee";
+        }
     }
 }

@@ -58,7 +58,10 @@ namespace Login
             TableApiTest testTableApi = new TableApiTest();
             //testTableApi.TestCreateTable();   
             //testTableApi.TestUpdateTable();
-            testTableApi.TestReadTable();
+            //testTableApi.TestReadTable();
+
+            EmployeeApiTest testEmployeeApi = new EmployeeApiTest();
+            testEmployeeApi.TestCreateEmployee();
 
         }
     }
