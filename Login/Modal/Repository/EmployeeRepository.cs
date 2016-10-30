@@ -56,5 +56,26 @@ namespace Login.Modal.Repository {
             }
             return listEmployee;
         }
+
+        public int Update(Employee employee) {
+            int res = -1;
+            try {
+                string query = @"UPDATE " + config.GetEmployeeTableName() 
+                                 + " SET Name = N'" + employee.Name
+                                 + @"', Birthday = '" + employee.Birthday
+                                 + @"', Address = N'" + employee.Address
+                                 + @"', Salary = " + employee.Salary
+                                 + @", Position = N'" + employee.Position
+                                 + @"' WHERE Id = " + employee.Id;
+                res = Database.Database.Update(query, config.GetEmployeeTableName());
+            } catch { }
+            return res;
+        }
+
+        public Employee Get(int id) {
+            Employee employee = new Employee();
+            employee.Id = 1;
+            return employee;
+        }
     }
 }

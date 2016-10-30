@@ -34,6 +34,27 @@ namespace Login.Database
             }
         }
 
+        public static int Connect(string databaseName)
+        {
+            SqlConnection conn = DBUtils.GetDBConnection(databaseName);
+            try
+            {
+                Console.WriteLine("Connecting to database");
+                conn.Open();
+                Console.WriteLine("Connecting to database successfully!");
+                return 1;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: " + e.Message);
+                return -1;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         public static void Create()
         {
             String str;
@@ -66,27 +87,6 @@ namespace Login.Database
                 {
                     myConn.Close();
                 }
-            }
-        }
-
-        public static int Connect(string databaseName)
-        {
-            SqlConnection conn = DBUtils.GetDBConnection(databaseName);
-            try
-            {
-                Console.WriteLine("Connecting to database");
-                conn.Open();
-                Console.WriteLine("Connecting to database successfully!");
-                return 1;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error: " + e.Message);
-                return -1;
-            }
-            finally
-            {
-                conn.Close();
             }
         }
 
