@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace iRes.Configuration
 {
-    class Configuration
+    public class Configuration
     {
         public Configuration()
         {

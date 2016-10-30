@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Login.Modal.Entities {
-    class Employee {
+    public class Employee {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Birthday { get; set; }

@@ -2,12 +2,13 @@
 using Login.Modal.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Login.Modal.Repository {
-    class EmployeeRepository {
+    public class EmployeeRepository {
         public Configuration config = new Configuration();
 
         public int Create(Employee employee) {
@@ -27,8 +28,33 @@ namespace Login.Modal.Repository {
             return res;
         }
 
-        public int Read() {
-            return -1;
+        public List<Employee> Read() {
+            List<Employee> listEmployee = new List<Employee>();
+            DataTable dataTable = Database.Database.Read(config.GetEmployeeTableName());
+            for (int i = 0; i < dataTable.Rows.Count; i++) {
+                Employee employee = new Employee();
+                try {
+                    employee.Id = (int)dataTable.Rows[i][0];
+                    employee.Name = (string)dataTable.Rows[i][1];
+                    try {
+                        DateTime date = (DateTime)dataTable.Rows[i][2];
+                        employee.Birthday = date.ToShortDateString();
+                    } catch {
+                        employee.Birthday = "";
+                    }
+                    employee.Address = dataTable.Rows[i][3].ToString();
+                    try {
+                        employee.Salary = (int)dataTable.Rows[i][4];
+                    } catch {
+                        employee.Salary = 0;
+                    }
+                    employee.Position = dataTable.Rows[i][5].ToString();
+                    listEmployee.Add(employee);
+                } catch {
+                    Console.WriteLine("[ERROR] - The data in Table Database is not valid");
+                }
+            }
+            return listEmployee;
         }
     }
 }
