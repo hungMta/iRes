@@ -54,6 +54,19 @@
     <Compile Include="Modal\Database\Database.cs" />
     <Compile Include="Modal\Database\DBSQLServerUtils.cs" />
     <Compile Include="Modal\Database\DBUtils.cs" />
+    <Compile Include="Plugin\Nhommon\Modal\Nhommon.cs" />
+    <Compile Include="Plugin\Nhommon\View\FormNhomMon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Plugin\Nhommon\View\FormNhomMon.designer.cs">
+      <DependentUpon>FormNhomMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Homepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Homepage.designer.cs">
+      <DependentUpon>Homepage.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +75,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Plugin\Nhommon\View\FormNhomMon.resx">
+      <DependentUpon>FormNhomMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Homepage.resx">
+      <DependentUpon>Homepage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -86,6 +105,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Plugin\Nhommon\Controller\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

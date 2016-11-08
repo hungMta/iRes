@@ -16,25 +16,20 @@ namespace Login.Database
 
         private static Database instance;
 
-        private Database()
-        {
+        private Database() {
 
         }
 
-        private static Database Intance
-        {
-            get
-            {
-                if (instance == null)
-                {
+        private static Database Intance {
+            get {
+                if (instance == null) {
                     instance = new Database();
                 }
                 return instance;
             }
         }
 
-        public static void Create()
-        {
+        public static void Create() {
             String str;
             SqlConnection myConn = new SqlConnection("Server=localhost;Integrated security=SSPI;database=master");
 
@@ -49,20 +44,16 @@ namespace Login.Database
                 "FILEGROWTH = 10%)";
 
             SqlCommand myCommand = new SqlCommand(str, myConn);
-            try
-            {
+            try {
                 myConn.Open();
                 myCommand.ExecuteNonQuery();
                 MessageBox.Show("DataBase is Created Successfully", "MyProgram", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (System.Exception ex)
-            {
+            catch (System.Exception ex) {
                 MessageBox.Show(ex.ToString(), "MyProgram", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            finally
-            {
-                if (myConn.State == ConnectionState.Open)
-                {
+            finally {
+                if (myConn.State == ConnectionState.Open) {
                     myConn.Close();
                 }
             }

@@ -24,7 +24,7 @@ namespace iRes.Configuration
         }
 
         public String GetDatabaseName() {
-            return "iRes";
+            return "QuanLyNhaHang";
         }
 
         public String GetAccountTableName() {

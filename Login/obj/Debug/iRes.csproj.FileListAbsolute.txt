@@ -9,3 +9,5 @@ C:\Users\khanhlq\Documents\Visual Studio 2015\Projects\C# Basic\iRes\Login\bin\D
 C:\Users\khanhlq\Documents\Visual Studio 2015\Projects\C# Basic\iRes\Login\bin\Debug\MySql.Data.xml
 C:\Users\khanhlq\Documents\Visual Studio 2015\Projects\C# Basic\iRes\Login\obj\Debug\Login.exe
 C:\Users\khanhlq\Documents\Visual Studio 2015\Projects\C# Basic\iRes\Login\obj\Debug\Login.pdb
+C:\Users\khanhlq\Documents\Visual Studio 2015\Projects\C# Basic\iRes\Login\obj\Debug\WindowsFormsApplication1.frmMain.resources
+C:\Users\khanhlq\Documents\Visual Studio 2015\Projects\C# Basic\iRes\Login\obj\Debug\WindowsFormsApplication1.Views.uctThucDon.resources
