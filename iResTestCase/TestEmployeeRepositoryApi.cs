@@ -28,8 +28,7 @@ namespace iResTestCase {
             Assert.IsTrue(res == 1);
         }
 
-        [TestMethod]
-        public void TestGetEmployeeDatabase() {
+        [TestMethod] public void TestGetEmployeeDatabase() {
             EmployeeRepository employeeRepo = new EmployeeRepository();
             Employee employee = employeeRepo.Get(1);
             Assert.IsTrue(employee.Name == "Lê Hoàng");

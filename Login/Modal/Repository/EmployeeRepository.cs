@@ -74,6 +74,8 @@ namespace Login.Modal.Repository {
 
         public Employee Get(int id) {
             Employee employee = new Employee();
+            string query = @"Select * from" + config.GetEmployeeTableName()
+                            + "where Id = " + id.ToString();
             employee.Id = 1;
             return employee;
         }
