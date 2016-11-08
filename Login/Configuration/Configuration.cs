@@ -8,28 +8,34 @@ namespace iRes.Configuration
 {
     public class Configuration
     {
-        public Configuration()
-        {
-
+        public Configuration() {
         }
 
-        public String GetDatabaseName()
-        {
+        public string GetDataSource() {
+            return @".\SQLEXPRESS";
+        }
+
+        public string GetUsernameSqlServer() {
+            return "abc";
+        }
+
+        public string GetPasswordSqlServer() {
+            return "1234";
+        }
+
+        public String GetDatabaseName() {
             return "iRes";
         }
 
-        public String GetAccountTableName()
-        {
+        public String GetAccountTableName() {
             return "Account";
         }
 
-        public String GetTablesTableName()
-        {
+        public String GetTablesTableName() {
             return "Tables";
         }
 
-        public String GetEmployeeTableName()
-        {
+        public String GetEmployeeTableName() {
             return "Employee";
         }
     }

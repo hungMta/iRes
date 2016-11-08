@@ -10,21 +10,11 @@ namespace Tutorial.SqlConn
 {
     class DBSQLServerUtils
     {
-
         public static SqlConnection
-        GetDBConnection(string datasource, string database, string username, string password)
-        {
-            //
-            // Data Source=.\SQLEXPRESS;Initial Catalog=Account;Integrated Security=True
-            //
-            string connString = @"Data Source=" + datasource + ";Initial Catalog="
-                        + database + ";Integrated Security=True";
-
+        GetDBConnection(string datasource, string database, string username, string password) {
+            string connString = @"Data Source=" + datasource + ";Initial Catalog=" + database + ";Integrated Security=True";
             SqlConnection conn = new SqlConnection(connString);
-
             return conn;
         }
-
-
     }
 }

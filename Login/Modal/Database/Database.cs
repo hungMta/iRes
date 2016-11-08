@@ -11,8 +11,7 @@ using iRes.Configuration;
 
 namespace Login.Database
 {
-    class Database
-    {
+    public class Database {
         private static Configuration config = new Configuration();
 
         private static Database instance;
@@ -31,27 +30,6 @@ namespace Login.Database
                     instance = new Database();
                 }
                 return instance;
-            }
-        }
-
-        public static int Connect(string databaseName)
-        {
-            SqlConnection conn = DBUtils.GetDBConnection(databaseName);
-            try
-            {
-                Console.WriteLine("Connecting to database");
-                conn.Open();
-                Console.WriteLine("Connecting to database successfully!");
-                return 1;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error: " + e.Message);
-                return -1;
-            }
-            finally
-            {
-                conn.Close();
             }
         }
 
@@ -90,48 +68,55 @@ namespace Login.Database
             }
         }
 
-        public static DataTable Read(string tableName)
-        {
-            String query = "Select * from " + tableName;
+        public static DataSet Read(string strTableName) {
             SqlConnection conn = DBUtils.GetDBConnection(config.GetDatabaseName());
+            String query = "Select * from " + strTableName;
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-            DataTable dataTable = new DataTable();
-            try
-            {
+            DataSet dataSet = new DataSet();
+            try {
                 conn.Open();
-                adapter.Fill(dataTable);
+                adapter.Fill(dataSet, strTableName);
                 Console.WriteLine("Get table");
             }
-            catch (Exception e)
-            {
+            catch (Exception e) {
                 Console.WriteLine(e.Message);
             }
-            finally
-            {
+            finally {
                 conn.Close();
             }
-            return dataTable;
+            return dataSet;
         }
 
-        public static int Update(string query, string tableName)
-        {
+        public static int Update(string query) {
             SqlConnection conn = DBUtils.GetDBConnection(config.GetDatabaseName());
             SqlCommand command = conn.CreateCommand();
             command.CommandText = query;
             int res = 1;
-            try
-            {
+            try {
                 conn.Open();
                 command.ExecuteNonQuery();
-
             }
-            catch (Exception e)
-            {
+            catch (Exception e) {
                 Console.Write(e.Message);
                 res = -1;
             }
             return res;
         }
 
+        public static int Delete(string query) {
+            SqlConnection conn = DBUtils.GetDBConnection(config.GetDatabaseName());
+            SqlCommand command = conn.CreateCommand();
+            command.CommandText = query;
+            int res = 1;
+            try {
+                conn.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (Exception e) {
+                Console.Write(e.Message);
+                res = -1;
+            }
+            return res;
+        }
     }
 }

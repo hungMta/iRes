@@ -36,7 +36,6 @@ namespace Login
             this.labelPassWord = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.labeliRes = new System.Windows.Forms.Label();
-            this.btnTest = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtboxUserName
@@ -92,22 +91,11 @@ namespace Login
             this.labeliRes.TabIndex = 5;
             this.labeliRes.Text = "iRes";
             // 
-            // btnTest
-            // 
-            this.btnTest.Location = new System.Drawing.Point(249, 279);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(97, 23);
-            this.btnTest.TabIndex = 6;
-            this.btnTest.Text = "Test";
-            this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(561, 355);
-            this.Controls.Add(this.btnTest);
             this.Controls.Add(this.labeliRes);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.labelPassWord);
@@ -132,7 +120,6 @@ namespace Login
         private System.Windows.Forms.Label labelPassWord;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label labeliRes;
-        private System.Windows.Forms.Button btnTest;
     }
 }
 
