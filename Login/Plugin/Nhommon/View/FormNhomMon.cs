@@ -48,7 +48,7 @@ namespace WindowsFormsApplication1.Views
             this.btnHuybo.Visible = true;
         }
 
-        private void Thêm_Click(object sender, EventArgs e) {
+        private void btnAddNhomMon_Click(object sender, EventArgs e) {
             string strQueryInsert =  @"insert into NhomMon(MaNhom, TenNhom, SoLuongMon)" +
                                      @" values('" + this.txtMaNhom.Text + 
                                      @" ', N'" + this.txtTenNhom.Text +
@@ -70,6 +70,16 @@ namespace WindowsFormsApplication1.Views
             this.btnAddNhomMon.Visible = false;
             this.btnHuybo.Visible = false;
             ClearTextBox();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e) {
+            int index = this.dgvNhomMon.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = this.dgvNhomMon.Rows[index];
+            string MaNhom = Convert.ToString(selectedRow.Cells["MaNhom"].Value);
+            Console.WriteLine(index);
+            string strDelete = "delete NhomMon where MaNhom='" + MaNhom.Trim() + "'";
+            int res = Database.Delete(strDelete);
+            LoadDataGridView();
         }
     }
 }

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uctThucDon));
             this.grbThemNhomMon = new System.Windows.Forms.GroupBox();
+            this.btnHuybo = new System.Windows.Forms.Button();
+            this.btnAddNhomMon = new System.Windows.Forms.Button();
             this.txtTongSoMon = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTenNhom = new System.Windows.Forms.TextBox();
@@ -44,8 +46,9 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.btnAddNhomMon = new System.Windows.Forms.Button();
-            this.btnHuybo = new System.Windows.Forms.Button();
+            this.MaNhom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNhom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbThemNhomMon.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhomMon)).BeginInit();
@@ -67,6 +70,28 @@
             this.grbThemNhomMon.TabIndex = 0;
             this.grbThemNhomMon.TabStop = false;
             this.grbThemNhomMon.Text = "Thêm nhóm món";
+            // 
+            // btnHuybo
+            // 
+            this.btnHuybo.Location = new System.Drawing.Point(184, 217);
+            this.btnHuybo.Name = "btnHuybo";
+            this.btnHuybo.Size = new System.Drawing.Size(61, 23);
+            this.btnHuybo.TabIndex = 4;
+            this.btnHuybo.Text = "Hủy bỏ";
+            this.btnHuybo.UseVisualStyleBackColor = true;
+            this.btnHuybo.Visible = false;
+            this.btnHuybo.Click += new System.EventHandler(this.btnHuybo_Click);
+            // 
+            // btnAddNhomMon
+            // 
+            this.btnAddNhomMon.Location = new System.Drawing.Point(117, 217);
+            this.btnAddNhomMon.Name = "btnAddNhomMon";
+            this.btnAddNhomMon.Size = new System.Drawing.Size(61, 23);
+            this.btnAddNhomMon.TabIndex = 3;
+            this.btnAddNhomMon.Text = "Thêm";
+            this.btnAddNhomMon.UseVisualStyleBackColor = true;
+            this.btnAddNhomMon.Visible = false;
+            this.btnAddNhomMon.Click += new System.EventHandler(this.btnAddNhomMon_Click);
             // 
             // txtTongSoMon
             // 
@@ -137,10 +162,17 @@
             // 
             // dgvNhomMon
             // 
+            this.dgvNhomMon.AllowUserToAddRows = false;
+            this.dgvNhomMon.AllowUserToDeleteRows = false;
             this.dgvNhomMon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNhomMon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaNhom,
+            this.TenNhom,
+            this.SoLuongMon});
             this.dgvNhomMon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvNhomMon.Location = new System.Drawing.Point(3, 16);
             this.dgvNhomMon.Name = "dgvNhomMon";
+            this.dgvNhomMon.ReadOnly = true;
             this.dgvNhomMon.Size = new System.Drawing.Size(662, 469);
             this.dgvNhomMon.TabIndex = 0;
             this.dgvNhomMon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhomMon_CellContentClick);
@@ -176,6 +208,7 @@
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -201,27 +234,29 @@
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // btnAddNhomMon
+            // MaNhom
             // 
-            this.btnAddNhomMon.Location = new System.Drawing.Point(117, 217);
-            this.btnAddNhomMon.Name = "btnAddNhomMon";
-            this.btnAddNhomMon.Size = new System.Drawing.Size(61, 23);
-            this.btnAddNhomMon.TabIndex = 3;
-            this.btnAddNhomMon.Text = "Thêm";
-            this.btnAddNhomMon.UseVisualStyleBackColor = true;
-            this.btnAddNhomMon.Visible = false;
-            this.btnAddNhomMon.Click += new System.EventHandler(this.Thêm_Click);
+            this.MaNhom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MaNhom.DataPropertyName = "MaNhom";
+            this.MaNhom.HeaderText = "Mã Nhóm";
+            this.MaNhom.Name = "MaNhom";
+            this.MaNhom.ReadOnly = true;
             // 
-            // btnHuybo
+            // TenNhom
             // 
-            this.btnHuybo.Location = new System.Drawing.Point(184, 217);
-            this.btnHuybo.Name = "btnHuybo";
-            this.btnHuybo.Size = new System.Drawing.Size(61, 23);
-            this.btnHuybo.TabIndex = 4;
-            this.btnHuybo.Text = "Hủy bỏ";
-            this.btnHuybo.UseVisualStyleBackColor = true;
-            this.btnHuybo.Visible = false;
-            this.btnHuybo.Click += new System.EventHandler(this.btnHuybo_Click);
+            this.TenNhom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenNhom.DataPropertyName = "TenNhom";
+            this.TenNhom.HeaderText = "Tên Nhóm";
+            this.TenNhom.Name = "TenNhom";
+            this.TenNhom.ReadOnly = true;
+            // 
+            // SoLuongMon
+            // 
+            this.SoLuongMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SoLuongMon.DataPropertyName = "SoLuongMon";
+            this.SoLuongMon.HeaderText = "Số Lượng Món";
+            this.SoLuongMon.Name = "SoLuongMon";
+            this.SoLuongMon.ReadOnly = true;
             // 
             // uctThucDon
             // 
@@ -266,5 +301,8 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnHuybo;
         private System.Windows.Forms.Button btnAddNhomMon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNhom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenNhom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongMon;
     }
 }
