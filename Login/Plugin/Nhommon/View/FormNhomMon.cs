@@ -133,5 +133,31 @@ namespace WindowsFormsApplication1.Views
             }
         }
 
+        private void btnTimKiem_Click(object sender, EventArgs e) {
+            this.grbSearchNhomMon.Visible = true;
+        }
+
+        private void btnAnTimKiem_Click(object sender, EventArgs e) {
+            this.grbSearchNhomMon.Visible = false;
+        }
+
+        private void btnTim_Click(object sender, EventArgs e) {
+            int selectedIndex = this.cboTimKiem.SelectedIndex;
+            string strQuerySelectWhere = "";
+            switch (selectedIndex) {
+                case 0:
+                    strQuerySelectWhere =  @"Select * from NhomMon where MaNhom='" + this.txtNoiDung.Text + "'";
+                    break;
+                case 1:
+                    strQuerySelectWhere =  @"Select * from NhomMon where TenNhom='" + this.txtNoiDung.Text + "'";
+                    break;
+                case 2:
+                    strQuerySelectWhere =  @"Select * from NhomMon where SoLuongMon='" + this.txtNoiDung.Text + "'";
+                    break;
+            }
+            DataSet dataset = new DataSet();
+            dataset = Database.Read(strQuerySelectWhere);
+            this.dgvNhomMon.DataSource = dataset.Tables[0];
+        }
     }
 }
