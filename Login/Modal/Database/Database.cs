@@ -59,10 +59,9 @@ namespace Login.Database
             }
         }
 
-        public static DataSet Read(string strTableName) {
+        public static DataSet Read(string strTableName, string strQuerySelect) {
             SqlConnection conn = DBUtils.GetDBConnection(config.GetDatabaseName());
-            String query = "Select * from " + strTableName;
-            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+            SqlDataAdapter adapter = new SqlDataAdapter(strQuerySelect, conn);
             DataSet dataSet = new DataSet();
             try {
                 conn.Open();

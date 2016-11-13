@@ -32,9 +32,10 @@ namespace WindowsFormsApplication1.Views
         /// Call API Read data from table Nhommon, and show the result to datagridview
         /// </summary>
         public void LoadDataGridView() {
-            string strQueryReadTable = "NhomMon";
+            string strTableName = "NhomMon";
+            string strQuerySelect = "Select * from NhomMon";
             DataSet dataset = new DataSet();
-            dataset = Database.Read(strQueryReadTable);
+            dataset = Database.Read(strTableName, strQuerySelect);
             this.dgvNhomMon.DataSource = dataset.Tables[0];
         }
 
@@ -139,6 +140,7 @@ namespace WindowsFormsApplication1.Views
 
         private void btnAnTimKiem_Click(object sender, EventArgs e) {
             this.grbSearchNhomMon.Visible = false;
+            LoadDataGridView();
         }
 
         private void btnTim_Click(object sender, EventArgs e) {
@@ -156,7 +158,7 @@ namespace WindowsFormsApplication1.Views
                     break;
             }
             DataSet dataset = new DataSet();
-            dataset = Database.Read(strQuerySelectWhere);
+            dataset = Database.Read("NhomMon", strQuerySelectWhere);
             this.dgvNhomMon.DataSource = dataset.Tables[0];
         }
     }
