@@ -75,15 +75,15 @@ namespace WindowsFormsApplication1
             ThemTabPages(Views.uctThucDon.uctTD, 4, "Quản lý nhóm món");
         }
 
-        //private void đóngTrangHiệnTạiToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    DongTabHienTai();
-        //}
+        private void mnuDongTrangHienTai_Click(object sender, EventArgs e)
+        {
+            DongTabHienTai();
+        }
 
-        //private void đóngTấtCảCáTrangToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    DongAllTab();
-        //}
+        private void mnuDongTatCaCacTrang_Click(object sender, EventArgs e)
+        {
+            DongAllTab();
+        }
 
 
 
