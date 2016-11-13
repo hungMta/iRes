@@ -295,6 +295,7 @@
             this.cboTimKiem.Location = new System.Drawing.Point(115, 20);
             this.cboTimKiem.Name = "cboTimKiem";
             this.cboTimKiem.Size = new System.Drawing.Size(121, 21);
+            this.cboTimKiem.SelectedIndex = 0;
             this.cboTimKiem.TabIndex = 0;
             // 
             // lblTimKiemTheo
