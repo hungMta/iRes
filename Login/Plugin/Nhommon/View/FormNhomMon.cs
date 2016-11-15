@@ -56,8 +56,6 @@ namespace WindowsFormsApplication1.Views
             } else {
                 MessageBox.Show("Nhóm món đã tồn tại");
             }
-            this.btnThemSuaOk.Visible = false;
-            this.btnHuybo.Visible = false;
             ClearTextBox();
         }
         
@@ -77,8 +75,6 @@ namespace WindowsFormsApplication1.Views
             } else {
                 MessageBox.Show("Không thể thay đổi nhóm món này");
             }
-            this.btnThemSuaOk.Visible = false;
-            this.btnHuybo.Visible = false;
             ClearTextBox();
         }
 
@@ -88,25 +84,27 @@ namespace WindowsFormsApplication1.Views
             } else {
                 SuaNhomMon();
             }
+            this.btnThemSuaOk.Enabled = false;
+            this.btnHuybo.Enabled = false;
         }
 
         private void btnHuybo_Click(object sender, EventArgs e) {
-            this.btnThemSuaOk.Visible = false;
-            this.btnHuybo.Visible = false;
+            this.btnThemSuaOk.Enabled = false;
+            this.btnHuybo.Enabled = false;
             ClearTextBox();
         }
 
         private void btnThem_Click(object sender, EventArgs e) {
             this.grbThemNhomMon.Text = "Thêm nhóm món";
             this.txtMaNhom.Focus();
-            this.btnThemSuaOk.Visible = true;
-            this.btnHuybo.Visible = true;
+            this.btnThemSuaOk.Enabled = true;
+            this.btnHuybo.Enabled = true;
         }
 
         private void btnSua_Click(object sender, EventArgs e) {
             this.grbThemNhomMon.Text = "Sửa nhóm món";
-            this.btnThemSuaOk.Visible = true;
-            this.btnHuybo.Visible = true;
+            this.btnThemSuaOk.Enabled = true;
+            this.btnHuybo.Enabled = true;
             int currentSelectedRowIndex = this.dgvNhomMon.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = this.dgvNhomMon.Rows[currentSelectedRowIndex];
             this.txtMaNhom.Text = Convert.ToString(selectedRow.Cells["MaNhom"].Value);

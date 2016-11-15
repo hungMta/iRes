@@ -54,6 +54,13 @@
     <Compile Include="Modal\Database\Database.cs" />
     <Compile Include="Modal\Database\DBSQLServerUtils.cs" />
     <Compile Include="Modal\Database\DBUtils.cs" />
+    <Compile Include="Plugin\MonAn\Modal\MonAn.cs" />
+    <Compile Include="Plugin\MonAn\View\UctMonAn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Plugin\MonAn\View\UctMonAn.Designer.cs">
+      <DependentUpon>UctMonAn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plugin\Nhommon\Modal\Nhommon.cs" />
     <Compile Include="Plugin\Nhommon\View\FormNhomMon.cs">
       <SubType>UserControl</SubType>
@@ -75,6 +82,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Plugin\MonAn\View\UctMonAn.resx">
+      <DependentUpon>UctMonAn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Plugin\Nhommon\View\FormNhomMon.resx">
       <DependentUpon>FormNhomMon.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,9 +116,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Plugin\Nhommon\Controller\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

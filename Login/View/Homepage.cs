@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Login;
 
 namespace WindowsFormsApplication1
 {
@@ -58,23 +59,6 @@ namespace WindowsFormsApplication1
             }
         }
 
-        //private void quảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    ThemTabPages(Views.uctNhanVien.uctNV,4,"Quản lý nhân viên");
-        //}
-
-        //private void trựcTiếpToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    ThemTabPages(Views.uctGoiMonTrucTiep.uctGMTT, 4, "Gọi món trực tiếp");
-        //}
-
-        private void tabThucDon_Click(object sender, EventArgs e) {
-        }
-
-        private void mnuQuanLyNhomMon_Click(object sender, EventArgs e) {
-            ThemTabPages(Views.uctThucDon.uctTD, 4, "Quản lý nhóm món");
-        }
-
         private void mnuDongTrangHienTai_Click(object sender, EventArgs e)
         {
             DongTabHienTai();
@@ -84,8 +68,16 @@ namespace WindowsFormsApplication1
         {
             DongAllTab();
         }
+        
+        private void tabThucDon_Click(object sender, EventArgs e) {
+        }
 
+        private void mnuQuanLyNhomMon_Click(object sender, EventArgs e) {
+            ThemTabPages(Views.uctThucDon.uctTD, 4, "Quản lý nhóm món");
+        }
 
-
+        private void mnuQuanLyMonAn_Click(object sender, EventArgs e) {
+            ThemTabPages(Login.Plugin.MonAn.View.UctMonAn.uctMonAn, 4, "Quản lý món ăn");
+        }
     }
 }

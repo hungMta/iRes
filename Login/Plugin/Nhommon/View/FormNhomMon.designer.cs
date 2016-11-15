@@ -129,24 +129,24 @@
             // 
             // btnHuybo
             // 
+            this.btnHuybo.Enabled = false;
             this.btnHuybo.Location = new System.Drawing.Point(347, 388);
             this.btnHuybo.Name = "btnHuybo";
             this.btnHuybo.Size = new System.Drawing.Size(75, 31);
             this.btnHuybo.TabIndex = 2;
             this.btnHuybo.Text = "HỦY";
             this.btnHuybo.UseVisualStyleBackColor = true;
-            this.btnHuybo.Visible = false;
             this.btnHuybo.Click += new System.EventHandler(this.btnHuybo_Click);
             // 
             // btnThemSuaOk
             // 
+            this.btnThemSuaOk.Enabled = false;
             this.btnThemSuaOk.Location = new System.Drawing.Point(266, 388);
             this.btnThemSuaOk.Name = "btnThemSuaOk";
             this.btnThemSuaOk.Size = new System.Drawing.Size(75, 31);
             this.btnThemSuaOk.TabIndex = 1;
             this.btnThemSuaOk.Text = "OK";
             this.btnThemSuaOk.UseVisualStyleBackColor = true;
-            this.btnThemSuaOk.Visible = false;
             this.btnThemSuaOk.Click += new System.EventHandler(this.btnThemSuaOk_Click);
             // 
             // label1
@@ -295,7 +295,6 @@
             this.cboTimKiem.Location = new System.Drawing.Point(115, 20);
             this.cboTimKiem.Name = "cboTimKiem";
             this.cboTimKiem.Size = new System.Drawing.Size(121, 21);
-            this.cboTimKiem.SelectedIndex = 0;
             this.cboTimKiem.TabIndex = 0;
             // 
             // lblTimKiemTheo

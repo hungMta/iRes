@@ -123,6 +123,7 @@
             this.mnuQuanLyMonAn.Name = "mnuQuanLyMonAn";
             this.mnuQuanLyMonAn.Size = new System.Drawing.Size(199, 22);
             this.mnuQuanLyMonAn.Text = "Quản lý món ăn";
+            this.mnuQuanLyMonAn.Click += new System.EventHandler(this.mnuQuanLyMonAn_Click);
             // 
             // mnuQuanLyPhieuGoi
             // 
