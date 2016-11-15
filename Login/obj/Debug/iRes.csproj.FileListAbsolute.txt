@@ -12,3 +12,22 @@ C:\Users\khanhlq\Documents\Visual Studio 2015\Projects\C# Basic\iRes\Login\obj\D
 C:\Users\khanhlq\Documents\Visual Studio 2015\Projects\C# Basic\iRes\Login\obj\Debug\WindowsFormsApplication1.frmMain.resources
 C:\Users\khanhlq\Documents\Visual Studio 2015\Projects\C# Basic\iRes\Login\obj\Debug\WindowsFormsApplication1.Views.uctThucDon.resources
 C:\Users\khanhlq\Documents\Visual Studio 2015\Projects\C# Basic\iRes\Login\obj\Debug\Login.Plugin.MonAn.View.UctMonAn.resources
+C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\bin\Debug\Login.exe.config
+C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\obj\Debug\Login.exe
+C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\obj\Debug\Login.pdb
+C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\bin\Debug\Login.exe
+C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\bin\Debug\Login.pdb
+C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\bin\Debug\mscorlib.dll
+C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\bin\Debug\MySql.Data.xml
+C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\bin\Debug\normidna.nlp
+C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\bin\Debug\normnfc.nlp
+C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\bin\Debug\normnfd.nlp
+C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\bin\Debug\normnfkc.nlp
+C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\bin\Debug\normnfkd.nlp
+C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\obj\Debug\iRes.csprojResolveAssemblyReference.cache
+C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\obj\Debug\Login.Plugin.MonAn.View.UctMonAn.resources
+C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\obj\Debug\WindowsFormsApplication1.Views.uctThucDon.resources
+C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\obj\Debug\WindowsFormsApplication1.frmMain.resources
+C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\obj\Debug\Login.Login.resources
+C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\obj\Debug\Login.Properties.Resources.resources
+C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\obj\Debug\iRes.csproj.GenerateResource.Cache

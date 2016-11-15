@@ -12,7 +12,8 @@ namespace iRes.Configuration
         }
 
         public string GetDataSource() {
-            return @".\SQLEXPRESS";
+            return @"DESKTOP-8IKVHJR"; //Thay doi cai nay oke con gi nua khong?
+
         }
 
         public string GetUsernameSqlServer() {
