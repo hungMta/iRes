@@ -79,5 +79,15 @@ namespace WindowsFormsApplication1
         private void mnuQuanLyMonAn_Click(object sender, EventArgs e) {
             ThemTabPages(Login.Plugin.MonAn.View.UctMonAn.uctMonAn, 4, "Quản lý món ăn");
         }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuQuanLyNhanVien_Click(object sender, EventArgs e)
+        {
+            ThemTabPages(Login.Plugin.NhanVien.View.UctNhanVien.uctNhanVien, 4, "Quản lý nhân viên");
+        }
     }
 }

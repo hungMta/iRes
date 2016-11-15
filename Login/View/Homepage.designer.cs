@@ -98,6 +98,7 @@
             this.mnuQuanLyNhanVien.Name = "mnuQuanLyNhanVien";
             this.mnuQuanLyNhanVien.Size = new System.Drawing.Size(199, 22);
             this.mnuQuanLyNhanVien.Text = "Quản lý nhân viên";
+            this.mnuQuanLyNhanVien.Click += new System.EventHandler(this.mnuQuanLyNhanVien_Click);
             // 
             // mnuQuanLyKhachHang
             // 
@@ -286,6 +287,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "iRes Phần mềm quản lý nhà hàng";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ctxtTabHienThi.ResumeLayout(false);

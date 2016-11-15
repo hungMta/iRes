@@ -31,3 +31,4 @@ C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\obj\Debug\Windows
 C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\obj\Debug\Login.Login.resources
 C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\obj\Debug\Login.Properties.Resources.resources
 C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\obj\Debug\iRes.csproj.GenerateResource.Cache
+C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\Login\obj\Debug\Login.Plugin.NhanVien.View.UctNhanVien.resources
