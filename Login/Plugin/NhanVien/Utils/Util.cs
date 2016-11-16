@@ -48,5 +48,14 @@ namespace Login.Plugin.NhanVien.Utils
             string query = "delete NhanVien where MaNV='" + MaNV + "'";
             return query;
         }
+
+        public string autoMaNV()
+        {
+
+
+
+            return "";
+        }
+
     }
 }

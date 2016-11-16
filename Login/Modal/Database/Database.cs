@@ -109,24 +109,6 @@ namespace Login.Database
             return res;
         }
 
-        public static int Insert(string query)
-        {
-            SqlConnection conn = DBUtils.GetDBConnection(config.GetDatabaseName());
-            SqlCommand command = conn.CreateCommand();
-            command.CommandText = query;
-            int res = 1;
-            try
-            {
-                conn.Open();
-                command.ExecuteNonQuery();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString(), "Lỗi", MessageBoxButtons.OK);
-                res = -1;
-
-            }
-            return res;
-        }
+    
     }
 }

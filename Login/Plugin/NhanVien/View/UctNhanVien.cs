@@ -134,7 +134,7 @@ namespace Login.Plugin.NhanVien.View
         {
             NhanVienEntity nhanVien = getNhanVienValues();
             String queryInsert = utils.queryInsert(nhanVien);
-            Database.Database.Insert(queryInsert);
+            Database.Database.Update(queryInsert);
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -184,6 +184,8 @@ namespace Login.Plugin.NhanVien.View
                  LoadDataGridView();
              }
         }
+
+
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
