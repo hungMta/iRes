@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\Bus.cs" />
+    <Compile Include="Config\Configuration.cs" />
     <Compile Include="DAO\Dao.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="GUI\Main.cs">

@@ -5,12 +5,15 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Title.Config;
 using Title.VO;
 
 namespace Title.DAO {
     public class Dao {
+        public static Configuration config = new Configuration();
+
         public static DataTable GetListNhanVien() {
-            return DataProvider.GetData("GetListNhanVien");
+            return DataProvider.GetData(config.PROC_GET_LIST_NHANVIEN);
         }
 
         public static int InsertNhanVien(NhanVien nv) {
@@ -24,7 +27,7 @@ namespace Title.DAO {
                 new SqlParameter("@ChucVu",nv.ChucVu),
                 new SqlParameter("@MatKhau",nv.MatKhau)
             };
-            return DataProvider.ExecuteNonQuery("ThemNhanVien", para);
+            return DataProvider.ExecuteNonQuery(config.PROC_INSERT_NHANVIEN, para);
         }
     }
 }

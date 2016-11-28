@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using Title.Config;
+using Title.BUS; 
 
 namespace Title.GUI {
     public partial class UtcQuanLyNhanVien : UserControl {
@@ -14,8 +17,16 @@ namespace Title.GUI {
             InitializeComponent();
         }
 
+        Configuration config = new Configuration();
+
+        public void LoadData() {
+            DataTable dataTable = new DataTable();
+            dataTable = Bus.GetListNhanVien();
+            this.gridControlNhanVien.DataSource = dataTable;
+        }
+
         private void UtcQuanLyNhanVien_Load(object sender, EventArgs e) {
-            this.nhanVienTableAdapter1.Fill(this.iResDatabaseDataSet2.NhanVien);
+            LoadData();
         }
     }
 }
