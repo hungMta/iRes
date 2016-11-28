@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iRes", "Title\iRes.csproj", "{BBA06083-5051-4AEF-AA62-A73B71EAB68A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iResTestCase", "iResTestCase\iResTestCase.csproj", "{33310551-5F35-41FD-8CF2-862F1EC65E6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iRes", "iRes\iRes.csproj", "{BBA06083-5051-4AEF-AA62-A73B71EAB68A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BBA06083-5051-4AEF-AA62-A73B71EAB68A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BBA06083-5051-4AEF-AA62-A73B71EAB68A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BBA06083-5051-4AEF-AA62-A73B71EAB68A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BBA06083-5051-4AEF-AA62-A73B71EAB68A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{33310551-5F35-41FD-8CF2-862F1EC65E6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{33310551-5F35-41FD-8CF2-862F1EC65E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33310551-5F35-41FD-8CF2-862F1EC65E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33310551-5F35-41FD-8CF2-862F1EC65E6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBA06083-5051-4AEF-AA62-A73B71EAB68A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBA06083-5051-4AEF-AA62-A73B71EAB68A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBA06083-5051-4AEF-AA62-A73B71EAB68A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBA06083-5051-4AEF-AA62-A73B71EAB68A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -54,12 +54,6 @@
     <Compile Include="TestDataProviderMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Title\iRes.csproj">
-      <Project>{bba06083-5051-4aef-aa62-a73b71eab68a}</Project>
-      <Name>iRes</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
