@@ -31,11 +31,14 @@
             this.barButtonClipBoardPaste = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonMoveUp = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonMoveDown = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonDelete = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButton = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonSave = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonEdit = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonAdd = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupClipBoard = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupMove = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageView = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
@@ -53,9 +56,6 @@
             this.navBarGroupQuanLyMonAn = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroupNhapHang = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlClientArea)).BeginInit();
             this.groupControlClientArea.SuspendLayout();
@@ -72,10 +72,10 @@
             this.barButtonClipBoardPaste,
             this.barButtonMoveUp,
             this.barButtonMoveDown,
-            this.barButtonDelete,
-            this.barButtonItem1,
-            this.barButtonItem2,
-            this.barButtonItem3});
+            this.barButton,
+            this.barButtonSave,
+            this.barButtonEdit,
+            this.barButtonAdd});
             this.ribbonControlTop.Location = new System.Drawing.Point(0, 0);
             this.ribbonControlTop.MaxItemId = 11;
             this.ribbonControlTop.Name = "ribbonControlTop";
@@ -126,21 +126,39 @@
             this.barButtonMoveDown.Name = "barButtonMoveDown";
             this.barButtonMoveDown.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
-            // barButtonDelete
+            // barButton
             // 
-            this.barButtonDelete.Caption = "Delete";
-            this.barButtonDelete.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonDelete.Glyph")));
-            this.barButtonDelete.Id = 6;
-            this.barButtonDelete.Name = "barButtonDelete";
-            this.barButtonDelete.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButton.Caption = "Delete";
+            this.barButton.Glyph = ((System.Drawing.Image)(resources.GetObject("barButton.Glyph")));
+            this.barButton.Id = 6;
+            this.barButton.Name = "barButton";
+            this.barButton.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButton_ItemClick);
             // 
-            // barButtonItem1
+            // barButtonSave
             // 
-            this.barButtonItem1.Caption = "Save";
-            this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
-            this.barButtonItem1.Id = 7;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonSave.Caption = "Save";
+            this.barButtonSave.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonSave.Glyph")));
+            this.barButtonSave.Id = 7;
+            this.barButtonSave.Name = "barButtonSave";
+            this.barButtonSave.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barButtonEdit
+            // 
+            this.barButtonEdit.Caption = "Edit";
+            this.barButtonEdit.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonEdit.Glyph")));
+            this.barButtonEdit.Id = 9;
+            this.barButtonEdit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonEdit.LargeGlyph")));
+            this.barButtonEdit.Name = "barButtonEdit";
+            this.barButtonEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonEdit_ItemClick);
+            // 
+            // barButtonAdd
+            // 
+            this.barButtonAdd.Caption = "Add";
+            this.barButtonAdd.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonAdd.Glyph")));
+            this.barButtonAdd.Id = 10;
+            this.barButtonAdd.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonAdd.LargeGlyph")));
+            this.barButtonAdd.Name = "barButtonAdd";
             // 
             // ribbonPageHome
             // 
@@ -164,6 +182,14 @@
             this.ribbonPageGroupMove.ItemLinks.Add(this.barButtonMoveUp);
             this.ribbonPageGroupMove.ItemLinks.Add(this.barButtonMoveDown);
             this.ribbonPageGroupMove.Name = "ribbonPageGroupMove";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonAdd);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonEdit);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButton);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonSave);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // ribbonPageView
             // 
@@ -317,30 +343,6 @@
             this.navBarControl1.TabIndex = 1;
             this.navBarControl1.Text = "navBarControl1";
             // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem3);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonDelete);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "Edit";
-            this.barButtonItem2.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.Glyph")));
-            this.barButtonItem2.Id = 9;
-            this.barButtonItem2.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.LargeGlyph")));
-            this.barButtonItem2.Name = "barButtonItem2";
-            // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "Add";
-            this.barButtonItem3.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.Glyph")));
-            this.barButtonItem3.Id = 10;
-            this.barButtonItem3.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.LargeGlyph")));
-            this.barButtonItem3.Name = "barButtonItem3";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -373,9 +375,9 @@
         private DevExpress.XtraBars.BarButtonItem barButtonClipBoardPaste;
         private DevExpress.XtraBars.BarButtonItem barButtonMoveUp;
         private DevExpress.XtraBars.BarButtonItem barButtonMoveDown;
-        private DevExpress.XtraBars.BarButtonItem barButtonDelete;
+        private DevExpress.XtraBars.BarButtonItem barButton;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupMove;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonSave;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraEditors.GroupControl groupControlClientArea;
         private DevExpress.XtraNavBar.NavBarItem navBarItemNhanVien;
@@ -391,8 +393,8 @@
         private DevExpress.XtraNavBar.NavBarGroup navBarGroupQuanLyMonAn;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroupNhapHang;
         private DevExpress.XtraNavBar.NavBarControl navBarControl1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonEdit;
+        private DevExpress.XtraBars.BarButtonItem barButtonAdd;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
     }
 }

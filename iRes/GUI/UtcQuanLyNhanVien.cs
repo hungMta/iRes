@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Title.Config;
-using Title.BUS; 
+using Title.BUS;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace Title.GUI {
     public partial class UtcQuanLyNhanVien : UserControl {
@@ -27,6 +28,21 @@ namespace Title.GUI {
 
         private void UtcQuanLyNhanVien_Load(object sender, EventArgs e) {
             LoadData();
+        }
+
+        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e) {
+            int[] selRows = ((GridView)gridControlNhanVien.MainView).GetSelectedRows();
+            DataRowView selRow = (DataRowView)(((GridView)gridControlNhanVien.MainView).GetRow(selRows[0]));
+            this.textEditMaNV.Text = selRow["MaNV"].ToString();
+            this.textEditTenNV.Text = selRow["TenNV"].ToString();
+            this.textEditQueQuan.Text = selRow["QueQuan"].ToString();
+            this.textEditLuong.Text = selRow["Luong"].ToString();
+            this.textEditMatKhau.Text = selRow["MatKhau"].ToString();
+            this.dateEditNgaySinh.EditValue = selRow["NgaySinh"];
+        }
+
+        public void Edit() {
+            this.panelTextBox.Enabled = true;
         }
     }
 }

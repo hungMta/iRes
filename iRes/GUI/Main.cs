@@ -17,13 +17,16 @@ namespace iRes{
 
         Configuration config = new Configuration();
 
+        UtcQuanLyNhanVien utcQuanLyNhanVien = new UtcQuanLyNhanVien();
+        UtcQuanLyKhachHang utcQuanLyKhachHang = new UtcQuanLyKhachHang();
+        UtcQuanLyMonAn utcQuanLyMonAn = new UtcQuanLyMonAn();
+
         private string currentTabName;
 
         private void tclItem1_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e) {
         }
 
         private void navBarItemNhanVien_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e) {
-            UtcQuanLyNhanVien utcQuanLyNhanVien = new UtcQuanLyNhanVien();
             utcQuanLyNhanVien.Dock = DockStyle.Fill;
             this.groupControlClientArea.Controls.Clear();
             this.groupControlClientArea.Controls.Add(utcQuanLyNhanVien);
@@ -31,7 +34,6 @@ namespace iRes{
         }
 
         private void navBarItemKhachHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e) {
-            UtcQuanLyKhachHang utcQuanLyKhachHang = new UtcQuanLyKhachHang();
             utcQuanLyKhachHang.Dock = DockStyle.Fill;
             this.groupControlClientArea.Controls.Clear();
             this.groupControlClientArea.Controls.Add(utcQuanLyKhachHang);
@@ -43,7 +45,6 @@ namespace iRes{
 
         private void navBarItemMonAn_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            UtcQuanLyMonAn utcQuanLyMonAn = new UtcQuanLyMonAn();
             utcQuanLyMonAn.Dock = DockStyle.Fill;
             this.groupControlClientArea.Controls.Clear();
             this.groupControlClientArea.Controls.Add(utcQuanLyMonAn);
@@ -51,6 +52,23 @@ namespace iRes{
         }
 
         private void groupControlClientArea_Paint(object sender, PaintEventArgs e) {
+        }
+
+        private void barButtonEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            switch (this.currentTabName) {
+                case "TabNhanVien":
+                    utcQuanLyNhanVien.Edit();
+                    break;
+                case "TabKhachHang":
+                    break;
+            }
+        }
+
+        private void barButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            DialogResult dialogResult = MessageBox.Show("","Do you want to delete?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes) {
+            } else {
+            }
         }
     }
 }
