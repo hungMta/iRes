@@ -9,12 +9,12 @@ namespace Title.VO {
         public NhanVien () {
         }
 
-        public NhanVien (string maNV, string tenNV, DateTime ngaySinh, string gioiTinh, string queQuan, int luong, string chucVu, string MatKhau ) {
+        public NhanVien (string maNV, string tenNV, DateTime ngaySinh, string gioiTinh, string diaChi, int luong, string chucVu, string MatKhau ) {
             this.MaNV = maNV;
             this.TenNV = tenNV;
             this.NgaySinh = ngaySinh;
             this.GioiTinh = gioiTinh;
-            this.QueQuan = queQuan;
+            this.DiaChi = diaChi;
             this.Luong = luong;
             this.ChucVu = chucVu;
             this.MatKhau = MatKhau;
@@ -24,7 +24,7 @@ namespace Title.VO {
         public string TenNV { get; set; }
         public DateTime NgaySinh { get; set; }
         public string GioiTinh { get; set; }
-        public string QueQuan { get; set; }
+        public string DiaChi{ get; set; }
         public int Luong { get; set; }
         public string ChucVu { get; set; }
         public string MatKhau { get; set; }

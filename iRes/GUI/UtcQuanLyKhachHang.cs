@@ -19,16 +19,26 @@ namespace Title.GUI {
 
         Configuration config = new Configuration();
 
-        public void LoadData()
-        {
+        public void LoadData() {
             DataTable dataTable = new DataTable();
             dataTable = Bus.GetListKhachHang();
             this.gridControl1.DataSource = dataTable;
         }
 
-        private void UtcQuanLyKhachHang_Load(object sender, EventArgs e)
-        {
+        private void UtcQuanLyKhachHang_Load(object sender, EventArgs e) {
             LoadData();
+        }
+
+        public void Add() {
+        }
+
+        public void Edit() {
+        }
+
+        public void Delete() {
+        }
+
+        public void Save() {
         }
     }
 }

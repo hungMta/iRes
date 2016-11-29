@@ -17,13 +17,10 @@ namespace Title.VO
         public decimal TongTien { get; set; }
         public string PhanLoai { get; set; }
 
-        KhanhHang()
-        {
-
+        KhanhHang() {
         }
 
-        KhanhHang(string maKH , string tenKH , string diaChi,string sdt, string email,int soLanAn, decimal tongTien,string phanLoai)
-        {
+        KhanhHang(string maKH , string tenKH , string diaChi,string sdt, string email,int soLanAn, decimal tongTien,string phanLoai) {
             this.MaKH = maKH;
             this.TenKH = tenKH;
             this.DiaChi = diaChi;

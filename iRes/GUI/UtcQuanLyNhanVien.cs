@@ -41,8 +41,21 @@ namespace Title.GUI {
             this.dateEditNgaySinh.EditValue = selRow["NgaySinh"];
         }
 
-        public void Edit() {
-            this.panelTextBox.Enabled = true;
+        public void Add() {
         }
+
+        public void Edit() {
+        }
+
+        public void Delete() {
+            DialogResult dialogResult = MessageBox.Show("","Do you want to delete?", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes) {
+            } else {
+            }
+        }
+
+        public void Save() {
+        }
+
     }
 }

@@ -64,10 +64,14 @@ namespace iRes{
             }
         }
 
-        private void barButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
-            DialogResult dialogResult = MessageBox.Show("","Do you want to delete?", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes) {
-            } else {
+        private void barButtonDelete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            switch (this.currentTabName) {
+                case "TabNhanVien":
+                    utcQuanLyNhanVien.Delete();
+                    break;
+                case "TabKhachHang":
+                    utcQuanLyKhachHang.Delete();
+                    break;
             }
         }
     }
