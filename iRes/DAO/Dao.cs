@@ -50,5 +50,10 @@ namespace Title.DAO {
             return DataProvider.GetData(config.PROC_GET_LIST_KHACHHANG);
         }
 
+        public static DataTable GetListMonAn()
+        {
+            return DataProvider.GetData(config.PROC_GET_LIST_MONAN);
+        }
+
     }
 }

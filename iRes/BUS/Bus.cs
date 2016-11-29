@@ -21,9 +21,15 @@ namespace Title.BUS {
         {
             return Dao.GetListKhachHang();
         }
+
         public static int InsertKhachHang(KhanhHang kh)
         {
             return Dao.InsertKhanhHang(kh);
+        }
+
+        public static DataTable  GetListMonAn()
+        {
+            return Dao.GetListMonAn();
         }
     }
 }

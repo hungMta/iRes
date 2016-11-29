@@ -53,6 +53,9 @@
             this.navBarGroupQuanLyMonAn = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroupNhapHang = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlClientArea)).BeginInit();
             this.groupControlClientArea.SuspendLayout();
@@ -70,9 +73,11 @@
             this.barButtonMoveUp,
             this.barButtonMoveDown,
             this.barButtonDelete,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.barButtonItem2,
+            this.barButtonItem3});
             this.ribbonControlTop.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControlTop.MaxItemId = 8;
+            this.ribbonControlTop.MaxItemId = 11;
             this.ribbonControlTop.Name = "ribbonControlTop";
             this.ribbonControlTop.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageHome,
@@ -141,7 +146,8 @@
             // 
             this.ribbonPageHome.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroupClipBoard,
-            this.ribbonPageGroupMove});
+            this.ribbonPageGroupMove,
+            this.ribbonPageGroup1});
             this.ribbonPageHome.Name = "ribbonPageHome";
             this.ribbonPageHome.Text = "Home";
             // 
@@ -157,8 +163,6 @@
             // 
             this.ribbonPageGroupMove.ItemLinks.Add(this.barButtonMoveUp);
             this.ribbonPageGroupMove.ItemLinks.Add(this.barButtonMoveDown);
-            this.ribbonPageGroupMove.ItemLinks.Add(this.barButtonDelete);
-            this.ribbonPageGroupMove.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroupMove.Name = "ribbonPageGroupMove";
             // 
             // ribbonPageView
@@ -185,6 +189,7 @@
             this.groupControlClientArea.Name = "groupControlClientArea";
             this.groupControlClientArea.Size = new System.Drawing.Size(833, 391);
             this.groupControlClientArea.TabIndex = 3;
+            this.groupControlClientArea.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControlClientArea_Paint);
             // 
             // navBarItemNhanVien
             // 
@@ -205,9 +210,10 @@
             // navBarItemMonAn
             // 
             this.navBarItemMonAn.Caption = "Món Ăn";
-            this.navBarItemMonAn.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItemMonAn.LargeImage")));
+            this.navBarItemMonAn.LargeImage = global::Title.Properties.Resources.Aha_Soft_Food_Hamburger;
             this.navBarItemMonAn.Name = "navBarItemMonAn";
             this.navBarItemMonAn.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItemMonAn.SmallImage")));
+            this.navBarItemMonAn.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemMonAn_LinkClicked);
             // 
             // navBarItemNhomMon
             // 
@@ -311,6 +317,30 @@
             this.navBarControl1.TabIndex = 1;
             this.navBarControl1.Text = "navBarControl1";
             // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonDelete);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Edit";
+            this.barButtonItem2.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.Glyph")));
+            this.barButtonItem2.Id = 9;
+            this.barButtonItem2.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.LargeGlyph")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Add";
+            this.barButtonItem3.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.Glyph")));
+            this.barButtonItem3.Id = 10;
+            this.barButtonItem3.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.LargeGlyph")));
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,6 +391,9 @@
         private DevExpress.XtraNavBar.NavBarGroup navBarGroupQuanLyMonAn;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroupNhapHang;
         private DevExpress.XtraNavBar.NavBarControl navBarControl1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
     }
 }
 

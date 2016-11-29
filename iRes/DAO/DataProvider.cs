@@ -36,6 +36,24 @@ namespace Title.DAO {
             }
         }
 
+        public static DataTable GetDataAndImage(string proc)
+        {
+            try
+            {
+                conn = Connect();
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = new SqlCommand(proc, conn);
+                da.Fill(dt);
+                return dt;
+            }
+            catch (SqlException)
+            {
+                conn.Close();
+                return null;
+            }
+        }
+
         public static int ExecuteNonQuery(string proc, SqlParameter[] para) {
             try {
                 conn = Connect();

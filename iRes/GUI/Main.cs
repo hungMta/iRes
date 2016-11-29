@@ -34,5 +34,18 @@ namespace iRes{
 
         private void barButtonClipBoardCut_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
         }
+
+        private void navBarItemMonAn_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            UtcQuanLyMonAn utcQuanLyMonAn = new UtcQuanLyMonAn();
+            utcQuanLyMonAn.Dock = DockStyle.Fill;
+            this.groupControlClientArea.Controls.Clear();
+            this.groupControlClientArea.Controls.Add(utcQuanLyMonAn);
+        }
+
+        private void groupControlClientArea_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

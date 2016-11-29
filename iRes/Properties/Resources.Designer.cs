@@ -63,6 +63,16 @@ namespace Title.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Aha_Soft_Food_Hamburger {
+            get {
+                object obj = ResourceManager.GetObject("Aha-Soft-Food-Hamburger", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap usergroup_32x32 {
             get {
                 object obj = ResourceManager.GetObject("usergroup_32x32", resourceCulture);
