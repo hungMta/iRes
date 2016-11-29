@@ -74,5 +74,25 @@ namespace iRes{
                     break;
             }
         }
+
+        private void barButtonAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            switch (this.currentTabName) {
+                case "TabNhanVien":
+                    break;
+                case "TabKhachHang":
+                    utcQuanLyKhachHang.Add();
+                    break;
+            }
+        }
+
+        private void barButtonSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            switch (this.currentTabName) {
+                case "TabNhanVien":
+                    break;
+                case "TabKhachHang":
+                    utcQuanLyKhachHang.Save();
+                    break;
+            }
+        }
     }
 }
