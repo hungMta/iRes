@@ -5,15 +5,16 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Title.Config;
 
 namespace Title.DAO {
     public class DataProvider {
         private static SqlConnection conn;
+        public static Configuration config = new Configuration();
 
         public static SqlConnection Connect() {
             try {
-                string sql = @"Data Source=.\SQLEXPRESS;Initial Catalog=iResDatabase;Integrated Security=True";
-                SqlConnection conn = new SqlConnection(sql);
+                SqlConnection conn = new SqlConnection(config.DATA_SOURCE);
                 conn.Open();
                 return conn;
             } catch (SqlException) {

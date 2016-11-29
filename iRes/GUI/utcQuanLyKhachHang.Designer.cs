@@ -23,34 +23,32 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.khachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.khachHangBindingSource = new System.Windows.Forms.BindingSource();
             this.iResDatabaseDataSet1 = new Title.iResDatabaseDataSet1();
-            this.khachHangTableAdapter = new Title.iResDatabaseDataSet1TableAdapters.KhachHangTableAdapter();
             this.layoutView1 = new DevExpress.XtraGrid.Views.Layout.LayoutView();
             this.colMaKH = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.colHoDemKH = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.colTenKH = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.colSDT = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.colEmail = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.colSoLanAn = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.colTongChi = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.colPhanLoaiKH = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
             this.layoutViewField_colMaKH = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.colHoDemKH = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.layoutViewField_colHoDemKH = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.colTenKH = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.layoutViewField_colTenKH = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.colSDT = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.layoutViewField_colSDT = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.colEmail = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.layoutViewField_colEmail = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.colSoLanAn = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.layoutViewField_colSoLanAn = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.colTongChi = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.layoutViewField_colTongChi = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.colPhanLoaiKH = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.layoutViewField_colPhanLoaiKH = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
+            this.khachHangTableAdapter = new Title.iResDatabaseDataSet1TableAdapters.KhachHangTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iResDatabaseDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colMaKH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colHoDemKH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colTenKH)).BeginInit();
@@ -59,6 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colSoLanAn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colTongChi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colPhanLoaiKH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -83,10 +82,6 @@
             this.iResDatabaseDataSet1.DataSetName = "iResDatabaseDataSet1";
             this.iResDatabaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // khachHangTableAdapter
-            // 
-            this.khachHangTableAdapter.ClearBeforeFill = true;
-            // 
             // layoutView1
             // 
             this.layoutView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.LayoutViewColumn[] {
@@ -108,11 +103,27 @@
             this.colMaKH.LayoutViewField = this.layoutViewField_colMaKH;
             this.colMaKH.Name = "colMaKH";
             // 
+            // layoutViewField_colMaKH
+            // 
+            this.layoutViewField_colMaKH.EditorPreferredWidth = 129;
+            this.layoutViewField_colMaKH.Location = new System.Drawing.Point(0, 0);
+            this.layoutViewField_colMaKH.Name = "layoutViewField_colMaKH";
+            this.layoutViewField_colMaKH.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_colMaKH.TextSize = new System.Drawing.Size(66, 13);
+            // 
             // colHoDemKH
             // 
             this.colHoDemKH.FieldName = "HoDemKH";
             this.colHoDemKH.LayoutViewField = this.layoutViewField_colHoDemKH;
             this.colHoDemKH.Name = "colHoDemKH";
+            // 
+            // layoutViewField_colHoDemKH
+            // 
+            this.layoutViewField_colHoDemKH.EditorPreferredWidth = 129;
+            this.layoutViewField_colHoDemKH.Location = new System.Drawing.Point(0, 24);
+            this.layoutViewField_colHoDemKH.Name = "layoutViewField_colHoDemKH";
+            this.layoutViewField_colHoDemKH.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_colHoDemKH.TextSize = new System.Drawing.Size(66, 13);
             // 
             // colTenKH
             // 
@@ -120,11 +131,27 @@
             this.colTenKH.LayoutViewField = this.layoutViewField_colTenKH;
             this.colTenKH.Name = "colTenKH";
             // 
+            // layoutViewField_colTenKH
+            // 
+            this.layoutViewField_colTenKH.EditorPreferredWidth = 129;
+            this.layoutViewField_colTenKH.Location = new System.Drawing.Point(0, 48);
+            this.layoutViewField_colTenKH.Name = "layoutViewField_colTenKH";
+            this.layoutViewField_colTenKH.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_colTenKH.TextSize = new System.Drawing.Size(66, 13);
+            // 
             // colSDT
             // 
             this.colSDT.FieldName = "SDT";
             this.colSDT.LayoutViewField = this.layoutViewField_colSDT;
             this.colSDT.Name = "colSDT";
+            // 
+            // layoutViewField_colSDT
+            // 
+            this.layoutViewField_colSDT.EditorPreferredWidth = 129;
+            this.layoutViewField_colSDT.Location = new System.Drawing.Point(0, 72);
+            this.layoutViewField_colSDT.Name = "layoutViewField_colSDT";
+            this.layoutViewField_colSDT.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_colSDT.TextSize = new System.Drawing.Size(66, 13);
             // 
             // colEmail
             // 
@@ -132,11 +159,27 @@
             this.colEmail.LayoutViewField = this.layoutViewField_colEmail;
             this.colEmail.Name = "colEmail";
             // 
+            // layoutViewField_colEmail
+            // 
+            this.layoutViewField_colEmail.EditorPreferredWidth = 129;
+            this.layoutViewField_colEmail.Location = new System.Drawing.Point(0, 96);
+            this.layoutViewField_colEmail.Name = "layoutViewField_colEmail";
+            this.layoutViewField_colEmail.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_colEmail.TextSize = new System.Drawing.Size(66, 13);
+            // 
             // colSoLanAn
             // 
             this.colSoLanAn.FieldName = "SoLanAn";
             this.colSoLanAn.LayoutViewField = this.layoutViewField_colSoLanAn;
             this.colSoLanAn.Name = "colSoLanAn";
+            // 
+            // layoutViewField_colSoLanAn
+            // 
+            this.layoutViewField_colSoLanAn.EditorPreferredWidth = 129;
+            this.layoutViewField_colSoLanAn.Location = new System.Drawing.Point(0, 120);
+            this.layoutViewField_colSoLanAn.Name = "layoutViewField_colSoLanAn";
+            this.layoutViewField_colSoLanAn.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_colSoLanAn.TextSize = new System.Drawing.Size(66, 13);
             // 
             // colTongChi
             // 
@@ -144,11 +187,27 @@
             this.colTongChi.LayoutViewField = this.layoutViewField_colTongChi;
             this.colTongChi.Name = "colTongChi";
             // 
+            // layoutViewField_colTongChi
+            // 
+            this.layoutViewField_colTongChi.EditorPreferredWidth = 129;
+            this.layoutViewField_colTongChi.Location = new System.Drawing.Point(0, 144);
+            this.layoutViewField_colTongChi.Name = "layoutViewField_colTongChi";
+            this.layoutViewField_colTongChi.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_colTongChi.TextSize = new System.Drawing.Size(66, 13);
+            // 
             // colPhanLoaiKH
             // 
             this.colPhanLoaiKH.FieldName = "PhanLoaiKH";
             this.colPhanLoaiKH.LayoutViewField = this.layoutViewField_colPhanLoaiKH;
             this.colPhanLoaiKH.Name = "colPhanLoaiKH";
+            // 
+            // layoutViewField_colPhanLoaiKH
+            // 
+            this.layoutViewField_colPhanLoaiKH.EditorPreferredWidth = 129;
+            this.layoutViewField_colPhanLoaiKH.Location = new System.Drawing.Point(0, 168);
+            this.layoutViewField_colPhanLoaiKH.Name = "layoutViewField_colPhanLoaiKH";
+            this.layoutViewField_colPhanLoaiKH.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_colPhanLoaiKH.TextSize = new System.Drawing.Size(66, 13);
             // 
             // layoutViewCard1
             // 
@@ -164,69 +223,9 @@
             this.layoutViewField_colPhanLoaiKH});
             this.layoutViewCard1.Name = "layoutViewCard1";
             // 
-            // layoutViewField_colMaKH
+            // khachHangTableAdapter
             // 
-            this.layoutViewField_colMaKH.EditorPreferredWidth = 129;
-            this.layoutViewField_colMaKH.Location = new System.Drawing.Point(0, 0);
-            this.layoutViewField_colMaKH.Name = "layoutViewField_colMaKH";
-            this.layoutViewField_colMaKH.Size = new System.Drawing.Size(203, 24);
-            this.layoutViewField_colMaKH.TextSize = new System.Drawing.Size(66, 13);
-            // 
-            // layoutViewField_colHoDemKH
-            // 
-            this.layoutViewField_colHoDemKH.EditorPreferredWidth = 129;
-            this.layoutViewField_colHoDemKH.Location = new System.Drawing.Point(0, 24);
-            this.layoutViewField_colHoDemKH.Name = "layoutViewField_colHoDemKH";
-            this.layoutViewField_colHoDemKH.Size = new System.Drawing.Size(203, 24);
-            this.layoutViewField_colHoDemKH.TextSize = new System.Drawing.Size(66, 13);
-            // 
-            // layoutViewField_colTenKH
-            // 
-            this.layoutViewField_colTenKH.EditorPreferredWidth = 129;
-            this.layoutViewField_colTenKH.Location = new System.Drawing.Point(0, 48);
-            this.layoutViewField_colTenKH.Name = "layoutViewField_colTenKH";
-            this.layoutViewField_colTenKH.Size = new System.Drawing.Size(203, 24);
-            this.layoutViewField_colTenKH.TextSize = new System.Drawing.Size(66, 13);
-            // 
-            // layoutViewField_colSDT
-            // 
-            this.layoutViewField_colSDT.EditorPreferredWidth = 129;
-            this.layoutViewField_colSDT.Location = new System.Drawing.Point(0, 72);
-            this.layoutViewField_colSDT.Name = "layoutViewField_colSDT";
-            this.layoutViewField_colSDT.Size = new System.Drawing.Size(203, 24);
-            this.layoutViewField_colSDT.TextSize = new System.Drawing.Size(66, 13);
-            // 
-            // layoutViewField_colEmail
-            // 
-            this.layoutViewField_colEmail.EditorPreferredWidth = 129;
-            this.layoutViewField_colEmail.Location = new System.Drawing.Point(0, 96);
-            this.layoutViewField_colEmail.Name = "layoutViewField_colEmail";
-            this.layoutViewField_colEmail.Size = new System.Drawing.Size(203, 24);
-            this.layoutViewField_colEmail.TextSize = new System.Drawing.Size(66, 13);
-            // 
-            // layoutViewField_colSoLanAn
-            // 
-            this.layoutViewField_colSoLanAn.EditorPreferredWidth = 129;
-            this.layoutViewField_colSoLanAn.Location = new System.Drawing.Point(0, 120);
-            this.layoutViewField_colSoLanAn.Name = "layoutViewField_colSoLanAn";
-            this.layoutViewField_colSoLanAn.Size = new System.Drawing.Size(203, 24);
-            this.layoutViewField_colSoLanAn.TextSize = new System.Drawing.Size(66, 13);
-            // 
-            // layoutViewField_colTongChi
-            // 
-            this.layoutViewField_colTongChi.EditorPreferredWidth = 129;
-            this.layoutViewField_colTongChi.Location = new System.Drawing.Point(0, 144);
-            this.layoutViewField_colTongChi.Name = "layoutViewField_colTongChi";
-            this.layoutViewField_colTongChi.Size = new System.Drawing.Size(203, 24);
-            this.layoutViewField_colTongChi.TextSize = new System.Drawing.Size(66, 13);
-            // 
-            // layoutViewField_colPhanLoaiKH
-            // 
-            this.layoutViewField_colPhanLoaiKH.EditorPreferredWidth = 129;
-            this.layoutViewField_colPhanLoaiKH.Location = new System.Drawing.Point(0, 168);
-            this.layoutViewField_colPhanLoaiKH.Name = "layoutViewField_colPhanLoaiKH";
-            this.layoutViewField_colPhanLoaiKH.Size = new System.Drawing.Size(203, 24);
-            this.layoutViewField_colPhanLoaiKH.TextSize = new System.Drawing.Size(66, 13);
+            this.khachHangTableAdapter.ClearBeforeFill = true;
             // 
             // UtcQuanLyKhachHang
             // 
@@ -235,11 +234,11 @@
             this.Controls.Add(this.gridControl1);
             this.Name = "UtcQuanLyKhachHang";
             this.Size = new System.Drawing.Size(932, 490);
+            this.Load += new System.EventHandler(this.UtcQuanLyKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iResDatabaseDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colMaKH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colHoDemKH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colTenKH)).EndInit();
@@ -248,6 +247,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colSoLanAn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colTongChi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colPhanLoaiKH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).EndInit();
             this.ResumeLayout(false);
 
         }
