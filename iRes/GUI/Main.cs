@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Title.Config;
 using Title.GUI;
 
 namespace iRes{
@@ -14,8 +15,11 @@ namespace iRes{
             InitializeComponent();
         }
 
-        private void tclItem1_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e) {
+        Configuration config = new Configuration();
 
+        private string currentTabName;
+
+        private void tclItem1_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e) {
         }
 
         private void navBarItemNhanVien_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e) {
@@ -23,6 +27,7 @@ namespace iRes{
             utcQuanLyNhanVien.Dock = DockStyle.Fill;
             this.groupControlClientArea.Controls.Clear();
             this.groupControlClientArea.Controls.Add(utcQuanLyNhanVien);
+            this.currentTabName = config.TAB_NHAN_VIEN;
         }
 
         private void navBarItemKhachHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e) {
@@ -30,6 +35,7 @@ namespace iRes{
             utcQuanLyKhachHang.Dock = DockStyle.Fill;
             this.groupControlClientArea.Controls.Clear();
             this.groupControlClientArea.Controls.Add(utcQuanLyKhachHang);
+            this.currentTabName = config.TAB_KHACH_HANG;
         }
 
         private void barButtonClipBoardCut_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
@@ -41,11 +47,10 @@ namespace iRes{
             utcQuanLyMonAn.Dock = DockStyle.Fill;
             this.groupControlClientArea.Controls.Clear();
             this.groupControlClientArea.Controls.Add(utcQuanLyMonAn);
+            this.currentTabName = config.TAB_MON_AN;
         }
 
-        private void groupControlClientArea_Paint(object sender, PaintEventArgs e)
-        {
-
+        private void groupControlClientArea_Paint(object sender, PaintEventArgs e) {
         }
     }
 }
