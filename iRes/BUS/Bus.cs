@@ -17,6 +17,14 @@ namespace Title.BUS {
             return Dao.InsertNhanVien(nv);
         }
 
+        public static int UpdateNhanVien(NhanVien nv) {
+            return Dao.UpdateNhanVien(nv);
+        }
+        
+        public static int DeleteNhanVien(NhanVien nv) {
+            return Dao.DeleteNhanVien(nv);
+        }
+
         public static DataTable GetListKhachHang()
         {
             return Dao.GetListKhachHang();

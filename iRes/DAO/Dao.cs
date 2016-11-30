@@ -22,12 +22,40 @@ namespace Title.DAO {
                 new SqlParameter("@MaNV", nv.MaNV),
                 new SqlParameter("@TenNV", nv.TenNV),
                 new SqlParameter("@NgaySinh", nv.NgaySinh),
-                new SqlParameter("@QueQuan",nv.DiaChi),
-                new SqlParameter("@Luong",nv.Luong),
-                new SqlParameter("@ChucVu",nv.ChucVu),
-                new SqlParameter("@MatKhau",nv.MatKhau)
+                new SqlParameter("@GioiTinh", nv.DiaChi),
+                new SqlParameter("@DiaChi", nv.DiaChi),
+                new SqlParameter("@Luong", nv.Luong),
+                new SqlParameter("@ChucVu", nv.ChucVu),
+                new SqlParameter("@MatKhau", nv.MatKhau),
+                new SqlParameter("@HinhAnh", nv.HinhAnh),
+                new SqlParameter("@TinhTrang", nv.TinhTrangLamViec)
             };
             return DataProvider.ExecuteNonQuery(config.PROC_INSERT_NHANVIEN, para);
+        }
+
+        public static int UpdateNhanVien(NhanVien nv) {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@MaNV", nv.MaNV),
+                new SqlParameter("@TenNV", nv.TenNV),
+                new SqlParameter("@NgaySinh", nv.NgaySinh),
+                new SqlParameter("@GioiTinh", nv.GioiTinh),
+                new SqlParameter("@DiaChi", nv.DiaChi),
+                new SqlParameter("@Luong", nv.Luong),
+                new SqlParameter("@ChucVu", nv.ChucVu),
+                new SqlParameter("@MatKhau", nv.MatKhau),
+                new SqlParameter("@HinhAnh", nv.HinhAnh),
+                new SqlParameter("@TinhTrang", nv.TinhTrangLamViec)
+            };
+            return DataProvider.ExecuteNonQuery(config.PROC_UPDATE_NHANVIEN, para);
+        }
+
+        public static int DeleteNhanVien(NhanVien nv) {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@MaNV", nv.MaNV)
+            };
+            return DataProvider.ExecuteNonQuery(config.PROC_DELETE_NHANVIEN, para);
         }
 
         public static int InsertKhanhHang(KhanhHang kh)

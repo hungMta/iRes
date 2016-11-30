@@ -40,7 +40,6 @@
             this.ribbonPageGroupMove = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageView = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.groupControlClientArea = new DevExpress.XtraEditors.GroupControl();
             this.navBarItemNhanVien = new DevExpress.XtraNavBar.NavBarItem();
@@ -56,6 +55,7 @@
             this.navBarGroupQuanLyMonAn = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroupNhapHang = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
+            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlClientArea)).BeginInit();
             this.groupControlClientArea.SuspendLayout();
@@ -83,7 +83,7 @@
             this.ribbonPageHome,
             this.ribbonPageView});
             this.ribbonControlTop.Size = new System.Drawing.Size(1070, 141);
-            this.ribbonControlTop.StatusBar = this.ribbonStatusBar1;
+            this.ribbonControlTop.StatusBar = this.ribbonStatusBar;
             // 
             // barButtonClipBoardCut
             // 
@@ -198,20 +198,13 @@
             this.ribbonPageView.Name = "ribbonPageView";
             this.ribbonPageView.Text = "View";
             // 
-            // ribbonStatusBar1
-            // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(2, 362);
-            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
-            this.ribbonStatusBar1.Ribbon = this.ribbonControlTop;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(829, 27);
-            // 
             // defaultLookAndFeel1
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "DevExpress Dark Style";
             // 
             // groupControlClientArea
             // 
-            this.groupControlClientArea.Controls.Add(this.ribbonStatusBar1);
+            this.groupControlClientArea.Controls.Add(this.ribbonStatusBar);
             this.groupControlClientArea.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControlClientArea.Location = new System.Drawing.Point(237, 141);
             this.groupControlClientArea.Name = "groupControlClientArea";
@@ -345,6 +338,13 @@
             this.navBarControl1.TabIndex = 1;
             this.navBarControl1.Text = "navBarControl1";
             // 
+            // ribbonStatusBar
+            // 
+            this.ribbonStatusBar.Location = new System.Drawing.Point(2, 369);
+            this.ribbonStatusBar.Name = "ribbonStatusBar";
+            this.ribbonStatusBar.Ribbon = this.ribbonControlTop;
+            this.ribbonStatusBar.Size = new System.Drawing.Size(829, 20);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -380,7 +380,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonDelete;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupMove;
         private DevExpress.XtraBars.BarButtonItem barButtonSave;
-        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraEditors.GroupControl groupControlClientArea;
         private DevExpress.XtraNavBar.NavBarItem navBarItemNhanVien;
         private DevExpress.XtraNavBar.NavBarItem navBarItemKhachHang;
@@ -398,6 +397,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonEdit;
         private DevExpress.XtraBars.BarButtonItem barButtonAdd;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
     }
 }
 

@@ -78,6 +78,7 @@ namespace iRes{
         private void barButtonAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
             switch (this.currentTabName) {
                 case "TabNhanVien":
+                    utcQuanLyNhanVien.Add();
                     break;
                 case "TabKhachHang":
                     utcQuanLyKhachHang.Add();
@@ -88,6 +89,7 @@ namespace iRes{
         private void barButtonSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
             switch (this.currentTabName) {
                 case "TabNhanVien":
+                    utcQuanLyNhanVien.Save();
                     break;
                 case "TabKhachHang":
                     utcQuanLyKhachHang.Save();

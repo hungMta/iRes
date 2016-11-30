@@ -9,7 +9,7 @@ namespace Title.VO {
         public NhanVien () {
         }
 
-        public NhanVien (string maNV, string tenNV, DateTime ngaySinh, string gioiTinh, string diaChi, int luong, string chucVu, string MatKhau ) {
+        public NhanVien (string maNV, string tenNV, DateTime ngaySinh, string gioiTinh, string diaChi, int luong, string chucVu, string MatKhau, string hinhAnh, string tinhTrangLamViec) {
             this.MaNV = maNV;
             this.TenNV = tenNV;
             this.NgaySinh = ngaySinh;
@@ -18,6 +18,8 @@ namespace Title.VO {
             this.Luong = luong;
             this.ChucVu = chucVu;
             this.MatKhau = MatKhau;
+            this.HinhAnh = hinhAnh;
+            this.TinhTrangLamViec = tinhTrangLamViec;
         }
 
         public string MaNV { get; set; }
