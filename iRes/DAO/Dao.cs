@@ -64,14 +64,16 @@ namespace Title.DAO {
         {
             SqlParameter[] para = new SqlParameter[]
               {
-                  new SqlParameter("@MaKH", kh.MaKH),
-                  new SqlParameter("@TenKH",kh.TenKH),
-                  new SqlParameter("@DiaChi",kh.DiaChi),
-                  new SqlParameter("@SDT",kh.SDT),
-                  new SqlParameter("@Email",kh.Email),
-                  new SqlParameter("@SoLanAn",kh.SoLanAn),
-                  new SqlParameter("@TongTien",kh.TongTien),
-                  new SqlParameter("@PhanLoai",kh.PhanLoai)
+                  new SqlParameter("@"+config.KHACHHANG_MAKH, kh.MaKH),
+                  new SqlParameter("@"+config.KHACHHANG_TENKH, kh.TenKH),
+                  new SqlParameter("@"+config.KHACHHANG_DIACHI, kh.DiaChi),
+                  new SqlParameter("@"+config.KHACHHANG_SDT, kh.SDT),
+                  new SqlParameter("@"+config.KHACHHANG_EMAIL, kh.Email),
+                  new SqlParameter("@"+config.KHACHHANG_SOLANAN, kh.SoLanAn),
+                  new SqlParameter("@"+config.KHACHHANG_TONGTIEN, kh.TongTien),
+                  new SqlParameter("@"+config.KHACHHANG_PHANLOAI, kh.PhanLoai)
+
+
               };
                return DataProvider.ExecuteNonQuery(config.PROC_INSERT_KHACHHANG, para);
         }
@@ -80,14 +82,14 @@ namespace Title.DAO {
         {
             SqlParameter[] para = new SqlParameter[]
               {
-                  new SqlParameter("@MaKH", kh.MaKH),
-                  new SqlParameter("@TenKH",kh.TenKH),
-                  new SqlParameter("@DiaChi",kh.DiaChi),
-                  new SqlParameter("@SDT",kh.SDT),
-                  new SqlParameter("@Email",kh.Email),
-                  new SqlParameter("@SoLanAn",kh.SoLanAn),
-                  new SqlParameter("@TongTien",kh.TongTien),
-                  new SqlParameter("@PhanLoai",kh.PhanLoai)
+                  new SqlParameter("@"+config.KHACHHANG_MAKH, kh.MaKH),
+                  new SqlParameter("@"+config.KHACHHANG_TENKH, kh.TenKH),
+                  new SqlParameter("@"+config.KHACHHANG_DIACHI, kh.DiaChi),
+                  new SqlParameter("@"+config.KHACHHANG_SDT, kh.SDT),
+                  new SqlParameter("@"+config.KHACHHANG_EMAIL, kh.Email),
+                  new SqlParameter("@"+config.KHACHHANG_SOLANAN, kh.SoLanAn),
+                  new SqlParameter("@"+config.KHACHHANG_TONGTIEN, kh.TongTien),
+                  new SqlParameter("@"+config.KHACHHANG_PHANLOAI, kh.PhanLoai)
               };
             return DataProvider.ExecuteNonQuery(config.PROC_UPDATE_KHACHHANG, para);
         }
@@ -96,7 +98,7 @@ namespace Title.DAO {
         {
             SqlParameter[] para = new SqlParameter[]
               {
-                  new SqlParameter("@MaKH", kh.MaKH),            
+                  new SqlParameter("@"+config.KHACHHANG_MAKH, kh.MaKH),            
               };
             return DataProvider.ExecuteNonQuery(config.PROC_DELETE_KHACHHANG, para);
         }

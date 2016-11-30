@@ -19,6 +19,16 @@ namespace Title.Config {
         public string DATA_SOURCE = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
         //public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyNhaHang;Integrated Security=True";
 
+        // Propety of KhachHang
+        public string KHACHHANG_MAKH = "MaKH";
+        public string KHACHHANG_TENKH = "TenKH";
+        public string KHACHHANG_DIACHI = "DiaChi";
+        public string KHACHHANG_SDT = "SDT";
+        public string KHACHHANG_EMAIL = "Email";
+        public string KHACHHANG_SOLANAN = "SoLanAn";
+        public string KHACHHANG_TONGTIEN = "TongTienDaChi";
+        public string KHACHHANG_PHANLOAI = "PhanLoaiKH";
+
         // Proceduces of NhanVien
         public string PROC_GET_LIST_NHANVIEN = "DanhSachNhanVien";
         public string PROC_INSERT_NHANVIEN = "ThemNhanVien";
@@ -26,13 +36,13 @@ namespace Title.Config {
         public string PROC_UPDATE_NHANVIEN = "SuaNhanVien";
 
         // Proceduces of KhachHang
-        public string PROC_GET_LIST_KHACHHANG = "GetListKhachHang";
+        public string PROC_GET_LIST_KHACHHANG = "DanhSachKhachHang";
         public string PROC_UPDATE_KHACHHANG = "SuaKhachHang";
         public string PROC_DELETE_KHACHHANG = "XoaKhachHang";
         public string PROC_INSERT_KHACHHANG  = "ThemKhachHang";
 
+        // Proceduces of MonAn
         public string PROC_GET_LIST_MONAN = "GetListMonAn";
-
         public string GET_LIST_MONAN_AND_IMAGE = @"select Cast('C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\iRes\Resources\MonAn\'
                                                 + hinhanh as nvarchar(4000)) as [Hình ảnh],
                                                 MaMon as [Mã món ăn], 
@@ -41,6 +51,7 @@ namespace Title.Config {
                                                 DonGia as [Đơn giá],
                                                 SoLuong as [Số lương] from MonAn";
 
+        // Tab Name
         public string TAB_NHAN_VIEN = "TabNhanVien";
         public string TAB_KHACH_HANG = "TabKhachHang";
         public string TAB_MON_AN = "TabMonAn";

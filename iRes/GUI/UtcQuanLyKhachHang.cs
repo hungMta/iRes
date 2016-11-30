@@ -38,45 +38,34 @@ namespace Title.GUI
             LoadData();
         }
 
-        public void Add()
-        {
+        public void Add() {
             feature = "add";
             clearTextBox();
             panelTextBox.Enabled = true;
-
         }
 
-        public void Edit()
-        {
+        public void Edit() {
             feature = "edit";
             panelTextBox.Enabled = true;
         }
 
-        public void Delete()
-        {
-
-            DialogResult dialogResult = MessageBox.Show("Bạn có muốn lưu thông tin?", "Thông báo", MessageBoxButtons.YesNo);
+        public void Delete() {
+            DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo);
             getKhachHang();
             if (dialogResult == DialogResult.Yes)
-            try
-            {
+            try {
                int res = Bus.DeleteKhachHang(khachHang);
                LoadData();
             }
-            catch (Exception e)
-            {
+            catch (Exception e) {
                 MessageBox.Show("Xóa thành công!");
             }
-            
-
         }
 
-        public void Save()
-        {
+        public void Save() {
             DialogResult dialogResult = MessageBox.Show(  "Bạn có muốn lưu thông tin?","Thông báo", MessageBoxButtons.YesNo);
             getKhachHang();
-            if (dialogResult == DialogResult.Yes)
-            {
+            if (dialogResult == DialogResult.Yes) {
                 int res = 0;
                 if (feature == "add") {
                     try {
@@ -101,16 +90,13 @@ namespace Title.GUI
                 }
                 LoadData();
             }
-            else if (dialogResult == DialogResult.No)
-            {
-    
+            else if (dialogResult == DialogResult.No) {
                 panelTextBox.Enabled = false;
             }
             clearTextBox(); 
         }
 
-        private  void getKhachHang()
-        {
+        private void getKhachHang() {
             int solan;
             decimal tongTien;
 
@@ -119,28 +105,21 @@ namespace Title.GUI
             string diachi = textEditDiaChi.Text;
             string sdt = textEditSDT.Text;
             string email = textEditEmail.Text;
-            try
-            {
+            try {
                 solan = int.Parse(textEditSoLanAn.Text);
-            }
-            catch
-            {
+            } catch {
                 solan = 0;
             }
-            try
-            {
+            try {
                 tongTien = decimal.Parse(textEditTongChi.Text);
-             }
-            catch
-            {
+            } catch {
                 tongTien = 0;
             }
             string phanloai = cbxPhanLoai.Text;
             khachHang = new KhachHang(ma, ten, diachi, sdt, email, solan, tongTien, phanloai);
         }
 
-        private void clearTextBox()
-        {
+        private void clearTextBox() {
             textEditMaKH.Text = "";
             textEditTen.Text = "";
             textEditDiaChi.Text = "";
@@ -150,18 +129,20 @@ namespace Title.GUI
             textEditTongChi.Text = "0";
             cbxPhanLoai.Text = "";
         }
-        private void gridView1_RowClick(object sender, RowClickEventArgs e)
-        {
+
+        private void gridView1_RowClick(object sender, RowClickEventArgs e) {
             int[] selRows = ((GridView)gridControl1.MainView).GetSelectedRows();
             DataRowView selRow = (DataRowView)(((GridView)gridControl1.MainView).GetRow(selRows[0]));
-            this.textEditMaKH.Text = selRow["MaKH"].ToString();
-            this.textEditTen.Text = selRow["TenKH"].ToString();
-            this.textEditDiaChi.Text = selRow["DiaChi"].ToString();
-            this.textEditSDT.Text = selRow["SDT"].ToString();
-            this.textEditEmail.Text = selRow["Email"].ToString();
-            this.textEditSoLanAn.Text = selRow["SoLanAn"].ToString();
-            this.textEditTongChi.Text = selRow["TongTien"].ToString();
-            this.cbxPhanLoai.Text = selRow["PhanLoai"].ToString();
+            try {
+                this.textEditMaKH.Text = selRow[config.KHACHHANG_MAKH].ToString();
+                this.textEditTen.Text = selRow[config.KHACHHANG_TENKH].ToString();
+                this.textEditDiaChi.Text = selRow[config.KHACHHANG_DIACHI].ToString();
+                this.textEditSDT.Text = selRow[config.KHACHHANG_SDT].ToString();
+                this.textEditEmail.Text = selRow[config.KHACHHANG_EMAIL].ToString();
+                this.textEditSoLanAn.Text = selRow[config.KHACHHANG_SOLANAN].ToString();
+                this.textEditTongChi.Text = selRow[config.KHACHHANG_TONGTIEN].ToString();
+                this.cbxPhanLoai.Text = selRow[config.KHACHHANG_PHANLOAI].ToString();
+            } catch { }
         }
     }
 }
