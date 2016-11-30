@@ -66,7 +66,7 @@ namespace Title.DAO {
                 int val = cmd.ExecuteNonQuery();
                 conn.Close();
                 return val;
-            } catch (Exception e) {
+            } catch (SqlException) {
                 return -1;
             }
         }

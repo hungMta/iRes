@@ -16,10 +16,8 @@ namespace Title.Config {
             return projectLink;
         }
 
-
-<<<<<<< HEAD
-        public string DATA_SOURCE = @"Data Source=.\SQLEXPRESS;Initial Catalog=iResDatabase;Integrated Security=True";
-        //public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyNhaHang;Integrated Security=True";
+        //public string DATA_SOURCE = @"Data Source=.\SQLEXPRESS;Initial Catalog=iResDatabase;Integrated Security=True";
+        public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyNhaHang;Integrated Security=True";
 
         // Proceduces of NhanVien
         public string PROC_GET_LIST_NHANVIEN = "GetListNhanVien";
@@ -28,19 +26,12 @@ namespace Title.Config {
         public string PROC_UPDATE_NHANVIEN = "SuaNhanVien";
 
         // Proceduces of KhachHang
-=======
-       // public string DATA_SOURCE = @"Data Source=.\SQLEXPRESS;Initial Catalog=iResDatabase;Integrated Security=True";
-        public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyNhaHang;Integrated Security=True";
-        public string PROC_GET_LIST_NHANVIEN = "GetListNhanVien";
-        public string PROC_INSERT_NHANVIEN = "InsertNhanVien";
-        public string PROC_INSERT_KHACHHANG = "ThemKhachHang";
->>>>>>> fixconflict
         public string PROC_GET_LIST_KHACHHANG = "GetListKhachHang";
+        public string PROC_UPDATE_KHACHHANG = "SuaKhachHang";
+        public string PROC_DELETE_KHACHHANG = "XoaKhachHang";
+        public string PROC_INSERT_KHACHHANG  = "ThemKhachHang";
 
-        // Proceduces of MonAn
         public string PROC_GET_LIST_MONAN = "GetListMonAn";
-        public string PROC_UPDATE_KhachHang = "SuaKhachHang";
-        public string PROC_DELETE_KhachHang = "XoaKhachHang";
 
         public string GET_LIST_MONAN_AND_IMAGE = @"select Cast('C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\iRes\Resources\MonAn\'
                                                 + hinhanh as nvarchar(4000)) as [Hình ảnh],

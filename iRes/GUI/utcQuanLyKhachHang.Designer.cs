@@ -23,9 +23,8 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.khachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.khachHangBindingSource = new System.Windows.Forms.BindingSource();
             this.iResDatabaseDataSet1 = new Title.iResDatabaseDataSet1();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaKH = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -38,6 +37,7 @@
             this.colDiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.khachHangTableAdapter = new Title.iResDatabaseDataSet1TableAdapters.KhachHangTableAdapter();
             this.panelTextBox = new System.Windows.Forms.Panel();
+            this.cbxPhanLoai = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -53,12 +53,12 @@
             this.textEditDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.textEditTen = new DevExpress.XtraEditors.TextEdit();
             this.textEditMaKH = new DevExpress.XtraEditors.TextEdit();
-            this.cbxPhanLoai = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iResDatabaseDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panelTextBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxPhanLoai.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditTongChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditSoLanAn.Properties)).BeginInit();
@@ -66,7 +66,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditDiaChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditMaKH.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxPhanLoai.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -192,6 +191,18 @@
             this.panelTextBox.Size = new System.Drawing.Size(932, 117);
             this.panelTextBox.TabIndex = 2;
             // 
+            // cbxPhanLoai
+            // 
+            this.cbxPhanLoai.Location = new System.Drawing.Point(836, 55);
+            this.cbxPhanLoai.Name = "cbxPhanLoai";
+            this.cbxPhanLoai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbxPhanLoai.Properties.Items.AddRange(new object[] {
+            "VIP",
+            "Normal"});
+            this.cbxPhanLoai.Size = new System.Drawing.Size(145, 20);
+            this.cbxPhanLoai.TabIndex = 25;
+            // 
             // labelControl10
             // 
             this.labelControl10.Location = new System.Drawing.Point(755, 55);
@@ -305,18 +316,6 @@
             this.textEditMaKH.Size = new System.Drawing.Size(251, 20);
             this.textEditMaKH.TabIndex = 0;
             // 
-            // cbxPhanLoai
-            // 
-            this.cbxPhanLoai.Location = new System.Drawing.Point(836, 55);
-            this.cbxPhanLoai.Name = "cbxPhanLoai";
-            this.cbxPhanLoai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbxPhanLoai.Properties.Items.AddRange(new object[] {
-            "VIP",
-            "Normal"});
-            this.cbxPhanLoai.Size = new System.Drawing.Size(145, 20);
-            this.cbxPhanLoai.TabIndex = 25;
-            // 
             // UtcQuanLyKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,6 +331,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.panelTextBox.ResumeLayout(false);
             this.panelTextBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbxPhanLoai.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditTongChi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditEmail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditSoLanAn.Properties)).EndInit();
@@ -339,7 +339,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditDiaChi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditMaKH.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbxPhanLoai.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

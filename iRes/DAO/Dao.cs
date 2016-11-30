@@ -33,7 +33,6 @@ namespace Title.DAO {
             return DataProvider.ExecuteNonQuery(config.PROC_INSERT_NHANVIEN, para);
         }
 
-<<<<<<< HEAD
         public static int UpdateNhanVien(NhanVien nv) {
             SqlParameter[] para = new SqlParameter[]
             {
@@ -60,9 +59,6 @@ namespace Title.DAO {
         }
 
         public static int InsertKhachHang(KhachHang kh)
-=======
-        public static int InsertKhachHang(KhachHang kh)
->>>>>>> fixconflict
         {
             SqlParameter[] para = new SqlParameter[]
               {
@@ -91,7 +87,7 @@ namespace Title.DAO {
                   new SqlParameter("@TongTien",kh.TongTien),
                   new SqlParameter("@PhanLoai",kh.PhanLoai)
               };
-            return DataProvider.ExecuteNonQuery(config.PROC_UPDATE_KhachHang, para);
+            return DataProvider.ExecuteNonQuery(config.PROC_UPDATE_KHACHHANG, para);
         }
 
         public static int DeleteKhachHang(KhachHang kh)
@@ -100,7 +96,7 @@ namespace Title.DAO {
               {
                   new SqlParameter("@MaKH", kh.MaKH),            
               };
-            return DataProvider.ExecuteNonQuery(config.PROC_DELETE_KhachHang, para);
+            return DataProvider.ExecuteNonQuery(config.PROC_DELETE_KHACHHANG, para);
         }
 
         public static DataTable GetListKhachHang()
