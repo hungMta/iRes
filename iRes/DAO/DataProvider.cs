@@ -63,11 +63,10 @@ namespace Title.DAO {
                 cmd.CommandType = CommandType.StoredProcedure;
                 if (para != null)
                     cmd.Parameters.AddRange(para);
-
                 int val = cmd.ExecuteNonQuery();
                 conn.Close();
                 return val;
-            } catch (SqlException) {
+            } catch (Exception e) {
                 return -1;
             }
         }

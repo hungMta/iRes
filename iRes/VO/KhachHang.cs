@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 namespace Title.VO
 {
-  public  class KhanhHang
+  public class KhachHang
     {
+        private string p1;
+        private string p2;
+        private string p3;
+        private string p4;
+        private string p5;
+        private int p6;
+        private int p7;
+        private string p8;
+
         public string MaKH { get; set; }
         public string TenKH { get; set; }
         public string DiaChi { get; set; }
@@ -17,10 +26,10 @@ namespace Title.VO
         public decimal TongTien { get; set; }
         public string PhanLoai { get; set; }
 
-        KhanhHang() {
+      public  KhachHang() {
         }
 
-        KhanhHang(string maKH , string tenKH , string diaChi,string sdt, string email,int soLanAn, decimal tongTien,string phanLoai) {
+       public KhachHang(string maKH , string tenKH , string diaChi,string sdt, string email,int soLanAn, decimal tongTien,string phanLoai) {
             this.MaKH = maKH;
             this.TenKH = tenKH;
             this.DiaChi = diaChi;
@@ -30,5 +39,7 @@ namespace Title.VO
             this.TongTien = tongTien;
             this.PhanLoai = phanLoai;
         }
+
+    
     }
 }
