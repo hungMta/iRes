@@ -33,6 +33,7 @@ namespace Title.DAO {
             return DataProvider.ExecuteNonQuery(config.PROC_INSERT_NHANVIEN, para);
         }
 
+<<<<<<< HEAD
         public static int UpdateNhanVien(NhanVien nv) {
             SqlParameter[] para = new SqlParameter[]
             {
@@ -58,7 +59,10 @@ namespace Title.DAO {
             return DataProvider.ExecuteNonQuery(config.PROC_DELETE_NHANVIEN, para);
         }
 
-        public static int InsertKhanhHang(KhanhHang kh)
+        public static int InsertKhachHang(KhachHang kh)
+=======
+        public static int InsertKhachHang(KhachHang kh)
+>>>>>>> fixconflict
         {
             SqlParameter[] para = new SqlParameter[]
               {
@@ -73,6 +77,32 @@ namespace Title.DAO {
               };
                return DataProvider.ExecuteNonQuery(config.PROC_INSERT_KHACHHANG, para);
         }
+
+        public static int UpdateKhachHang(KhachHang kh)
+        {
+            SqlParameter[] para = new SqlParameter[]
+              {
+                  new SqlParameter("@MaKH", kh.MaKH),
+                  new SqlParameter("@TenKH",kh.TenKH),
+                  new SqlParameter("@DiaChi",kh.DiaChi),
+                  new SqlParameter("@SDT",kh.SDT),
+                  new SqlParameter("@Email",kh.Email),
+                  new SqlParameter("@SoLanAn",kh.SoLanAn),
+                  new SqlParameter("@TongTien",kh.TongTien),
+                  new SqlParameter("@PhanLoai",kh.PhanLoai)
+              };
+            return DataProvider.ExecuteNonQuery(config.PROC_UPDATE_KhachHang, para);
+        }
+
+        public static int DeleteKhachHang(KhachHang kh)
+        {
+            SqlParameter[] para = new SqlParameter[]
+              {
+                  new SqlParameter("@MaKH", kh.MaKH),            
+              };
+            return DataProvider.ExecuteNonQuery(config.PROC_DELETE_KhachHang, para);
+        }
+
         public static DataTable GetListKhachHang()
         {
             return DataProvider.GetData(config.PROC_GET_LIST_KHACHHANG);

@@ -60,6 +60,7 @@ namespace iRes{
                     utcQuanLyNhanVien.Edit();
                     break;
                 case "TabKhachHang":
+                    utcQuanLyKhachHang.Edit();
                     break;
             }
         }

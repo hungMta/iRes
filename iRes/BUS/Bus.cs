@@ -30,11 +30,21 @@ namespace Title.BUS {
             return Dao.GetListKhachHang();
         }
 
-        public static int InsertKhachHang(KhanhHang kh)
+        public static int InsertKhachHang(KhachHang kh)
         {
-            return Dao.InsertKhanhHang(kh);
+            return Dao.InsertKhachHang(kh);
         }
 
+        public static int UpdateKhachHang(KhachHang kh)
+        {
+            return Dao.UpdateKhachHang(kh);
+        }
+
+        public static int  DeleteKhachHang(KhachHang kh)
+        {
+            return Dao.DeleteKhachHang(kh);
+        }
+        
         public static DataTable  GetListMonAn()
         {
             return Dao.GetListMonAn();
