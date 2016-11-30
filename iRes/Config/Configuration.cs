@@ -19,7 +19,7 @@ namespace Title.Config {
         public string DATA_SOURCE = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
         //public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyNhaHang;Integrated Security=True";
 
-        // Propety of KhachHang
+        // Property of KhachHang
         public string KHACHHANG_MAKH = "MaKH";
         public string KHACHHANG_TENKH = "TenKH";
         public string KHACHHANG_DIACHI = "DiaChi";
@@ -28,6 +28,14 @@ namespace Title.Config {
         public string KHACHHANG_SOLANAN = "SoLanAn";
         public string KHACHHANG_TONGTIEN = "TongTienDaChi";
         public string KHACHHANG_PHANLOAI = "PhanLoaiKH";
+
+        // Property of MonAn
+        public string MONAN_MAMON = "MaMon";
+        public string MONAN_TENMON = "TenMon";
+        public string MONAN_MANHOM = "MaNhom";
+        public string MONAN_HINHANH = "HinhAnh";
+        public string MONAN_SOLUONG = "SoLuong";
+        public string MONAN_DONGIA = "DonGia";
 
         // Proceduces of NhanVien
         public string PROC_GET_LIST_NHANVIEN = "DanhSachNhanVien";
@@ -43,13 +51,13 @@ namespace Title.Config {
 
         // Proceduces of MonAn
         public string PROC_GET_LIST_MONAN = "GetListMonAn";
-        public string GET_LIST_MONAN_AND_IMAGE = @"select Cast('C:\Users\Tran\Documents\Visual Studio 2012\Projects\iRes\iRes\Resources\MonAn\'
-                                                + hinhanh as nvarchar(4000)) as [Hình ảnh],
+        public string GET_LIST_MONAN_AND_IMAGE = @"select Cast('C:\Users\khanhlq\Documents\Visual Studio 2015\Projects\DevExpress\iRes\iRes\Resources\MonAn\'
+                                                + HinhAnh as nvarchar(4000)) as [Hình ảnh],
                                                 MaMon as [Mã món ăn], 
                                                 TenMon as [Tên món ăn],
                                                 MaNhom as [Mã nhóm],
                                                 DonGia as [Đơn giá],
-                                                SoLuong as [Số lương] from MonAn";
+                                                SoLuongDangCo as [Số lương] from MonAn";
 
         // Tab Name
         public string TAB_NHAN_VIEN = "TabNhanVien";

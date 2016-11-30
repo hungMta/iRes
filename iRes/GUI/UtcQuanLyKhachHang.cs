@@ -63,36 +63,26 @@ namespace Title.GUI
         }
 
         public void Save() {
-            DialogResult dialogResult = MessageBox.Show(  "Bạn có muốn lưu thông tin?","Thông báo", MessageBoxButtons.YesNo);
+            int res = 0;
             getKhachHang();
-            if (dialogResult == DialogResult.Yes) {
-                int res = 0;
-                if (feature == "add") {
-                    try {
-                        res = Bus.InsertKhachHang(khachHang);
-                      }
-                      catch (Exception e) {
-                         MessageBox.Show("Thêm thành công!");
-                      }
+            if (feature == "add") {
+                res = Bus.InsertKhachHang(khachHang);
+                if (res == 1) {
+                    MessageBox.Show("Thêm thành công!");
+                } else {
+                    MessageBox.Show("Thêm không thành công!");
                 }
-
-                if (feature == "edit") {
-                    try {
-                         res = Bus.UpdateKhachHang(khachHang);
-                      }
-                      catch (Exception e) {
-                         MessageBox.Show("Sửa thành công!");
-                      }
-                }
-
-                if (res != -1) {
-                    MessageBox.Show("Lưu thành công!");
-                }
-                LoadData();
             }
-            else if (dialogResult == DialogResult.No) {
-                panelTextBox.Enabled = false;
+
+            if (feature == "edit") {
+                res = Bus.UpdateKhachHang(khachHang);
+                if (res == 1) {
+                    MessageBox.Show("Sửa thành công!");
+                } else {
+                    MessageBox.Show("Sửa không thành công!");
+                }
             }
+            LoadData();
             clearTextBox(); 
         }
 

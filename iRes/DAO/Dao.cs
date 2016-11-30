@@ -60,6 +60,11 @@ namespace Title.DAO {
             return DataProvider.ExecuteNonQuery(config.PROC_DELETE_NHANVIEN, para);
         }
 
+        public static DataTable GetListKhachHang()
+        {
+            return DataProvider.GetData(config.PROC_GET_LIST_KHACHHANG);
+        }
+
         public static int InsertKhachHang(KhachHang kh)
         {
             SqlParameter[] para = new SqlParameter[]
@@ -101,11 +106,6 @@ namespace Title.DAO {
                   new SqlParameter("@"+config.KHACHHANG_MAKH, kh.MaKH),            
               };
             return DataProvider.ExecuteNonQuery(config.PROC_DELETE_KHACHHANG, para);
-        }
-
-        public static DataTable GetListKhachHang()
-        {
-            return DataProvider.GetData(config.PROC_GET_LIST_KHACHHANG);
         }
 
         public static DataTable GetListMonAn()
