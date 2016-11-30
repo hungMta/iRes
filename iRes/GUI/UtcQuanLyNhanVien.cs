@@ -38,11 +38,12 @@ namespace Title.GUI {
             DataRowView selRow = (DataRowView)(((GridView)gridControlNhanVien.MainView).GetRow(selRows[0]));
             this.textEditMaNV.Text = selRow["MaNV"].ToString();
             this.textEditTenNV.Text = selRow["TenNV"].ToString();
+            this.textEditSDT.Text = selRow["SDT"].ToString();
             this.textEditQueQuan.Text = selRow["DiaChi"].ToString();
             this.textEditLuong.Text = selRow["Luong"].ToString();
             this.textEditMatKhau.Text = selRow["MatKhau"].ToString();
             this.dateEditNgaySinh.EditValue = selRow["NgaySinh"];
-            this.textEditTinhTrangLamViec.Text = selRow["TinhTrang"].ToString();
+            this.textEditTinhTrangLamViec.Text = selRow["TrangThai"].ToString();
             this.comboBoxGioiTinh.Text = selRow["GioiTinh"].ToString();
             this.textEditChucVu.Text = selRow["ChucVu"].ToString();
             this.textEditHinhAnh.Text = selRow["HinhAnh"].ToString();
@@ -58,6 +59,7 @@ namespace Title.GUI {
             this.textEditChucVu.Text = "";
             this.textEditTinhTrangLamViec.Text = "";
             this.textEditHinhAnh.Text = "";
+            this.textEditSDT.Text = "";
         }
 
         public void Add() {
@@ -91,20 +93,21 @@ namespace Title.GUI {
 
         public void Save() {
             try {
-                string maNV, tenNV, gioiTinh, diaChi, chucVu, matKhau, hinhAnh, tinhTrang;
+                string maNV, tenNV, gioiTinh, SDT, diaChi, chucVu, matKhau, hinhAnh, tinhTrang;
                 int luong;
                 DateTime ngaySinh;
                 maNV = this.textEditMaNV.Text;
                 tenNV = this.textEditTenNV.Text;
                 ngaySinh = (DateTime)this.dateEditNgaySinh.DateTime;
                 gioiTinh = this.comboBoxGioiTinh.SelectedItem.ToString() ;
+                SDT = this.textEditSDT.Text;
                 diaChi = this.textEditQueQuan.Text;
                 luong = int.Parse(this.textEditLuong.Text);
                 chucVu = this.textEditChucVu.Text;
                 matKhau = this.textEditMatKhau.Text;
                 hinhAnh = this.textEditHinhAnh.Text;
                 tinhTrang = this.textEditTinhTrangLamViec.Text;
-                NhanVien nv = new NhanVien(maNV, tenNV, ngaySinh, gioiTinh, diaChi, luong, chucVu, matKhau, hinhAnh, tinhTrang);
+                NhanVien nv = new NhanVien(maNV, tenNV, ngaySinh, gioiTinh, SDT ,diaChi, luong, chucVu, matKhau, hinhAnh, tinhTrang);
                 if (this.currentAction == "Add") {
                     int res = Bus.InsertNhanVien(nv);
                     if (res == 1) {

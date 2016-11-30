@@ -23,12 +23,13 @@ namespace Title.DAO {
                 new SqlParameter("@TenNV", nv.TenNV),
                 new SqlParameter("@NgaySinh", nv.NgaySinh),
                 new SqlParameter("@GioiTinh", nv.DiaChi),
+                new SqlParameter("@SDT", nv.SDT),
                 new SqlParameter("@DiaChi", nv.DiaChi),
                 new SqlParameter("@Luong", nv.Luong),
                 new SqlParameter("@ChucVu", nv.ChucVu),
                 new SqlParameter("@MatKhau", nv.MatKhau),
                 new SqlParameter("@HinhAnh", nv.HinhAnh),
-                new SqlParameter("@TinhTrang", nv.TinhTrangLamViec)
+                new SqlParameter("@TrangThai", nv.TinhTrangLamViec)
             };
             return DataProvider.ExecuteNonQuery(config.PROC_INSERT_NHANVIEN, para);
         }
@@ -40,12 +41,13 @@ namespace Title.DAO {
                 new SqlParameter("@TenNV", nv.TenNV),
                 new SqlParameter("@NgaySinh", nv.NgaySinh),
                 new SqlParameter("@GioiTinh", nv.GioiTinh),
+                new SqlParameter("@SDT", nv.SDT),
                 new SqlParameter("@DiaChi", nv.DiaChi),
                 new SqlParameter("@Luong", nv.Luong),
                 new SqlParameter("@ChucVu", nv.ChucVu),
                 new SqlParameter("@MatKhau", nv.MatKhau),
                 new SqlParameter("@HinhAnh", nv.HinhAnh),
-                new SqlParameter("@TinhTrang", nv.TinhTrangLamViec)
+                new SqlParameter("@TrangThai", nv.TinhTrangLamViec)
             };
             return DataProvider.ExecuteNonQuery(config.PROC_UPDATE_NHANVIEN, para);
         }

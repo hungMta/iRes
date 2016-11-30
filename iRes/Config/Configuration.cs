@@ -16,11 +16,11 @@ namespace Title.Config {
             return projectLink;
         }
 
-        //public string DATA_SOURCE = @"Data Source=.\SQLEXPRESS;Initial Catalog=iResDatabase;Integrated Security=True";
-        public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyNhaHang;Integrated Security=True";
+        public string DATA_SOURCE = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
+        //public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyNhaHang;Integrated Security=True";
 
         // Proceduces of NhanVien
-        public string PROC_GET_LIST_NHANVIEN = "GetListNhanVien";
+        public string PROC_GET_LIST_NHANVIEN = "DanhSachNhanVien";
         public string PROC_INSERT_NHANVIEN = "ThemNhanVien";
         public string PROC_DELETE_NHANVIEN = "XoaNhanVien";
         public string PROC_UPDATE_NHANVIEN = "SuaNhanVien";
