@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using Title.Config;
 using Title.BUS;
 using DevExpress.XtraGrid.Views.Grid;
+using Title.VO;
 
 namespace Title.GUI {
     public partial class UtcQuanLyNhanVien : UserControl {
@@ -19,6 +20,8 @@ namespace Title.GUI {
         }
 
         Configuration config = new Configuration();
+
+        public string currentAction;
 
         public void LoadData() {
             DataTable dataTable = new DataTable();
@@ -35,27 +38,92 @@ namespace Title.GUI {
             DataRowView selRow = (DataRowView)(((GridView)gridControlNhanVien.MainView).GetRow(selRows[0]));
             this.textEditMaNV.Text = selRow["MaNV"].ToString();
             this.textEditTenNV.Text = selRow["TenNV"].ToString();
-            this.textEditQueQuan.Text = selRow["QueQuan"].ToString();
+            this.textEditQueQuan.Text = selRow["DiaChi"].ToString();
             this.textEditLuong.Text = selRow["Luong"].ToString();
             this.textEditMatKhau.Text = selRow["MatKhau"].ToString();
             this.dateEditNgaySinh.EditValue = selRow["NgaySinh"];
+            this.textEditTinhTrangLamViec.Text = selRow["TinhTrang"].ToString();
+            this.comboBoxGioiTinh.Text = selRow["GioiTinh"].ToString();
+            this.textEditChucVu.Text = selRow["ChucVu"].ToString();
+            this.textEditHinhAnh.Text = selRow["HinhAnh"].ToString();
+        }
+
+        public void ClearText() {
+            this.textEditMaNV.Text = "";
+            this.textEditTenNV.Text = "";
+            this.textEditLuong.Text = "";
+            this.textEditMatKhau.Text = "";
+            this.textEditQueQuan.Text = "";
+            this.textEditMatKhau.Text = "";
+            this.textEditChucVu.Text = "";
+            this.textEditTinhTrangLamViec.Text = "";
+            this.textEditHinhAnh.Text = "";
         }
 
         public void Add() {
+            ClearText();
+            this.panelTextBox.Enabled = true;
+            this.currentAction = "Add";
         }
 
         public void Edit() {
+            this.panelTextBox.Enabled = true;
+            this.currentAction = "Edit";
         }
 
         public void Delete() {
             DialogResult dialogResult = MessageBox.Show("","Do you want to delete?", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes) {
+                string maNV = this.textEditMaNV.Text;
+                NhanVien nv = new NhanVien();
+                nv.MaNV = maNV;
+                int res = Bus.DeleteNhanVien(nv);
+                if (res == 1) {
+                    MessageBox.Show("Xóa thành công");
+                    LoadData();
+                } else {
+                    MessageBox.Show("Xóa không thành công");
+                }
             } else {
             }
+            this.panelTextBox.Enabled = false;
         }
 
         public void Save() {
+            try {
+                string maNV, tenNV, gioiTinh, diaChi, chucVu, matKhau, hinhAnh, tinhTrang;
+                int luong;
+                DateTime ngaySinh;
+                maNV = this.textEditMaNV.Text;
+                tenNV = this.textEditTenNV.Text;
+                ngaySinh = (DateTime)this.dateEditNgaySinh.DateTime;
+                gioiTinh = this.comboBoxGioiTinh.SelectedItem.ToString() ;
+                diaChi = this.textEditQueQuan.Text;
+                luong = int.Parse(this.textEditLuong.Text);
+                chucVu = this.textEditChucVu.Text;
+                matKhau = this.textEditMatKhau.Text;
+                hinhAnh = this.textEditHinhAnh.Text;
+                tinhTrang = this.textEditTinhTrangLamViec.Text;
+                NhanVien nv = new NhanVien(maNV, tenNV, ngaySinh, gioiTinh, diaChi, luong, chucVu, matKhau, hinhAnh, tinhTrang);
+                if (this.currentAction == "Add") {
+                    int res = Bus.InsertNhanVien(nv);
+                    if (res == 1) {
+                        LoadData();
+                        MessageBox.Show("Đã thêm mới thành công");
+                        this.panelTextBox.Enabled = false;
+                    }
+                }
+                if (this.currentAction == "Edit") {
+                    int res = Bus.UpdateNhanVien(nv);
+                    if (res == 1) {
+                        LoadData();
+                        MessageBox.Show("Đã thay đổi thành công");
+                        this.panelTextBox.Enabled = false;
+                    }
+                }
+            } catch (Exception e){
+                MessageBox.Show(e.Message);
+            }
         }
-
     }
 }

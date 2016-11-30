@@ -27,6 +27,7 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelTextBox = new System.Windows.Forms.Panel();
+            this.comboBoxGioiTinh = new DevExpress.XtraEditors.ComboBoxEdit();
             this.dateEditNgaySinh = new DevExpress.XtraEditors.DateEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
@@ -42,24 +43,23 @@
             this.textEditQueQuan = new DevExpress.XtraEditors.TextEdit();
             this.textEditMatKhau = new DevExpress.XtraEditors.TextEdit();
             this.textEditChucVu = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
             this.textEditTenNV = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.textEditHinhAnh = new DevExpress.XtraEditors.TextEdit();
             this.textEditLuong = new DevExpress.XtraEditors.TextEdit();
             this.textEditMaNV = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlNhanVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelTextBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxGioiTinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinh.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditTinhTrangLamViec.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditQueQuan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditMatKhau.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditChucVu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditTenNV.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditHinhAnh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditMaNV.Properties)).BeginInit();
             this.SuspendLayout();
@@ -95,6 +95,7 @@
             // 
             // panelTextBox
             // 
+            this.panelTextBox.Controls.Add(this.comboBoxGioiTinh);
             this.panelTextBox.Controls.Add(this.dateEditNgaySinh);
             this.panelTextBox.Controls.Add(this.labelControl10);
             this.panelTextBox.Controls.Add(this.labelControl9);
@@ -110,9 +111,8 @@
             this.panelTextBox.Controls.Add(this.textEditQueQuan);
             this.panelTextBox.Controls.Add(this.textEditMatKhau);
             this.panelTextBox.Controls.Add(this.textEditChucVu);
-            this.panelTextBox.Controls.Add(this.textEdit7);
             this.panelTextBox.Controls.Add(this.textEditTenNV);
-            this.panelTextBox.Controls.Add(this.textEdit3);
+            this.panelTextBox.Controls.Add(this.textEditHinhAnh);
             this.panelTextBox.Controls.Add(this.textEditLuong);
             this.panelTextBox.Controls.Add(this.textEditMaNV);
             this.panelTextBox.Dock = System.Windows.Forms.DockStyle.Top;
@@ -120,7 +120,20 @@
             this.panelTextBox.Location = new System.Drawing.Point(0, 0);
             this.panelTextBox.Name = "panelTextBox";
             this.panelTextBox.Size = new System.Drawing.Size(1075, 117);
-            this.panelTextBox.TabIndex = 1;
+            this.panelTextBox.TabIndex = 0;
+            // 
+            // comboBoxGioiTinh
+            // 
+            this.comboBoxGioiTinh.Location = new System.Drawing.Point(836, 3);
+            this.comboBoxGioiTinh.Name = "comboBoxGioiTinh";
+            this.comboBoxGioiTinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxGioiTinh.Properties.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ",
+            "Khác"});
+            this.comboBoxGioiTinh.Size = new System.Drawing.Size(251, 20);
+            this.comboBoxGioiTinh.TabIndex = 4;
             // 
             // dateEditNgaySinh
             // 
@@ -132,7 +145,7 @@
             this.dateEditNgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEditNgaySinh.Size = new System.Drawing.Size(431, 20);
-            this.dateEditNgaySinh.TabIndex = 24;
+            this.dateEditNgaySinh.TabIndex = 10;
             // 
             // labelControl10
             // 
@@ -211,7 +224,7 @@
             this.labelControl1.Location = new System.Drawing.Point(26, 6);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(30, 13);
-            this.labelControl1.TabIndex = 14;
+            this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Mã NV";
             // 
             // textEditTinhTrangLamViec
@@ -219,63 +232,56 @@
             this.textEditTinhTrangLamViec.Location = new System.Drawing.Point(656, 81);
             this.textEditTinhTrangLamViec.Name = "textEditTinhTrangLamViec";
             this.textEditTinhTrangLamViec.Size = new System.Drawing.Size(431, 20);
-            this.textEditTinhTrangLamViec.TabIndex = 13;
+            this.textEditTinhTrangLamViec.TabIndex = 11;
             // 
             // textEditQueQuan
             // 
             this.textEditQueQuan.Location = new System.Drawing.Point(656, 55);
             this.textEditQueQuan.Name = "textEditQueQuan";
             this.textEditQueQuan.Size = new System.Drawing.Size(431, 20);
-            this.textEditQueQuan.TabIndex = 12;
+            this.textEditQueQuan.TabIndex = 9;
             // 
             // textEditMatKhau
             // 
             this.textEditMatKhau.Location = new System.Drawing.Point(836, 29);
             this.textEditMatKhau.Name = "textEditMatKhau";
             this.textEditMatKhau.Size = new System.Drawing.Size(251, 20);
-            this.textEditMatKhau.TabIndex = 8;
+            this.textEditMatKhau.TabIndex = 7;
             // 
             // textEditChucVu
             // 
             this.textEditChucVu.Location = new System.Drawing.Point(455, 29);
             this.textEditChucVu.Name = "textEditChucVu";
             this.textEditChucVu.Size = new System.Drawing.Size(251, 20);
-            this.textEditChucVu.TabIndex = 7;
-            // 
-            // textEdit7
-            // 
-            this.textEdit7.Location = new System.Drawing.Point(836, 3);
-            this.textEdit7.Name = "textEdit7";
-            this.textEdit7.Size = new System.Drawing.Size(251, 20);
-            this.textEdit7.TabIndex = 6;
+            this.textEditChucVu.TabIndex = 6;
             // 
             // textEditTenNV
             // 
             this.textEditTenNV.Location = new System.Drawing.Point(455, 3);
             this.textEditTenNV.Name = "textEditTenNV";
             this.textEditTenNV.Size = new System.Drawing.Size(251, 20);
-            this.textEditTenNV.TabIndex = 5;
+            this.textEditTenNV.TabIndex = 3;
             // 
-            // textEdit3
+            // textEditHinhAnh
             // 
-            this.textEdit3.Location = new System.Drawing.Point(81, 55);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(431, 20);
-            this.textEdit3.TabIndex = 2;
+            this.textEditHinhAnh.Location = new System.Drawing.Point(81, 55);
+            this.textEditHinhAnh.Name = "textEditHinhAnh";
+            this.textEditHinhAnh.Size = new System.Drawing.Size(431, 20);
+            this.textEditHinhAnh.TabIndex = 8;
             // 
             // textEditLuong
             // 
             this.textEditLuong.Location = new System.Drawing.Point(81, 29);
             this.textEditLuong.Name = "textEditLuong";
             this.textEditLuong.Size = new System.Drawing.Size(251, 20);
-            this.textEditLuong.TabIndex = 1;
+            this.textEditLuong.TabIndex = 5;
             // 
             // textEditMaNV
             // 
             this.textEditMaNV.Location = new System.Drawing.Point(81, 3);
             this.textEditMaNV.Name = "textEditMaNV";
             this.textEditMaNV.Size = new System.Drawing.Size(251, 20);
-            this.textEditMaNV.TabIndex = 0;
+            this.textEditMaNV.TabIndex = 2;
             // 
             // UtcQuanLyNhanVien
             // 
@@ -291,15 +297,15 @@
             this.panel2.ResumeLayout(false);
             this.panelTextBox.ResumeLayout(false);
             this.panelTextBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxGioiTinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinh.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditTinhTrangLamViec.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditQueQuan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditMatKhau.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditChucVu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditTenNV.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditHinhAnh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditMaNV.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -318,9 +324,8 @@
         private DevExpress.XtraEditors.TextEdit textEditQueQuan;
         private DevExpress.XtraEditors.TextEdit textEditMatKhau;
         private DevExpress.XtraEditors.TextEdit textEditChucVu;
-        private DevExpress.XtraEditors.TextEdit textEdit7;
         private DevExpress.XtraEditors.TextEdit textEditTenNV;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.TextEdit textEditHinhAnh;
         private DevExpress.XtraEditors.TextEdit textEditLuong;
         private DevExpress.XtraEditors.TextEdit textEditMaNV;
         private DevExpress.XtraEditors.LabelControl labelControl10;
@@ -332,5 +337,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.DateEdit dateEditNgaySinh;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxGioiTinh;
     }
 }
