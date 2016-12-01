@@ -23,8 +23,9 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.khachHangBindingSource = new System.Windows.Forms.BindingSource();
+            this.khachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iResDatabaseDataSet1 = new Title.iResDatabaseDataSet1();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaKH = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -104,6 +105,7 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             // 
             // colMaKH

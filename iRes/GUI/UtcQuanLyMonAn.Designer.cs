@@ -29,27 +29,36 @@
         private void InitializeComponent()
         {
             this.gridControlMonAn = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.layoutView1 = new DevExpress.XtraGrid.Views.Layout.LayoutView();
+            this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMonAn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlMonAn
             // 
             this.gridControlMonAn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlMonAn.Location = new System.Drawing.Point(0, 0);
-            this.gridControlMonAn.MainView = this.gridView1;
+            this.gridControlMonAn.MainView = this.layoutView1;
             this.gridControlMonAn.Name = "gridControlMonAn";
             this.gridControlMonAn.Size = new System.Drawing.Size(803, 402);
             this.gridControlMonAn.TabIndex = 0;
             this.gridControlMonAn.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.layoutView1});
             // 
-            // gridView1
+            // layoutView1
             // 
-            this.gridView1.GridControl = this.gridControlMonAn;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.RowAutoHeight = true;
+            this.layoutView1.GridControl = this.gridControlMonAn;
+            this.layoutView1.Name = "layoutView1";
+            this.layoutView1.OptionsBehavior.Editable = false;
+            this.layoutView1.OptionsView.ViewMode = DevExpress.XtraGrid.Views.Layout.LayoutViewMode.MultiColumn;
+            this.layoutView1.TemplateCard = this.layoutViewCard1;
+            // 
+            // layoutViewCard1
+            // 
+            this.layoutViewCard1.HeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
+            this.layoutViewCard1.Name = "layoutViewCard1";
             // 
             // UtcQuanLyMonAn
             // 
@@ -60,7 +69,8 @@
             this.Size = new System.Drawing.Size(803, 402);
             this.Load += new System.EventHandler(this.UtcQuanLyMonAn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlMonAn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -68,6 +78,7 @@
         #endregion
 
         private DevExpress.XtraGrid.GridControl gridControlMonAn;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Layout.LayoutView layoutView1;
+        private DevExpress.XtraGrid.Views.Layout.LayoutViewCard layoutViewCard1;
     }
 }

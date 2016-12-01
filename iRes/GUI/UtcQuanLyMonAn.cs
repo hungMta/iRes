@@ -39,7 +39,7 @@ namespace Title.GUI
 
             repItemGraphicsEdit.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
             repItemGraphicsEdit.BestFitWidth = 100;
-            gridView1.Columns["Hình ảnh"].ColumnEdit = repItemGraphicsEdit; 
+            layoutView1.Columns["Hình ảnh"].ColumnEdit = repItemGraphicsEdit;
         }
 
         public DataTable LoadDataTable()

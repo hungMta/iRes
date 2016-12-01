@@ -47,6 +47,8 @@
             this.textEditHinhAnh = new DevExpress.XtraEditors.TextEdit();
             this.textEditLuong = new DevExpress.XtraEditors.TextEdit();
             this.textEditMaNV = new DevExpress.XtraEditors.TextEdit();
+            this.textEditSDT = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlNhanVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -62,6 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditHinhAnh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditMaNV.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditSDT.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlNhanVien
@@ -95,6 +98,8 @@
             // 
             // panelTextBox
             // 
+            this.panelTextBox.Controls.Add(this.labelControl11);
+            this.panelTextBox.Controls.Add(this.textEditSDT);
             this.panelTextBox.Controls.Add(this.comboBoxGioiTinh);
             this.panelTextBox.Controls.Add(this.dateEditNgaySinh);
             this.panelTextBox.Controls.Add(this.labelControl10);
@@ -133,7 +138,7 @@
             "Nữ",
             "Khác"});
             this.comboBoxGioiTinh.Size = new System.Drawing.Size(251, 20);
-            this.comboBoxGioiTinh.TabIndex = 4;
+            this.comboBoxGioiTinh.TabIndex = 2;
             // 
             // dateEditNgaySinh
             // 
@@ -145,7 +150,7 @@
             this.dateEditNgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEditNgaySinh.Size = new System.Drawing.Size(431, 20);
-            this.dateEditNgaySinh.TabIndex = 10;
+            this.dateEditNgaySinh.TabIndex = 9;
             // 
             // labelControl10
             // 
@@ -181,11 +186,11 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(587, 58);
+            this.labelControl7.Location = new System.Drawing.Point(407, 57);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(49, 13);
+            this.labelControl7.Size = new System.Drawing.Size(32, 13);
             this.labelControl7.TabIndex = 16;
-            this.labelControl7.Text = "Quê Quán";
+            this.labelControl7.Text = "Địa chỉ";
             // 
             // labelControl6
             // 
@@ -232,56 +237,71 @@
             this.textEditTinhTrangLamViec.Location = new System.Drawing.Point(656, 81);
             this.textEditTinhTrangLamViec.Name = "textEditTinhTrangLamViec";
             this.textEditTinhTrangLamViec.Size = new System.Drawing.Size(431, 20);
-            this.textEditTinhTrangLamViec.TabIndex = 11;
+            this.textEditTinhTrangLamViec.TabIndex = 10;
             // 
             // textEditQueQuan
             // 
-            this.textEditQueQuan.Location = new System.Drawing.Point(656, 55);
+            this.textEditQueQuan.Location = new System.Drawing.Point(455, 54);
             this.textEditQueQuan.Name = "textEditQueQuan";
-            this.textEditQueQuan.Size = new System.Drawing.Size(431, 20);
-            this.textEditQueQuan.TabIndex = 9;
+            this.textEditQueQuan.Size = new System.Drawing.Size(251, 20);
+            this.textEditQueQuan.TabIndex = 7;
             // 
             // textEditMatKhau
             // 
             this.textEditMatKhau.Location = new System.Drawing.Point(836, 29);
             this.textEditMatKhau.Name = "textEditMatKhau";
             this.textEditMatKhau.Size = new System.Drawing.Size(251, 20);
-            this.textEditMatKhau.TabIndex = 7;
+            this.textEditMatKhau.TabIndex = 5;
             // 
             // textEditChucVu
             // 
             this.textEditChucVu.Location = new System.Drawing.Point(455, 29);
             this.textEditChucVu.Name = "textEditChucVu";
             this.textEditChucVu.Size = new System.Drawing.Size(251, 20);
-            this.textEditChucVu.TabIndex = 6;
+            this.textEditChucVu.TabIndex = 4;
             // 
             // textEditTenNV
             // 
             this.textEditTenNV.Location = new System.Drawing.Point(455, 3);
             this.textEditTenNV.Name = "textEditTenNV";
             this.textEditTenNV.Size = new System.Drawing.Size(251, 20);
-            this.textEditTenNV.TabIndex = 3;
+            this.textEditTenNV.TabIndex = 1;
             // 
             // textEditHinhAnh
             // 
             this.textEditHinhAnh.Location = new System.Drawing.Point(81, 55);
             this.textEditHinhAnh.Name = "textEditHinhAnh";
-            this.textEditHinhAnh.Size = new System.Drawing.Size(431, 20);
-            this.textEditHinhAnh.TabIndex = 8;
+            this.textEditHinhAnh.Size = new System.Drawing.Size(251, 20);
+            this.textEditHinhAnh.TabIndex = 6;
             // 
             // textEditLuong
             // 
             this.textEditLuong.Location = new System.Drawing.Point(81, 29);
             this.textEditLuong.Name = "textEditLuong";
             this.textEditLuong.Size = new System.Drawing.Size(251, 20);
-            this.textEditLuong.TabIndex = 5;
+            this.textEditLuong.TabIndex = 3;
             // 
             // textEditMaNV
             // 
             this.textEditMaNV.Location = new System.Drawing.Point(81, 3);
             this.textEditMaNV.Name = "textEditMaNV";
             this.textEditMaNV.Size = new System.Drawing.Size(251, 20);
-            this.textEditMaNV.TabIndex = 2;
+            this.textEditMaNV.TabIndex = 0;
+            // 
+            // textEditSDT
+            // 
+            this.textEditSDT.Location = new System.Drawing.Point(836, 54);
+            this.textEditSDT.Name = "textEditSDT";
+            this.textEditSDT.Size = new System.Drawing.Size(251, 20);
+            this.textEditSDT.TabIndex = 8;
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Location = new System.Drawing.Point(750, 57);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(64, 13);
+            this.labelControl11.TabIndex = 25;
+            this.labelControl11.Text = "Số điện Thoại";
             // 
             // UtcQuanLyNhanVien
             // 
@@ -308,6 +328,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditHinhAnh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditMaNV.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditSDT.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -338,5 +359,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.DateEdit dateEditNgaySinh;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxGioiTinh;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.TextEdit textEditSDT;
     }
 }
