@@ -17,8 +17,7 @@ namespace Title.DAO {
         }
 
         public static int InsertNhanVien(NhanVien nv) {
-            SqlParameter[] para = new SqlParameter[]
-            {
+            SqlParameter[] para = new SqlParameter[] {
                 new SqlParameter("@MaNV", nv.MaNV),
                 new SqlParameter("@TenNV", nv.TenNV),
                 new SqlParameter("@NgaySinh", nv.NgaySinh),
@@ -35,8 +34,7 @@ namespace Title.DAO {
         }
 
         public static int UpdateNhanVien(NhanVien nv) {
-            SqlParameter[] para = new SqlParameter[]
-            {
+            SqlParameter[] para = new SqlParameter[] {
                 new SqlParameter("@MaNV", nv.MaNV),
                 new SqlParameter("@TenNV", nv.TenNV),
                 new SqlParameter("@NgaySinh", nv.NgaySinh),
@@ -53,65 +51,57 @@ namespace Title.DAO {
         }
 
         public static int DeleteNhanVien(NhanVien nv) {
-            SqlParameter[] para = new SqlParameter[]
-            {
+            SqlParameter[] para = new SqlParameter[] {
                 new SqlParameter("@MaNV", nv.MaNV)
             };
             return DataProvider.ExecuteNonQuery(config.PROC_DELETE_NHANVIEN, para);
         }
 
-        public static DataTable GetListKhachHang()
-        {
+        public static DataTable GetListKhachHang() {
             return DataProvider.GetData(config.PROC_GET_LIST_KHACHHANG);
         }
 
-        public static int InsertKhachHang(KhachHang kh)
-        {
-            SqlParameter[] para = new SqlParameter[]
-              {
-                  new SqlParameter("@"+config.KHACHHANG_MAKH, kh.MaKH),
-                  new SqlParameter("@"+config.KHACHHANG_TENKH, kh.TenKH),
-                  new SqlParameter("@"+config.KHACHHANG_DIACHI, kh.DiaChi),
-                  new SqlParameter("@"+config.KHACHHANG_SDT, kh.SDT),
-                  new SqlParameter("@"+config.KHACHHANG_EMAIL, kh.Email),
-                  new SqlParameter("@"+config.KHACHHANG_SOLANAN, kh.SoLanAn),
-                  new SqlParameter("@"+config.KHACHHANG_TONGTIEN, kh.TongTien),
-                  new SqlParameter("@"+config.KHACHHANG_PHANLOAI, kh.PhanLoai)
-
-
-              };
-               return DataProvider.ExecuteNonQuery(config.PROC_INSERT_KHACHHANG, para);
+        public static int InsertKhachHang(KhachHang kh) {
+            SqlParameter[] para = new SqlParameter[] {
+                new SqlParameter("@"+config.KHACHHANG_MAKH, kh.MaKH),
+                new SqlParameter("@"+config.KHACHHANG_TENKH, kh.TenKH),
+                new SqlParameter("@"+config.KHACHHANG_DIACHI, kh.DiaChi),
+                new SqlParameter("@"+config.KHACHHANG_SDT, kh.SDT),
+                new SqlParameter("@"+config.KHACHHANG_EMAIL, kh.Email),
+                new SqlParameter("@"+config.KHACHHANG_SOLANAN, kh.SoLanAn),
+                new SqlParameter("@"+config.KHACHHANG_TONGTIEN, kh.TongTien),
+                new SqlParameter("@"+config.KHACHHANG_PHANLOAI, kh.PhanLoai)
+            };
+            return DataProvider.ExecuteNonQuery(config.PROC_INSERT_KHACHHANG, para);
         }
 
-        public static int UpdateKhachHang(KhachHang kh)
-        {
-            SqlParameter[] para = new SqlParameter[]
-              {
-                  new SqlParameter("@"+config.KHACHHANG_MAKH, kh.MaKH),
-                  new SqlParameter("@"+config.KHACHHANG_TENKH, kh.TenKH),
-                  new SqlParameter("@"+config.KHACHHANG_DIACHI, kh.DiaChi),
-                  new SqlParameter("@"+config.KHACHHANG_SDT, kh.SDT),
-                  new SqlParameter("@"+config.KHACHHANG_EMAIL, kh.Email),
-                  new SqlParameter("@"+config.KHACHHANG_SOLANAN, kh.SoLanAn),
-                  new SqlParameter("@"+config.KHACHHANG_TONGTIEN, kh.TongTien),
-                  new SqlParameter("@"+config.KHACHHANG_PHANLOAI, kh.PhanLoai)
-              };
+        public static int UpdateKhachHang(KhachHang kh) {
+            SqlParameter[] para = new SqlParameter[] {
+                new SqlParameter("@"+config.KHACHHANG_MAKH, kh.MaKH),
+                new SqlParameter("@"+config.KHACHHANG_TENKH, kh.TenKH),
+                new SqlParameter("@"+config.KHACHHANG_DIACHI, kh.DiaChi),
+                new SqlParameter("@"+config.KHACHHANG_SDT, kh.SDT),
+                new SqlParameter("@"+config.KHACHHANG_EMAIL, kh.Email),
+                new SqlParameter("@"+config.KHACHHANG_SOLANAN, kh.SoLanAn),
+                new SqlParameter("@"+config.KHACHHANG_TONGTIEN, kh.TongTien),
+                new SqlParameter("@"+config.KHACHHANG_PHANLOAI, kh.PhanLoai)
+            };
             return DataProvider.ExecuteNonQuery(config.PROC_UPDATE_KHACHHANG, para);
         }
 
-        public static int DeleteKhachHang(KhachHang kh)
-        {
-            SqlParameter[] para = new SqlParameter[]
-              {
-                  new SqlParameter("@"+config.KHACHHANG_MAKH, kh.MaKH),            
-              };
+        public static int DeleteKhachHang(KhachHang kh) {
+            SqlParameter[] para = new SqlParameter[] {
+                new SqlParameter("@"+config.KHACHHANG_MAKH, kh.MaKH),            
+            };
             return DataProvider.ExecuteNonQuery(config.PROC_DELETE_KHACHHANG, para);
         }
 
-        public static DataTable GetListMonAn()
-        {
+        public static DataTable GetListMonAn() {
             return DataProvider.GetData(config.PROC_GET_LIST_MONAN);
         }
 
+        public static DataTable GetListNhomMon() {
+            return DataProvider.GetData(config.PROC_GET_LIST_NHOMMON);
+        }
     }
 }

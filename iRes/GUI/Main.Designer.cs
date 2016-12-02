@@ -259,6 +259,7 @@
             this.navBarItemNhomMon.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItemNhomMon.LargeImage")));
             this.navBarItemNhomMon.Name = "navBarItemNhomMon";
             this.navBarItemNhomMon.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItemNhomMon.SmallImage")));
+            this.navBarItemNhomMon.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemNhomMon_LinkClicked);
             // 
             // navBarItem1
             // 
@@ -296,6 +297,7 @@
             this.navBarGroupQuanLy.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarGroupQuanLy.LargeImage")));
             this.navBarGroupQuanLy.Name = "navBarGroupQuanLy";
             this.navBarGroupQuanLy.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroupQuanLy.SmallImage")));
+            this.navBarGroupQuanLy.TopVisibleLinkIndex = 3;
             // 
             // navBarGroupGoiMon
             // 

@@ -59,6 +59,9 @@ namespace Title.Config {
                                                 DonGia as [Đơn giá],
                                                 SoLuongDangCo as [Số lương] from MonAn";
 
+        // Proceduces of NhomMon
+        public string PROC_GET_LIST_NHOMMON = "DanhSachNhomMon";
+
         // Tab Name
         public string TAB_NHAN_VIEN = "TabNhanVien";
         public string TAB_KHACH_HANG = "TabKhachHang";

@@ -20,6 +20,7 @@ namespace iRes{
         UtcQuanLyNhanVien utcQuanLyNhanVien = new UtcQuanLyNhanVien();
         UtcQuanLyKhachHang utcQuanLyKhachHang = new UtcQuanLyKhachHang();
         UtcQuanLyMonAn utcQuanLyMonAn = new UtcQuanLyMonAn();
+        UctQuanLyNhomMon uctQuanLyNhomMon = new UctQuanLyNhomMon();
 
         private string currentTabName;
 
@@ -46,6 +47,13 @@ namespace iRes{
             this.groupControlClientArea.Controls.Clear();
             this.groupControlClientArea.Controls.Add(utcQuanLyMonAn);
             this.currentTabName = config.TAB_MON_AN;
+        }
+
+        private void navBarItemNhomMon_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e) {
+            uctQuanLyNhomMon.Dock = DockStyle.Fill;
+            this.groupControlClientArea.Controls.Clear();
+            this.groupControlClientArea.Controls.Add(uctQuanLyNhomMon);
+            this.currentTabName = config.TAB_NHOM_MON;
         }
 
         public void DisableButtonBar() {
@@ -109,5 +117,6 @@ namespace iRes{
         private void barButtonCancel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
             EnableButtonBar();
         }
+
     }
 }

@@ -73,6 +73,12 @@
     <Compile Include="GUI\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UctQuanLyNhomMon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UctQuanLyNhomMon.Designer.cs">
+      <DependentUpon>UctQuanLyNhomMon.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UtcQuanLyKhachHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     <Compile Include="VO\NhanVien.cs" />
     <EmbeddedResource Include="GUI\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UctQuanLyNhomMon.resx">
+      <DependentUpon>UctQuanLyNhomMon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UtcQuanLyKhachHang.resx">
       <DependentUpon>UtcQuanLyKhachHang.cs</DependentUpon>
