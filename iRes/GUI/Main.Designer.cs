@@ -35,11 +35,13 @@
             this.barButtonSave = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonEdit = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonAdd = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonCancel = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupClipBoard = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupMove = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageView = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.groupControlClientArea = new DevExpress.XtraEditors.GroupControl();
             this.navBarItemNhanVien = new DevExpress.XtraNavBar.NavBarItem();
@@ -55,7 +57,6 @@
             this.navBarGroupQuanLyMonAn = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroupNhapHang = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
-            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlClientArea)).BeginInit();
             this.groupControlClientArea.SuspendLayout();
@@ -75,9 +76,10 @@
             this.barButtonDelete,
             this.barButtonSave,
             this.barButtonEdit,
-            this.barButtonAdd});
+            this.barButtonAdd,
+            this.barButtonCancel});
             this.ribbonControlTop.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControlTop.MaxItemId = 11;
+            this.ribbonControlTop.MaxItemId = 12;
             this.ribbonControlTop.Name = "ribbonControlTop";
             this.ribbonControlTop.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageHome,
@@ -92,7 +94,6 @@
             this.barButtonClipBoardCut.Id = 1;
             this.barButtonClipBoardCut.Name = "barButtonClipBoardCut";
             this.barButtonClipBoardCut.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
-            this.barButtonClipBoardCut.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonClipBoardCut_ItemClick);
             // 
             // barButtonClipBoardCopy
             // 
@@ -162,6 +163,15 @@
             this.barButtonAdd.Name = "barButtonAdd";
             this.barButtonAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonAdd_ItemClick);
             // 
+            // barButtonCancel
+            // 
+            this.barButtonCancel.Caption = "Cancel";
+            this.barButtonCancel.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonCancel.Glyph")));
+            this.barButtonCancel.Id = 11;
+            this.barButtonCancel.Name = "barButtonCancel";
+            this.barButtonCancel.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonCancel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonCancel_ItemClick);
+            // 
             // ribbonPageHome
             // 
             this.ribbonPageHome.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -191,12 +201,20 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonEdit);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonDelete);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonSave);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonCancel);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // ribbonPageView
             // 
             this.ribbonPageView.Name = "ribbonPageView";
             this.ribbonPageView.Text = "View";
+            // 
+            // ribbonStatusBar
+            // 
+            this.ribbonStatusBar.Location = new System.Drawing.Point(2, 362);
+            this.ribbonStatusBar.Name = "ribbonStatusBar";
+            this.ribbonStatusBar.Ribbon = this.ribbonControlTop;
+            this.ribbonStatusBar.Size = new System.Drawing.Size(829, 27);
             // 
             // defaultLookAndFeel1
             // 
@@ -210,7 +228,6 @@
             this.groupControlClientArea.Name = "groupControlClientArea";
             this.groupControlClientArea.Size = new System.Drawing.Size(833, 391);
             this.groupControlClientArea.TabIndex = 3;
-            this.groupControlClientArea.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControlClientArea_Paint);
             // 
             // navBarItemNhanVien
             // 
@@ -338,13 +355,6 @@
             this.navBarControl1.TabIndex = 1;
             this.navBarControl1.Text = "navBarControl1";
             // 
-            // ribbonStatusBar
-            // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(2, 369);
-            this.ribbonStatusBar.Name = "ribbonStatusBar";
-            this.ribbonStatusBar.Ribbon = this.ribbonControlTop;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(829, 20);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,6 +408,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonAdd;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
+        private DevExpress.XtraBars.BarButtonItem barButtonCancel;
     }
 }
 

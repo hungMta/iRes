@@ -30,7 +30,7 @@ namespace Title.GUI
         {
             DataTable dataTable = new DataTable();
             dataTable = Bus.GetListKhachHang();
-            this.gridControl1.DataSource = dataTable;
+            this.gridControlKhachHang.DataSource = dataTable;
         }
 
         private void UtcQuanLyKhachHang_Load(object sender, EventArgs e)
@@ -121,8 +121,8 @@ namespace Title.GUI
         }
 
         private void gridView1_RowClick(object sender, RowClickEventArgs e) {
-            int[] selRows = ((GridView)gridControl1.MainView).GetSelectedRows();
-            DataRowView selRow = (DataRowView)(((GridView)gridControl1.MainView).GetRow(selRows[0]));
+            int[] selRows = ((GridView)gridControlKhachHang.MainView).GetSelectedRows();
+            DataRowView selRow = (DataRowView)(((GridView)gridControlKhachHang.MainView).GetRow(selRows[0]));
             try {
                 this.textEditMaKH.Text = selRow[config.KHACHHANG_MAKH].ToString();
                 this.textEditTen.Text = selRow[config.KHACHHANG_TENKH].ToString();

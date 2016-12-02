@@ -24,10 +24,10 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridControlKhachHang = new DevExpress.XtraGrid.GridControl();
             this.khachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iResDatabaseDataSet1 = new Title.iResDatabaseDataSet1();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridViewKhachHang = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -54,10 +54,10 @@
             this.textEditDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.textEditTen = new DevExpress.XtraEditors.TextEdit();
             this.textEditMaKH = new DevExpress.XtraEditors.TextEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlKhachHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iResDatabaseDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewKhachHang)).BeginInit();
             this.panelTextBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbxPhanLoai.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditTongChi.Properties)).BeginInit();
@@ -69,17 +69,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditMaKH.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // gridControl1
+            // gridControlKhachHang
             // 
-            this.gridControl1.DataSource = this.khachHangBindingSource;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 117);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(932, 373);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridControlKhachHang.DataSource = this.khachHangBindingSource;
+            this.gridControlKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlKhachHang.Location = new System.Drawing.Point(0, 111);
+            this.gridControlKhachHang.MainView = this.gridViewKhachHang;
+            this.gridControlKhachHang.Name = "gridControlKhachHang";
+            this.gridControlKhachHang.Size = new System.Drawing.Size(932, 379);
+            this.gridControlKhachHang.TabIndex = 0;
+            this.gridControlKhachHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewKhachHang});
             // 
             // khachHangBindingSource
             // 
@@ -91,9 +91,9 @@
             this.iResDatabaseDataSet1.DataSetName = "iResDatabaseDataSet1";
             this.iResDatabaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // gridView1
+            // gridViewKhachHang
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridViewKhachHang.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMaKH,
             this.colTenKH,
             this.colSDT,
@@ -102,11 +102,11 @@
             this.colTongTien,
             this.colPhanLoaiKH,
             this.colDiaChi});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsFind.AlwaysVisible = true;
-            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
+            this.gridViewKhachHang.GridControl = this.gridControlKhachHang;
+            this.gridViewKhachHang.Name = "gridViewKhachHang";
+            this.gridViewKhachHang.OptionsBehavior.Editable = false;
+            this.gridViewKhachHang.OptionsFind.AlwaysVisible = true;
+            this.gridViewKhachHang.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             // 
             // colMaKH
             // 
@@ -190,7 +190,7 @@
             this.panelTextBox.Enabled = false;
             this.panelTextBox.Location = new System.Drawing.Point(0, 0);
             this.panelTextBox.Name = "panelTextBox";
-            this.panelTextBox.Size = new System.Drawing.Size(932, 117);
+            this.panelTextBox.Size = new System.Drawing.Size(932, 111);
             this.panelTextBox.TabIndex = 2;
             // 
             // cbxPhanLoai
@@ -322,15 +322,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.gridControlKhachHang);
             this.Controls.Add(this.panelTextBox);
             this.Name = "UtcQuanLyKhachHang";
             this.Size = new System.Drawing.Size(932, 490);
             this.Load += new System.EventHandler(this.UtcQuanLyKhachHang_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlKhachHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iResDatabaseDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewKhachHang)).EndInit();
             this.panelTextBox.ResumeLayout(false);
             this.panelTextBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbxPhanLoai.Properties)).EndInit();
@@ -347,11 +347,11 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl gridControlKhachHang;
         private System.Windows.Forms.BindingSource khachHangBindingSource;
         private iResDatabaseDataSet1 iResDatabaseDataSet1;
         private iResDatabaseDataSet1TableAdapters.KhachHangTableAdapter khachHangTableAdapter;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewKhachHang;
         private DevExpress.XtraGrid.Columns.GridColumn colMaKH;
         private DevExpress.XtraGrid.Columns.GridColumn colTenKH;
         private DevExpress.XtraGrid.Columns.GridColumn colSDT;

@@ -47,6 +47,15 @@ namespace Title.GUI {
             this.comboBoxGioiTinh.Text = selRow["GioiTinh"].ToString();
             this.textEditChucVu.Text = selRow["ChucVu"].ToString();
             this.textEditHinhAnh.Text = selRow["HinhAnh"].ToString();
+            try {
+                if (this.textEditHinhAnh.Text != "") {
+                    string imagePath = config.GetProjectLinkDirectory() + config.NHANVIEN_IMAGE_RESOURCE + this.textEditHinhAnh.Text;
+                    this.pictureEditAvatar.Image = Image.FromFile(imagePath);
+                } else {
+                    string imagePath = config.GetProjectLinkDirectory() + config.NHANVIEN_IMAGE_RESOURCE+ @"male.png";
+                    this.pictureEditAvatar.Image = Image.FromFile(imagePath);
+                }
+            } catch { }
         }
 
         public void ClearText() {

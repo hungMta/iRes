@@ -65,7 +65,7 @@ namespace Title.Config {
         public string TAB_MON_AN = "TabMonAn";
         public string TAB_NHOM_MON = "TabNhomMon";
 
-
-
+        // Resource Path
+        public string NHANVIEN_IMAGE_RESOURCE = @"\Resources\NhanVien\";
     }
 }
