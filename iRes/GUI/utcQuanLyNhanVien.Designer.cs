@@ -28,6 +28,7 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelTextBox = new System.Windows.Forms.Panel();
+            this.pictureEditAvatar = new DevExpress.XtraEditors.PictureEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.textEditSDT = new DevExpress.XtraEditors.TextEdit();
             this.comboBoxGioiTinh = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -42,7 +43,6 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.textEditTinhTrangLamViec = new DevExpress.XtraEditors.TextEdit();
             this.textEditQueQuan = new DevExpress.XtraEditors.TextEdit();
             this.textEditMatKhau = new DevExpress.XtraEditors.TextEdit();
             this.textEditChucVu = new DevExpress.XtraEditors.TextEdit();
@@ -50,16 +50,16 @@
             this.textEditHinhAnh = new DevExpress.XtraEditors.TextEdit();
             this.textEditLuong = new DevExpress.XtraEditors.TextEdit();
             this.textEditMaNV = new DevExpress.XtraEditors.TextEdit();
-            this.pictureEditAvatar = new DevExpress.XtraEditors.PictureEdit();
+            this.comboBoxTrangThai = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlNhanVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelTextBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEditAvatar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditSDT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxGioiTinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinh.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinh.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditTinhTrangLamViec.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditQueQuan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditMatKhau.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditChucVu.Properties)).BeginInit();
@@ -67,7 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditHinhAnh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditMaNV.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEditAvatar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxTrangThai.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlNhanVien
@@ -101,6 +101,7 @@
             // 
             // panelTextBox
             // 
+            this.panelTextBox.Controls.Add(this.comboBoxTrangThai);
             this.panelTextBox.Controls.Add(this.pictureEditAvatar);
             this.panelTextBox.Controls.Add(this.labelControl11);
             this.panelTextBox.Controls.Add(this.textEditSDT);
@@ -116,7 +117,6 @@
             this.panelTextBox.Controls.Add(this.labelControl4);
             this.panelTextBox.Controls.Add(this.labelControl2);
             this.panelTextBox.Controls.Add(this.labelControl1);
-            this.panelTextBox.Controls.Add(this.textEditTinhTrangLamViec);
             this.panelTextBox.Controls.Add(this.textEditQueQuan);
             this.panelTextBox.Controls.Add(this.textEditMatKhau);
             this.panelTextBox.Controls.Add(this.textEditChucVu);
@@ -130,6 +130,17 @@
             this.panelTextBox.Name = "panelTextBox";
             this.panelTextBox.Size = new System.Drawing.Size(1075, 117);
             this.panelTextBox.TabIndex = 0;
+            // 
+            // pictureEditAvatar
+            // 
+            this.pictureEditAvatar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureEditAvatar.EditValue = ((object)(resources.GetObject("pictureEditAvatar.EditValue")));
+            this.pictureEditAvatar.Location = new System.Drawing.Point(999, 2);
+            this.pictureEditAvatar.Name = "pictureEditAvatar";
+            this.pictureEditAvatar.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEditAvatar.Properties.ZoomAccelerationFactor = 1D;
+            this.pictureEditAvatar.Size = new System.Drawing.Size(115, 115);
+            this.pictureEditAvatar.TabIndex = 26;
             // 
             // labelControl11
             // 
@@ -251,13 +262,6 @@
             this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Mã NV";
             // 
-            // textEditTinhTrangLamViec
-            // 
-            this.textEditTinhTrangLamViec.Location = new System.Drawing.Point(394, 84);
-            this.textEditTinhTrangLamViec.Name = "textEditTinhTrangLamViec";
-            this.textEditTinhTrangLamViec.Size = new System.Drawing.Size(251, 20);
-            this.textEditTinhTrangLamViec.TabIndex = 10;
-            // 
             // textEditQueQuan
             // 
             this.textEditQueQuan.Location = new System.Drawing.Point(394, 55);
@@ -307,16 +311,18 @@
             this.textEditMaNV.Size = new System.Drawing.Size(251, 20);
             this.textEditMaNV.TabIndex = 0;
             // 
-            // pictureEditAvatar
+            // comboBoxTrangThai
             // 
-            this.pictureEditAvatar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureEditAvatar.EditValue = ((object)(resources.GetObject("pictureEditAvatar.EditValue")));
-            this.pictureEditAvatar.Location = new System.Drawing.Point(994, 2);
-            this.pictureEditAvatar.Name = "pictureEditAvatar";
-            this.pictureEditAvatar.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEditAvatar.Properties.ZoomAccelerationFactor = 1D;
-            this.pictureEditAvatar.Size = new System.Drawing.Size(115, 115);
-            this.pictureEditAvatar.TabIndex = 26;
+            this.comboBoxTrangThai.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.comboBoxTrangThai.Location = new System.Drawing.Point(394, 84);
+            this.comboBoxTrangThai.Name = "comboBoxTrangThai";
+            this.comboBoxTrangThai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxTrangThai.Properties.Items.AddRange(new object[] {
+            "Đang làm việc",
+            "Đã nghỉ"});
+            this.comboBoxTrangThai.Size = new System.Drawing.Size(251, 20);
+            this.comboBoxTrangThai.TabIndex = 27;
             // 
             // UtcQuanLyNhanVien
             // 
@@ -332,11 +338,11 @@
             this.panel2.ResumeLayout(false);
             this.panelTextBox.ResumeLayout(false);
             this.panelTextBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEditAvatar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditSDT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxGioiTinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinh.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinh.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditTinhTrangLamViec.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditQueQuan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditMatKhau.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditChucVu.Properties)).EndInit();
@@ -344,7 +350,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditHinhAnh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditMaNV.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEditAvatar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxTrangThai.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -357,7 +363,6 @@
         private System.Windows.Forms.Panel panelTextBox;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit textEditTinhTrangLamViec;
         private DevExpress.XtraEditors.TextEdit textEditQueQuan;
         private DevExpress.XtraEditors.TextEdit textEditMatKhau;
         private DevExpress.XtraEditors.TextEdit textEditChucVu;
@@ -378,5 +383,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.TextEdit textEditSDT;
         private DevExpress.XtraEditors.PictureEdit pictureEditAvatar;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxTrangThai;
     }
 }

@@ -37,6 +37,13 @@ namespace Title.Config {
         public string MONAN_SOLUONG = "SoLuong";
         public string MONAN_DONGIA = "DonGia";
 
+        // Property of BanAn
+        public string BANAN_MABAN = "MaBan";
+        public string BANAN_TRANGTHAI = "TrangThai";
+        public string BANAN_MAHOADON = "MaHD";
+        public string BANAN_TRANGTHAI_DANG_DUNG = "Đang dùng";
+        public string BANAN_TRANGTHAI_TRONG = "Trống";
+
         // Proceduces of NhanVien
         public string PROC_GET_LIST_NHANVIEN = "DanhSachNhanVien";
         public string PROC_INSERT_NHANVIEN = "ThemNhanVien";
@@ -50,7 +57,7 @@ namespace Title.Config {
         public string PROC_INSERT_KHACHHANG  = "ThemKhachHang";
 
         // Proceduces of MonAn
-        public string PROC_GET_LIST_MONAN = "GetListMonAn";
+        public string PROC_GET_LIST_MONAN = "DanhSachMonAn";
         public string GET_LIST_MONAN_AND_IMAGE = @"select Cast('C:\Users\khanhlq\Documents\Visual Studio 2015\Projects\DevExpress\iRes\iRes\Resources\MonAn\'
                                                 + HinhAnh as nvarchar(4000)) as [Hình ảnh],
                                                 MaMon as [Mã món ăn], 
@@ -62,13 +69,21 @@ namespace Title.Config {
         // Proceduces of NhomMon
         public string PROC_GET_LIST_NHOMMON = "DanhSachNhomMon";
 
+        // Proceduces of BanAn
+        public string PROC_GET_LIST_BANAN = "DanhSachBanAn";
+
+        // Procedures of ChiTietHoaDon
+        public string PROC_GET_LIST_CHITIET_HOADON = "DanhSachChiTietHoaDon";
+
         // Tab Name
         public string TAB_NHAN_VIEN = "TabNhanVien";
         public string TAB_KHACH_HANG = "TabKhachHang";
         public string TAB_MON_AN = "TabMonAn";
         public string TAB_NHOM_MON = "TabNhomMon";
+        public string TAB_GOI_MON_THEO_BAN = "TabGoiMonTheoBan";
 
         // Resource Path
         public string NHANVIEN_IMAGE_RESOURCE = @"\Resources\NhanVien\";
+        public string BANAN_IMAGE_RESOURCE = @"\Resources\BanAn\";
     }
 }

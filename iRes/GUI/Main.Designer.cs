@@ -23,7 +23,6 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ribbonControlTop = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonClipBoardCut = new DevExpress.XtraBars.BarButtonItem();
@@ -42,13 +41,13 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageView = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             this.groupControlClientArea = new DevExpress.XtraEditors.GroupControl();
             this.navBarItemNhanVien = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemKhachHang = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemMonAn = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemNhomMon = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGoiMonTheoBan = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
@@ -261,10 +260,13 @@
             this.navBarItemNhomMon.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItemNhomMon.SmallImage")));
             this.navBarItemNhomMon.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemNhomMon_LinkClicked);
             // 
-            // navBarItem1
+            // navBarGoiMonTheoBan
             // 
-            this.navBarItem1.Caption = "navBarItem1";
-            this.navBarItem1.Name = "navBarItem1";
+            this.navBarGoiMonTheoBan.Caption = "Theo bàn";
+            this.navBarGoiMonTheoBan.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarGoiMonTheoBan.LargeImage")));
+            this.navBarGoiMonTheoBan.Name = "navBarGoiMonTheoBan";
+            this.navBarGoiMonTheoBan.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGoiMonTheoBan.SmallImage")));
+            this.navBarGoiMonTheoBan.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarGoiMonTheoBan_LinkClicked);
             // 
             // navBarItem2
             // 
@@ -286,7 +288,6 @@
             this.navBarGroupQuanLy.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navBarGroupQuanLy.Appearance.Options.UseFont = true;
             this.navBarGroupQuanLy.Caption = "Quản lý";
-            this.navBarGroupQuanLy.Expanded = true;
             this.navBarGroupQuanLy.GroupCaptionUseImage = DevExpress.XtraNavBar.NavBarImage.Small;
             this.navBarGroupQuanLy.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
             this.navBarGroupQuanLy.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -304,8 +305,10 @@
             this.navBarGroupGoiMon.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navBarGroupGoiMon.Appearance.Options.UseFont = true;
             this.navBarGroupGoiMon.Caption = "Gọi Món";
+            this.navBarGroupGoiMon.Expanded = true;
+            this.navBarGroupGoiMon.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
             this.navBarGroupGoiMon.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarGoiMonTheoBan)});
             this.navBarGroupGoiMon.Name = "navBarGroupGoiMon";
             this.navBarGroupGoiMon.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroupGoiMon.SmallImage")));
             // 
@@ -313,7 +316,7 @@
             // 
             this.navBarGroupQuanLyMonAn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navBarGroupQuanLyMonAn.Appearance.Options.UseFont = true;
-            this.navBarGroupQuanLyMonAn.Caption = "Thanh Toán";
+            this.navBarGroupQuanLyMonAn.Caption = "Nhập hàng";
             this.navBarGroupQuanLyMonAn.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2)});
             this.navBarGroupQuanLyMonAn.Name = "navBarGroupQuanLyMonAn";
@@ -323,7 +326,7 @@
             // 
             this.navBarGroupNhapHang.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navBarGroupNhapHang.Appearance.Options.UseFont = true;
-            this.navBarGroupNhapHang.Caption = "Nhập hàng";
+            this.navBarGroupNhapHang.Caption = "Thống kê";
             this.navBarGroupNhapHang.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3)});
             this.navBarGroupNhapHang.Name = "navBarGroupNhapHang";
@@ -344,7 +347,7 @@
             this.navBarItemKhachHang,
             this.navBarItemMonAn,
             this.navBarItemNhomMon,
-            this.navBarItem1,
+            this.navBarGoiMonTheoBan,
             this.navBarItem2,
             this.navBarItem3,
             this.navBarItem4});
@@ -397,7 +400,7 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItemKhachHang;
         private DevExpress.XtraNavBar.NavBarItem navBarItemMonAn;
         private DevExpress.XtraNavBar.NavBarItem navBarItemNhomMon;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem1;
+        private DevExpress.XtraNavBar.NavBarItem navBarGoiMonTheoBan;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
         private DevExpress.XtraNavBar.NavBarItem navBarItem3;
         private DevExpress.XtraNavBar.NavBarItem navBarItem4;

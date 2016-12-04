@@ -17,21 +17,18 @@ namespace Title.GUI
     public partial class UtcQuanLyMonAn : UserControl
     {
         Configuration config = new Configuration();
-
-        public UtcQuanLyMonAn()
-        {
-            InitializeComponent();
-        }
         SqlConnection conn;
 
-        public void TaoKetNoi()
-        {
+        public UtcQuanLyMonAn() {
+            InitializeComponent();
+        }
+
+        public void TaoKetNoi() {
             conn = new SqlConnection(config.DATA_SOURCE);
             conn.Open();
         }
 
-        public void LoadData()
-        {
+        public void LoadData() {
             TaoKetNoi();
             DataTable dt = LoadDataTable();
             gridControlMonAn.DataSource = dt;
@@ -42,8 +39,7 @@ namespace Title.GUI
             layoutView1.Columns["Hình ảnh"].ColumnEdit = repItemGraphicsEdit;
         }
 
-        public DataTable LoadDataTable()
-        {
+        public DataTable LoadDataTable() {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
             da.SelectCommand = new SqlCommand(config.GET_LIST_MONAN_AND_IMAGE, conn);
@@ -51,8 +47,7 @@ namespace Title.GUI
             return dt;
         }
 
-        private void UtcQuanLyMonAn_Load(object sender, EventArgs e)
-        {
+        private void UtcQuanLyMonAn_Load(object sender, EventArgs e) {
             LoadData();
         }
 

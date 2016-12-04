@@ -48,5 +48,13 @@ namespace Title.BUS {
         public static DataTable GetListNhomMon() {
             return Dao.GetListNhomMon();
         }
+
+        public static DataTable GetListBanAn() {
+            return Dao.GetListBanAn();
+        }
+
+        public static DataTable GetListChiTietHoaDon(BanAn banAn) {
+            return Dao.GetListChiTietHoaDon(banAn);
+        }
     }
 }

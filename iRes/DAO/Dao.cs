@@ -103,5 +103,16 @@ namespace Title.DAO {
         public static DataTable GetListNhomMon() {
             return DataProvider.GetData(config.PROC_GET_LIST_NHOMMON);
         }
+
+        public static DataTable GetListBanAn() {
+            return DataProvider.GetData(config.PROC_GET_LIST_BANAN);
+        }
+
+        public static DataTable GetListChiTietHoaDon(BanAn banAn) {
+            SqlParameter[] para = new SqlParameter[] {
+                new SqlParameter("@"+config.BANAN_MAHOADON, banAn.MaHoaDon),            
+            };
+            return DataProvider.GetDataByParameter(config.PROC_GET_LIST_CHITIET_HOADON, para);
+        }
     }
 }
