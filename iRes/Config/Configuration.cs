@@ -44,6 +44,14 @@ namespace Title.Config {
         public string BANAN_TRANGTHAI_DANG_DUNG = "Đang dùng";
         public string BANAN_TRANGTHAI_TRONG = "Trống";
 
+        // Property of ChiTietHoaDon
+        public string CHI_TIET_HOA_DON_MA_HOA_DON = "MaHD";
+        public string CHI_TIET_HOA_DON_MA_MON = "MaMon";
+        public string CHI_TIET_HOA_DON_SO_LUONG = "SoLuong";
+        public string CHI_TIET_HOA_DON_GIA_MON = "GiaMon";
+        public string CHI_TIET_HOA_DON_THANH_TIEN = "ThanhTien";
+        public string CHI_TIET_HOA_DON_GHI_CHU = "GhiChu";
+
         // Proceduces of NhanVien
         public string PROC_GET_LIST_NHANVIEN = "DanhSachNhanVien";
         public string PROC_INSERT_NHANVIEN = "ThemNhanVien";
@@ -58,6 +66,7 @@ namespace Title.Config {
 
         // Proceduces of MonAn
         public string PROC_GET_LIST_MONAN = "DanhSachMonAn";
+        public string PROC_GET_LIST_MONAN_BY_NHOM_MON = "DanhSachMonAnByNhomMon";
         public string GET_LIST_MONAN_AND_IMAGE = @"select Cast('C:\Users\khanhlq\Documents\Visual Studio 2015\Projects\DevExpress\iRes\iRes\Resources\MonAn\'
                                                 + HinhAnh as nvarchar(4000)) as [Hình ảnh],
                                                 MaMon as [Mã món ăn], 
@@ -74,6 +83,7 @@ namespace Title.Config {
 
         // Procedures of ChiTietHoaDon
         public string PROC_GET_LIST_CHITIET_HOADON = "DanhSachChiTietHoaDon";
+        public string PROC_INSET_CHITIET_HOADON = "ThemChiTietHoaDon";
 
         // Tab Name
         public string TAB_NHAN_VIEN = "TabNhanVien";

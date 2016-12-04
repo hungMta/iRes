@@ -16,6 +16,7 @@ namespace Title.GUI {
     public partial class UctGoiMonTheoBan : UserControl {
         List<BanAn> listBanAn = new List<BanAn>();
         Configuration config = new Configuration();
+        BanAn banAnHienTai;
 
         public UctGoiMonTheoBan() {
             InitializeComponent();
@@ -32,6 +33,14 @@ namespace Title.GUI {
                 BanAn banAn = new BanAn(maBan, trangThai, maHoaDon);
                 listBanAn.Add(banAn);
             }
+        }
+
+        public void LoadListMonAnBanAn() {
+            try {
+                DataTable dataTable = Bus.GetListChiTietHoaDon(this.banAnHienTai);
+                this.gridControlBanAnGoiMon.DataSource = dataTable;
+            } catch { }
+            this.labelControl1.Text = "Bàn " + this.banAnHienTai.MaBan;
         }
 
         private void UctGoiMonTheoBan_Load(object sender, EventArgs e) {
@@ -63,11 +72,8 @@ namespace Title.GUI {
 
         private void imageListBoxBanAn_Click(object sender, EventArgs e) {
             int index = this.imageListBoxBanAn.SelectedIndex;
-            try {
-                DataTable dataTable = Bus.GetListChiTietHoaDon(listBanAn[index]);
-                this.gridControlBanAnGoiMon.DataSource = dataTable;
-            } catch { }
-            this.labelControl1.Text = "Bàn " + listBanAn[index].MaBan;
+            this.banAnHienTai = listBanAn[index];
+            LoadListMonAnBanAn();
         }
 
         private void simpleButtonThemMon_Click(object sender, EventArgs e) {
@@ -80,7 +86,7 @@ namespace Title.GUI {
             dataTableNhomMon = Bus.GetListNhomMon();
             try {
                 this.lookUpEditNhomMon.Properties.DisplayMember = "TenNhom";
-                this.lookUpEditNhomMon.Properties.ValueMember= "MaNhom";
+                this.lookUpEditNhomMon.Properties.ValueMember = "MaNhom";
                 this.lookUpEditNhomMon.Properties.DataSource = dataTableNhomMon;
             } catch { }
         }
@@ -88,11 +94,63 @@ namespace Title.GUI {
         private void gridControlSearchMonAn_Click(object sender, EventArgs e) {
             int[] selRows = ((GridView)gridControlSearchMonAn.MainView).GetSelectedRows();
             DataRowView selRow = (DataRowView)(((GridView)gridControlSearchMonAn.MainView).GetRow(selRows[0]));
-            this.textEditMaMon.Text = selRow["MaMon"].ToString();
+            this.lookUpEditMaMon.Properties.DataSource = null;
+            this.lookUpEditMaMon.Properties.NullText = selRow["MaMon"].ToString();
             this.textEditTenMon.Text = selRow["TenMon"].ToString();
         }
 
+        public void CreateChiTietHoaDon() {
+            try {
+                int soLuong = int.Parse(this.textEditSoLuong.Text);
+                string maMon = this.lookUpEditMaMon.Text.ToString();
+                string maHoaDon = this.banAnHienTai.MaHoaDon;
+                if (soLuong <= 0 ) {
+                    MessageBox.Show("Số lượng phải lớn hơn 0");
+                } else {
+                    if (maMon == "") {
+                        MessageBox.Show("Nhập đầy đủ thông tin");
+                    } else {
+                        ChiTietHoaDon chitietHoaDon = new ChiTietHoaDon(maHoaDon, maMon, soLuong);
+                        Bus.InsertChiTietHoaDon(chitietHoaDon);
+                    }
+                }
+            } catch {
+                MessageBox.Show("Nhập đầy đủ thông tin");
+            }
+        }
+
         private void simpleButtonThem_Click(object sender, EventArgs e) {
+            if (this.banAnHienTai == null) {
+                MessageBox.Show("Chưa chọn bàn");
+            } else {
+                if (this.banAnHienTai.MaHoaDon != "") {
+                    // if current table has have a HoaDon, then create a ChiTietHoaDon only
+                    CreateChiTietHoaDon();
+                    LoadListMonAnBanAn();
+                } else {
+                    MessageBox.Show("You have to create a HoaDon");
+                }
+            }
+        }
+
+        private void simpleButtonHuy_Click(object sender, EventArgs e) {
+            this.groupControlThemMon.Enabled = false;
+        }
+
+        private void lookUpEditNhomMon_EditValueChanged(object sender, EventArgs e) {
+            string maNhomMon = this.lookUpEditNhomMon.EditValue.ToString();
+            DataTable dataTable = new DataTable();
+            dataTable = Bus.GetListMonAnByNhomMon(maNhomMon);
+            this.gridControlSearchMonAn.DataSource = dataTable;
+            try {
+                this.lookUpEditMaMon.Properties.DisplayMember = "MaMon";
+                this.lookUpEditMaMon.Properties.ValueMember= "TenMon";
+                this.lookUpEditMaMon.Properties.DataSource = dataTable;
+            } catch { }
+        }
+
+        private void lookUpEditMaMon_EditValueChanged(object sender, EventArgs e) {
+            this.textEditTenMon.Text = this.lookUpEditMaMon.EditValue.ToString();
         }
     }
 }

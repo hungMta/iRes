@@ -39,19 +39,19 @@
             this.simpleButtonThanhToan = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.groupControlThemMon = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.textEditSoLuong = new DevExpress.XtraEditors.TextEdit();
+            this.textEditTenMon = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.gridControlSearchMonAn = new DevExpress.XtraGrid.GridControl();
             this.gridViewSearchMonAn = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.textEditMaMon = new DevExpress.XtraEditors.TextEdit();
-            this.textEditTenMon = new DevExpress.XtraEditors.TextEdit();
-            this.textEditSoLuong = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.lookUpEditNhomMon = new DevExpress.XtraEditors.LookUpEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButtonThem = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonHuy = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.lookUpEditMaMon = new DevExpress.XtraEditors.LookUpEdit();
+            this.simpleButtonHuy = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonThem = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.lookUpEditNhomMon = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.imageListBoxBanAn)).BeginInit();
             this.contextMenuBanAn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlBanAnGoiMon)).BeginInit();
@@ -60,14 +60,14 @@
             this.groupControlBanAn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlThemMon)).BeginInit();
             this.groupControlThemMon.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditSoLuong.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditTenMon.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSearchMonAn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewSearchMonAn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditMaMon.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditTenMon.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditSoLuong.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditNhomMon.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditMaMon.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditNhomMon.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // imageListBoxBanAn
@@ -137,10 +137,10 @@
             // gridControlBanAnGoiMon
             // 
             this.gridControlBanAnGoiMon.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControlBanAnGoiMon.Location = new System.Drawing.Point(2, 77);
+            this.gridControlBanAnGoiMon.Location = new System.Drawing.Point(2, 103);
             this.gridControlBanAnGoiMon.MainView = this.gridViewBanAnGoiMon;
             this.gridControlBanAnGoiMon.Name = "gridControlBanAnGoiMon";
-            this.gridControlBanAnGoiMon.Size = new System.Drawing.Size(504, 449);
+            this.gridControlBanAnGoiMon.Size = new System.Drawing.Size(504, 423);
             this.gridControlBanAnGoiMon.TabIndex = 1;
             this.gridControlBanAnGoiMon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewBanAnGoiMon});
@@ -202,7 +202,6 @@
             this.groupControlThemMon.Controls.Add(this.labelControl4);
             this.groupControlThemMon.Controls.Add(this.textEditSoLuong);
             this.groupControlThemMon.Controls.Add(this.textEditTenMon);
-            this.groupControlThemMon.Controls.Add(this.textEditMaMon);
             this.groupControlThemMon.Controls.Add(this.labelControl3);
             this.groupControlThemMon.Controls.Add(this.gridControlSearchMonAn);
             this.groupControlThemMon.Controls.Add(this.groupControl1);
@@ -212,6 +211,45 @@
             this.groupControlThemMon.Name = "groupControlThemMon";
             this.groupControlThemMon.Size = new System.Drawing.Size(433, 528);
             this.groupControlThemMon.TabIndex = 3;
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(10, 103);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(42, 13);
+            this.labelControl5.TabIndex = 9;
+            this.labelControl5.Text = "Số lượng";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(10, 77);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(41, 13);
+            this.labelControl4.TabIndex = 8;
+            this.labelControl4.Text = "Tên món";
+            // 
+            // textEditSoLuong
+            // 
+            this.textEditSoLuong.Location = new System.Drawing.Point(79, 100);
+            this.textEditSoLuong.Name = "textEditSoLuong";
+            this.textEditSoLuong.Size = new System.Drawing.Size(100, 20);
+            this.textEditSoLuong.TabIndex = 6;
+            // 
+            // textEditTenMon
+            // 
+            this.textEditTenMon.Location = new System.Drawing.Point(79, 74);
+            this.textEditTenMon.Name = "textEditTenMon";
+            this.textEditTenMon.Properties.ReadOnly = true;
+            this.textEditTenMon.Size = new System.Drawing.Size(100, 20);
+            this.textEditTenMon.TabIndex = 5;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(10, 51);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(37, 13);
+            this.labelControl3.TabIndex = 7;
+            this.labelControl3.Text = "Mã món";
             // 
             // gridControlSearchMonAn
             // 
@@ -232,67 +270,40 @@
             this.gridViewSearchMonAn.OptionsBehavior.Editable = false;
             this.gridViewSearchMonAn.OptionsFind.AlwaysVisible = true;
             // 
-            // textEditMaMon
+            // groupControl1
             // 
-            this.textEditMaMon.Location = new System.Drawing.Point(79, 48);
-            this.textEditMaMon.Name = "textEditMaMon";
-            this.textEditMaMon.Size = new System.Drawing.Size(100, 20);
-            this.textEditMaMon.TabIndex = 4;
+            this.groupControl1.Controls.Add(this.lookUpEditMaMon);
+            this.groupControl1.Controls.Add(this.simpleButtonHuy);
+            this.groupControl1.Controls.Add(this.simpleButtonThem);
+            this.groupControl1.Controls.Add(this.labelControl2);
+            this.groupControl1.Controls.Add(this.lookUpEditNhomMon);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupControl1.Location = new System.Drawing.Point(2, 20);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(429, 199);
+            this.groupControl1.TabIndex = 13;
             // 
-            // textEditTenMon
+            // lookUpEditMaMon
             // 
-            this.textEditTenMon.Location = new System.Drawing.Point(79, 74);
-            this.textEditTenMon.Name = "textEditTenMon";
-            this.textEditTenMon.Size = new System.Drawing.Size(100, 20);
-            this.textEditTenMon.TabIndex = 5;
-            // 
-            // textEditSoLuong
-            // 
-            this.textEditSoLuong.Location = new System.Drawing.Point(79, 100);
-            this.textEditSoLuong.Name = "textEditSoLuong";
-            this.textEditSoLuong.Size = new System.Drawing.Size(100, 20);
-            this.textEditSoLuong.TabIndex = 6;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(10, 51);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(37, 13);
-            this.labelControl3.TabIndex = 7;
-            this.labelControl3.Text = "Mã món";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(10, 77);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(41, 13);
-            this.labelControl4.TabIndex = 8;
-            this.labelControl4.Text = "Tên món";
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(10, 103);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(42, 13);
-            this.labelControl5.TabIndex = 9;
-            this.labelControl5.Text = "Số lượng";
-            // 
-            // lookUpEditNhomMon
-            // 
-            this.lookUpEditNhomMon.Location = new System.Drawing.Point(77, 111);
-            this.lookUpEditNhomMon.Name = "lookUpEditNhomMon";
-            this.lookUpEditNhomMon.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.lookUpEditMaMon.Location = new System.Drawing.Point(77, 28);
+            this.lookUpEditMaMon.Name = "lookUpEditMaMon";
+            this.lookUpEditMaMon.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEditNhomMon.Size = new System.Drawing.Size(100, 20);
-            this.lookUpEditNhomMon.TabIndex = 3;
+            this.lookUpEditMaMon.Properties.NullText = "";
+            this.lookUpEditMaMon.Size = new System.Drawing.Size(100, 20);
+            this.lookUpEditMaMon.TabIndex = 12;
+            this.lookUpEditMaMon.EditValueChanged += new System.EventHandler(this.lookUpEditMaMon_EditValueChanged);
             // 
-            // labelControl2
+            // simpleButtonHuy
             // 
-            this.labelControl2.Location = new System.Drawing.Point(8, 114);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(50, 13);
-            this.labelControl2.TabIndex = 2;
-            this.labelControl2.Text = "Nhóm món";
+            this.simpleButtonHuy.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.simpleButtonHuy.ImageLocation = DevExpress.XtraEditors.ImageLocation.BottomRight;
+            this.simpleButtonHuy.Location = new System.Drawing.Point(2, 151);
+            this.simpleButtonHuy.Name = "simpleButtonHuy";
+            this.simpleButtonHuy.Size = new System.Drawing.Size(425, 23);
+            this.simpleButtonHuy.TabIndex = 11;
+            this.simpleButtonHuy.Text = "Hủy";
+            this.simpleButtonHuy.Click += new System.EventHandler(this.simpleButtonHuy_Click);
             // 
             // simpleButtonThem
             // 
@@ -305,27 +316,24 @@
             this.simpleButtonThem.Text = "Thêm";
             this.simpleButtonThem.Click += new System.EventHandler(this.simpleButtonThem_Click);
             // 
-            // simpleButtonHuy
+            // labelControl2
             // 
-            this.simpleButtonHuy.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.simpleButtonHuy.ImageLocation = DevExpress.XtraEditors.ImageLocation.BottomRight;
-            this.simpleButtonHuy.Location = new System.Drawing.Point(2, 151);
-            this.simpleButtonHuy.Name = "simpleButtonHuy";
-            this.simpleButtonHuy.Size = new System.Drawing.Size(425, 23);
-            this.simpleButtonHuy.TabIndex = 11;
-            this.simpleButtonHuy.Text = "Hủy";
+            this.labelControl2.Location = new System.Drawing.Point(8, 114);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(50, 13);
+            this.labelControl2.TabIndex = 2;
+            this.labelControl2.Text = "Nhóm món";
             // 
-            // groupControl1
+            // lookUpEditNhomMon
             // 
-            this.groupControl1.Controls.Add(this.simpleButtonHuy);
-            this.groupControl1.Controls.Add(this.simpleButtonThem);
-            this.groupControl1.Controls.Add(this.labelControl2);
-            this.groupControl1.Controls.Add(this.lookUpEditNhomMon);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupControl1.Location = new System.Drawing.Point(2, 20);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(429, 199);
-            this.groupControl1.TabIndex = 13;
+            this.lookUpEditNhomMon.Location = new System.Drawing.Point(77, 111);
+            this.lookUpEditNhomMon.Name = "lookUpEditNhomMon";
+            this.lookUpEditNhomMon.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditNhomMon.Properties.NullText = "";
+            this.lookUpEditNhomMon.Size = new System.Drawing.Size(100, 20);
+            this.lookUpEditNhomMon.TabIndex = 3;
+            this.lookUpEditNhomMon.EditValueChanged += new System.EventHandler(this.lookUpEditNhomMon_EditValueChanged);
             // 
             // UctGoiMonTheoBan
             // 
@@ -347,15 +355,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControlThemMon)).EndInit();
             this.groupControlThemMon.ResumeLayout(false);
             this.groupControlThemMon.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditSoLuong.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditTenMon.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSearchMonAn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewSearchMonAn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditMaMon.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditTenMon.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditSoLuong.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditNhomMon.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditMaMon.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditNhomMon.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -384,11 +392,11 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit textEditSoLuong;
         private DevExpress.XtraEditors.TextEdit textEditTenMon;
-        private DevExpress.XtraEditors.TextEdit textEditMaMon;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SimpleButton simpleButtonHuy;
         private DevExpress.XtraEditors.SimpleButton simpleButtonThem;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LookUpEdit lookUpEditNhomMon;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEditMaMon;
     }
 }
