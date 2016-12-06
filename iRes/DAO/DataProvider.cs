@@ -25,30 +25,31 @@ namespace Title.DAO {
         public static DataTable GetData(string proc) {
             try {
                 conn = Connect();
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(proc, conn);
-                da.Fill(dt);
+                DataTable dataTable = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(proc, conn);
+                adapter.Fill(dataTable);
                 conn.Close();
-                return dt;
+                return dataTable;
             } catch (SqlException) {
                 conn.Close();
                 return null;
             }
         }
 
-        public static DataTable GetDataAndImage(string proc)
-        {
-            try
-            {
+        public static DataTable GetDataByParameter(string proc, SqlParameter[] para) {
+            try {
                 conn = Connect();
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter();
-                da.SelectCommand = new SqlCommand(proc, conn);
-                da.Fill(dt);
-                return dt;
-            }
-            catch (SqlException)
-            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = proc;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddRange(para);
+                SqlDataReader reader = cmd.ExecuteReader();
+                DataTable dataTable = new DataTable();
+                dataTable.Load(reader);
+                conn.Close();
+                return dataTable;
+            } catch (SqlException) {
                 conn.Close();
                 return null;
             }
@@ -67,6 +68,7 @@ namespace Title.DAO {
                 conn.Close();
                 return val;
             } catch (SqlException) {
+                conn.Close();
                 return -1;
             }
         }

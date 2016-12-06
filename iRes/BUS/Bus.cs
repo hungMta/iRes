@@ -25,29 +25,44 @@ namespace Title.BUS {
             return Dao.DeleteNhanVien(nv);
         }
 
-        public static DataTable GetListKhachHang()
-        {
+        public static DataTable GetListKhachHang() {
             return Dao.GetListKhachHang();
         }
 
-        public static int InsertKhachHang(KhachHang kh)
-        {
+        public static int InsertKhachHang(KhachHang kh) {
             return Dao.InsertKhachHang(kh);
         }
 
-        public static int UpdateKhachHang(KhachHang kh)
-        {
+        public static int UpdateKhachHang(KhachHang kh) {
             return Dao.UpdateKhachHang(kh);
         }
 
-        public static int  DeleteKhachHang(KhachHang kh)
-        {
+        public static int  DeleteKhachHang(KhachHang kh) {
             return Dao.DeleteKhachHang(kh);
         }
         
-        public static DataTable  GetListMonAn()
-        {
+        public static DataTable GetListMonAn() {
             return Dao.GetListMonAn();
+        }
+
+        public static DataTable GetListMonAnByNhomMon(string maNhom) {
+            return Dao.GetListMonAnByNhomMon(maNhom);
+        }
+
+        public static DataTable GetListNhomMon() {
+            return Dao.GetListNhomMon();
+        }
+
+        public static DataTable GetListBanAn() {
+            return Dao.GetListBanAn();
+        }
+
+        public static DataTable GetListChiTietHoaDon(BanAn banAn) {
+            return Dao.GetListChiTietHoaDon(banAn);
+        }
+
+        public static int InsertChiTietHoaDon(ChiTietHoaDon chiTietHoaDon) {
+            return Dao.InsertChiTietHoaDon(chiTietHoaDon);
         }
     }
 }

@@ -23,7 +23,6 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ribbonControlTop = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonClipBoardCut = new DevExpress.XtraBars.BarButtonItem();
@@ -35,18 +34,20 @@
             this.barButtonSave = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonEdit = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonAdd = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonCancel = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupClipBoard = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupMove = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageView = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             this.groupControlClientArea = new DevExpress.XtraEditors.GroupControl();
             this.navBarItemNhanVien = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemKhachHang = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemMonAn = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemNhomMon = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGoiMonTheoBan = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
@@ -55,7 +56,6 @@
             this.navBarGroupQuanLyMonAn = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroupNhapHang = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
-            this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlTop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlClientArea)).BeginInit();
             this.groupControlClientArea.SuspendLayout();
@@ -75,9 +75,10 @@
             this.barButtonDelete,
             this.barButtonSave,
             this.barButtonEdit,
-            this.barButtonAdd});
+            this.barButtonAdd,
+            this.barButtonCancel});
             this.ribbonControlTop.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControlTop.MaxItemId = 11;
+            this.ribbonControlTop.MaxItemId = 12;
             this.ribbonControlTop.Name = "ribbonControlTop";
             this.ribbonControlTop.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageHome,
@@ -92,7 +93,6 @@
             this.barButtonClipBoardCut.Id = 1;
             this.barButtonClipBoardCut.Name = "barButtonClipBoardCut";
             this.barButtonClipBoardCut.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText;
-            this.barButtonClipBoardCut.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonClipBoardCut_ItemClick);
             // 
             // barButtonClipBoardCopy
             // 
@@ -162,6 +162,15 @@
             this.barButtonAdd.Name = "barButtonAdd";
             this.barButtonAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonAdd_ItemClick);
             // 
+            // barButtonCancel
+            // 
+            this.barButtonCancel.Caption = "Cancel";
+            this.barButtonCancel.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonCancel.Glyph")));
+            this.barButtonCancel.Id = 11;
+            this.barButtonCancel.Name = "barButtonCancel";
+            this.barButtonCancel.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonCancel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonCancel_ItemClick);
+            // 
             // ribbonPageHome
             // 
             this.ribbonPageHome.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -191,12 +200,20 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonEdit);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonDelete);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonSave);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonCancel);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // ribbonPageView
             // 
             this.ribbonPageView.Name = "ribbonPageView";
             this.ribbonPageView.Text = "View";
+            // 
+            // ribbonStatusBar
+            // 
+            this.ribbonStatusBar.Location = new System.Drawing.Point(2, 362);
+            this.ribbonStatusBar.Name = "ribbonStatusBar";
+            this.ribbonStatusBar.Ribbon = this.ribbonControlTop;
+            this.ribbonStatusBar.Size = new System.Drawing.Size(829, 27);
             // 
             // defaultLookAndFeel1
             // 
@@ -210,7 +227,6 @@
             this.groupControlClientArea.Name = "groupControlClientArea";
             this.groupControlClientArea.Size = new System.Drawing.Size(833, 391);
             this.groupControlClientArea.TabIndex = 3;
-            this.groupControlClientArea.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControlClientArea_Paint);
             // 
             // navBarItemNhanVien
             // 
@@ -242,11 +258,15 @@
             this.navBarItemNhomMon.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItemNhomMon.LargeImage")));
             this.navBarItemNhomMon.Name = "navBarItemNhomMon";
             this.navBarItemNhomMon.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItemNhomMon.SmallImage")));
+            this.navBarItemNhomMon.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItemNhomMon_LinkClicked);
             // 
-            // navBarItem1
+            // navBarGoiMonTheoBan
             // 
-            this.navBarItem1.Caption = "navBarItem1";
-            this.navBarItem1.Name = "navBarItem1";
+            this.navBarGoiMonTheoBan.Caption = "Theo bàn";
+            this.navBarGoiMonTheoBan.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarGoiMonTheoBan.LargeImage")));
+            this.navBarGoiMonTheoBan.Name = "navBarGoiMonTheoBan";
+            this.navBarGoiMonTheoBan.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGoiMonTheoBan.SmallImage")));
+            this.navBarGoiMonTheoBan.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarGoiMonTheoBan_LinkClicked);
             // 
             // navBarItem2
             // 
@@ -268,7 +288,6 @@
             this.navBarGroupQuanLy.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navBarGroupQuanLy.Appearance.Options.UseFont = true;
             this.navBarGroupQuanLy.Caption = "Quản lý";
-            this.navBarGroupQuanLy.Expanded = true;
             this.navBarGroupQuanLy.GroupCaptionUseImage = DevExpress.XtraNavBar.NavBarImage.Small;
             this.navBarGroupQuanLy.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
             this.navBarGroupQuanLy.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -279,14 +298,17 @@
             this.navBarGroupQuanLy.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarGroupQuanLy.LargeImage")));
             this.navBarGroupQuanLy.Name = "navBarGroupQuanLy";
             this.navBarGroupQuanLy.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroupQuanLy.SmallImage")));
+            this.navBarGroupQuanLy.TopVisibleLinkIndex = 3;
             // 
             // navBarGroupGoiMon
             // 
             this.navBarGroupGoiMon.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navBarGroupGoiMon.Appearance.Options.UseFont = true;
             this.navBarGroupGoiMon.Caption = "Gọi Món";
+            this.navBarGroupGoiMon.Expanded = true;
+            this.navBarGroupGoiMon.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
             this.navBarGroupGoiMon.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarGoiMonTheoBan)});
             this.navBarGroupGoiMon.Name = "navBarGroupGoiMon";
             this.navBarGroupGoiMon.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroupGoiMon.SmallImage")));
             // 
@@ -294,7 +316,7 @@
             // 
             this.navBarGroupQuanLyMonAn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navBarGroupQuanLyMonAn.Appearance.Options.UseFont = true;
-            this.navBarGroupQuanLyMonAn.Caption = "Thanh Toán";
+            this.navBarGroupQuanLyMonAn.Caption = "Nhập hàng";
             this.navBarGroupQuanLyMonAn.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2)});
             this.navBarGroupQuanLyMonAn.Name = "navBarGroupQuanLyMonAn";
@@ -304,7 +326,7 @@
             // 
             this.navBarGroupNhapHang.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navBarGroupNhapHang.Appearance.Options.UseFont = true;
-            this.navBarGroupNhapHang.Caption = "Nhập hàng";
+            this.navBarGroupNhapHang.Caption = "Thống kê";
             this.navBarGroupNhapHang.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3)});
             this.navBarGroupNhapHang.Name = "navBarGroupNhapHang";
@@ -325,7 +347,7 @@
             this.navBarItemKhachHang,
             this.navBarItemMonAn,
             this.navBarItemNhomMon,
-            this.navBarItem1,
+            this.navBarGoiMonTheoBan,
             this.navBarItem2,
             this.navBarItem3,
             this.navBarItem4});
@@ -337,13 +359,6 @@
             this.navBarControl1.Size = new System.Drawing.Size(237, 391);
             this.navBarControl1.TabIndex = 1;
             this.navBarControl1.Text = "navBarControl1";
-            // 
-            // ribbonStatusBar
-            // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(2, 369);
-            this.ribbonStatusBar.Name = "ribbonStatusBar";
-            this.ribbonStatusBar.Ribbon = this.ribbonControlTop;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(829, 20);
             // 
             // frmMain
             // 
@@ -385,7 +400,7 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItemKhachHang;
         private DevExpress.XtraNavBar.NavBarItem navBarItemMonAn;
         private DevExpress.XtraNavBar.NavBarItem navBarItemNhomMon;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem1;
+        private DevExpress.XtraNavBar.NavBarItem navBarGoiMonTheoBan;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
         private DevExpress.XtraNavBar.NavBarItem navBarItem3;
         private DevExpress.XtraNavBar.NavBarItem navBarItem4;
@@ -398,6 +413,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonAdd;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
+        private DevExpress.XtraBars.BarButtonItem barButtonCancel;
     }
 }
 

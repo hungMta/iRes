@@ -43,10 +43,19 @@ namespace Title.GUI {
             this.textEditLuong.Text = selRow["Luong"].ToString();
             this.textEditMatKhau.Text = selRow["MatKhau"].ToString();
             this.dateEditNgaySinh.EditValue = selRow["NgaySinh"];
-            this.textEditTinhTrangLamViec.Text = selRow["TrangThai"].ToString();
+            this.comboBoxTrangThai.Text = selRow["TrangThai"].ToString();
             this.comboBoxGioiTinh.Text = selRow["GioiTinh"].ToString();
             this.textEditChucVu.Text = selRow["ChucVu"].ToString();
             this.textEditHinhAnh.Text = selRow["HinhAnh"].ToString();
+            try {
+                if (this.textEditHinhAnh.Text != "") {
+                    string imagePath = config.GetProjectLinkDirectory() + config.NHANVIEN_IMAGE_RESOURCE + this.textEditHinhAnh.Text;
+                    this.pictureEditAvatar.Image = Image.FromFile(imagePath);
+                } else {
+                    string imagePath = config.GetProjectLinkDirectory() + config.NHANVIEN_IMAGE_RESOURCE+ @"male.png";
+                    this.pictureEditAvatar.Image = Image.FromFile(imagePath);
+                }
+            } catch { }
         }
 
         public void ClearText() {
@@ -57,7 +66,6 @@ namespace Title.GUI {
             this.textEditQueQuan.Text = "";
             this.textEditMatKhau.Text = "";
             this.textEditChucVu.Text = "";
-            this.textEditTinhTrangLamViec.Text = "";
             this.textEditHinhAnh.Text = "";
             this.textEditSDT.Text = "";
         }
@@ -106,7 +114,7 @@ namespace Title.GUI {
                 chucVu = this.textEditChucVu.Text;
                 matKhau = this.textEditMatKhau.Text;
                 hinhAnh = this.textEditHinhAnh.Text;
-                tinhTrang = this.textEditTinhTrangLamViec.Text;
+                tinhTrang = this.comboBoxTrangThai.SelectedItem.ToString();
                 NhanVien nv = new NhanVien(maNV, tenNV, ngaySinh, gioiTinh, SDT ,diaChi, luong, chucVu, matKhau, hinhAnh, tinhTrang);
                 if (this.currentAction == "Add") {
                     int res = Bus.InsertNhanVien(nv);

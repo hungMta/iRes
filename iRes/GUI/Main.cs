@@ -20,6 +20,8 @@ namespace iRes{
         UtcQuanLyNhanVien utcQuanLyNhanVien = new UtcQuanLyNhanVien();
         UtcQuanLyKhachHang utcQuanLyKhachHang = new UtcQuanLyKhachHang();
         UtcQuanLyMonAn utcQuanLyMonAn = new UtcQuanLyMonAn();
+        UctQuanLyNhomMon uctQuanLyNhomMon = new UctQuanLyNhomMon();
+        UctGoiMonTheoBan uctGoiMonTheoBan = new UctGoiMonTheoBan();
 
         private string currentTabName;
 
@@ -40,9 +42,6 @@ namespace iRes{
             this.currentTabName = config.TAB_KHACH_HANG;
         }
 
-        private void barButtonClipBoardCut_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
-        }
-
         private void navBarItemMonAn_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             utcQuanLyMonAn.Dock = DockStyle.Fill;
@@ -51,10 +50,34 @@ namespace iRes{
             this.currentTabName = config.TAB_MON_AN;
         }
 
-        private void groupControlClientArea_Paint(object sender, PaintEventArgs e) {
+        private void navBarItemNhomMon_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e) {
+            uctQuanLyNhomMon.Dock = DockStyle.Fill;
+            this.groupControlClientArea.Controls.Clear();
+            this.groupControlClientArea.Controls.Add(uctQuanLyNhomMon);
+            this.currentTabName = config.TAB_NHOM_MON;
+        }
+
+        private void navBarGoiMonTheoBan_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e) {
+            uctGoiMonTheoBan.Dock = DockStyle.Fill;
+            this.groupControlClientArea.Controls.Clear();
+            this.groupControlClientArea.Controls.Add(uctGoiMonTheoBan);
+            this.currentTabName = config.TAB_GOI_MON_THEO_BAN;
+        }
+
+        public void DisableButtonBar() {
+            this.barButtonAdd.Enabled = false;
+            this.barButtonEdit.Enabled = false;
+            this.barButtonDelete.Enabled = false;
+        }
+
+        public void EnableButtonBar() {
+            this.barButtonAdd.Enabled = true;
+            this.barButtonEdit.Enabled = true;
+            this.barButtonDelete.Enabled = true;
         }
 
         private void barButtonEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            DisableButtonBar();
             switch (this.currentTabName) {
                 case "TabNhanVien":
                     utcQuanLyNhanVien.Edit();
@@ -77,6 +100,7 @@ namespace iRes{
         }
 
         private void barButtonAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            DisableButtonBar();
             switch (this.currentTabName) {
                 case "TabNhanVien":
                     utcQuanLyNhanVien.Add();
@@ -96,6 +120,12 @@ namespace iRes{
                     utcQuanLyKhachHang.Save();
                     break;
             }
+            EnableButtonBar();
         }
+
+        private void barButtonCancel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            EnableButtonBar();
+        }
+
     }
 }
