@@ -52,6 +52,10 @@
             this.simpleButtonThem = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.lookUpEditNhomMon = new DevExpress.XtraEditors.LookUpEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.textEditMaHoaDon = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.textEditMaKhachHang = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.imageListBoxBanAn)).BeginInit();
             this.contextMenuBanAn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlBanAnGoiMon)).BeginInit();
@@ -68,6 +72,8 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditMaMon.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditNhomMon.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditMaHoaDon.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditMaKhachHang.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // imageListBoxBanAn
@@ -154,6 +160,10 @@
             // 
             // groupControlBanAn
             // 
+            this.groupControlBanAn.Controls.Add(this.textEditMaKhachHang);
+            this.groupControlBanAn.Controls.Add(this.labelControl7);
+            this.groupControlBanAn.Controls.Add(this.textEditMaHoaDon);
+            this.groupControlBanAn.Controls.Add(this.labelControl6);
             this.groupControlBanAn.Controls.Add(this.simpleButtonThemMon);
             this.groupControlBanAn.Controls.Add(this.simpleButtonThanhToan);
             this.groupControlBanAn.Controls.Add(this.labelControl1);
@@ -191,10 +201,11 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(39, 36);
+            this.labelControl1.Location = new System.Drawing.Point(18, 36);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(0, 25);
+            this.labelControl1.Size = new System.Drawing.Size(66, 25);
             this.labelControl1.TabIndex = 2;
+            this.labelControl1.Text = "Bàn ăn";
             // 
             // groupControlThemMon
             // 
@@ -335,6 +346,37 @@
             this.lookUpEditNhomMon.TabIndex = 3;
             this.lookUpEditNhomMon.EditValueChanged += new System.EventHandler(this.lookUpEditNhomMon_EditValueChanged);
             // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(20, 80);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(63, 13);
+            this.labelControl6.TabIndex = 5;
+            this.labelControl6.Text = "Mã hóa đơn :";
+            // 
+            // textEditMaHoaDon
+            // 
+            this.textEditMaHoaDon.Location = new System.Drawing.Point(86, 77);
+            this.textEditMaHoaDon.Name = "textEditMaHoaDon";
+            this.textEditMaHoaDon.Properties.ReadOnly = true;
+            this.textEditMaHoaDon.Size = new System.Drawing.Size(100, 20);
+            this.textEditMaHoaDon.TabIndex = 6;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(217, 79);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(79, 13);
+            this.labelControl7.TabIndex = 5;
+            this.labelControl7.Text = "Mã khách hàng :";
+            // 
+            // textEditMaKhachHang
+            // 
+            this.textEditMaKhachHang.Location = new System.Drawing.Point(297, 77);
+            this.textEditMaKhachHang.Name = "textEditMaKhachHang";
+            this.textEditMaKhachHang.Size = new System.Drawing.Size(100, 20);
+            this.textEditMaKhachHang.TabIndex = 6;
+            // 
             // UctGoiMonTheoBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -364,6 +406,8 @@
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditMaMon.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditNhomMon.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditMaHoaDon.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditMaKhachHang.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -398,5 +442,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LookUpEdit lookUpEditNhomMon;
         private DevExpress.XtraEditors.LookUpEdit lookUpEditMaMon;
+        private DevExpress.XtraEditors.TextEdit textEditMaKhachHang;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.TextEdit textEditMaHoaDon;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
     }
 }
