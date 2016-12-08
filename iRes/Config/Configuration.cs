@@ -60,7 +60,7 @@ namespace Title.Config {
         public string HOA_DON_THANH_TIEN = "ThanhTien";
         public string HOA_DON_CHIET_KHAU = "ChietKhau";
         public string HOA_DON_TONG_TIEN = "TongTien";
-
+ 
 
         // Proceduces of NhanVien
         public string PROC_GET_LIST_NHANVIEN = "DanhSachNhanVien";
@@ -98,14 +98,21 @@ namespace Title.Config {
         // Proceduces of BanAn
         public string PROC_GET_LIST_BANAN = "DanhSachBanAn";
         public string PROC_UPDATE_BAN_AN = "SuaBanAn";
+        public string PROC_SET_BAN_AN_TRONG = "SuaBanAnThanhTrong";
 
         // Procedures of ChiTietHoaDon
         public string PROC_GET_LIST_CHITIET_HOADON = "DanhSachChiTietHoaDon";
         public string PROC_INSET_CHITIET_HOADON = "ThemChiTietHoaDon";
 
+
         // Procedures of HoaDon
         public string PROC_INSERT_HOADON = "ThemHoaDon";
         public string PROC_GET_LAST_HOADON = "GetLastHoaDon";
+        public string PROC_HOA_DON_GET_INFO_KHACH_HANG = "ThongTinKhachHangTheoMaHoaDon";
+        public string PROC_INFO_HOA_DON = "XemThongTinHoaDonTheoMa";
+        public string PROC_EDIT_HOADON = "SuaHoaDon";
+        public string PROC_GET_INFO_HOADON = "XemThongTinHoaDon";
+
 
         // Tab Name
         public string TAB_NHAN_VIEN = "TabNhanVien";
@@ -117,5 +124,7 @@ namespace Title.Config {
         // Resource Path
         public string NHANVIEN_IMAGE_RESOURCE = @"\Resources\NhanVien\";
         public string BANAN_IMAGE_RESOURCE = @"\Resources\BanAn\";
+
+        public string PRINT_HOA_DON = "printed";
     }
 }
