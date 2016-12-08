@@ -24,6 +24,7 @@ namespace Title.GUI {
         }
 
         public void GetListBanAn() {
+            listBanAn.Clear();
             DataTable dataTable = new DataTable();
             dataTable = Bus.GetListBanAn();
             foreach (DataRow row in dataTable.Rows) {
@@ -41,9 +42,12 @@ namespace Title.GUI {
                 this.gridControlBanAnGoiMon.DataSource = dataTable;
             } catch { }
             this.labelControl1.Text = "Bàn " + this.banAnHienTai.MaBan;
+            this.textEditMaHoaDon.Text = this.banAnHienTai.MaHoaDon;
+            
         }
 
-        private void UctGoiMonTheoBan_Load(object sender, EventArgs e) {
+        public void LoadBanAn() {
+            this.imageListBoxBanAn.Items.Clear();
             ImageList imageList = new ImageList();
             imageList.ImageSize = new Size(50, 50);
             GetListBanAn();
@@ -63,6 +67,10 @@ namespace Title.GUI {
             this.imageListBoxBanAn.ColumnWidth = 100;
         }
 
+        private void UctGoiMonTheoBan_Load(object sender, EventArgs e) {
+            LoadBanAn();
+        }
+
         private void imageListBoxBanAn_MouseMove(object sender, MouseEventArgs e) {
             Point point = this.imageListBoxBanAn.PointToClient(Cursor.Position);
             int index = this.imageListBoxBanAn.IndexFromPoint(point);
@@ -73,6 +81,7 @@ namespace Title.GUI {
         private void imageListBoxBanAn_Click(object sender, EventArgs e) {
             int index = this.imageListBoxBanAn.SelectedIndex;
             this.banAnHienTai = listBanAn[index];
+
             LoadListMonAnBanAn();
         }
 
@@ -128,7 +137,41 @@ namespace Title.GUI {
                     CreateChiTietHoaDon();
                     LoadListMonAnBanAn();
                 } else {
-                    MessageBox.Show("You have to create a HoaDon");
+                    try {
+                        int soLuong = int.Parse(this.textEditSoLuong.Text);
+                        string maMon = this.lookUpEditMaMon.Text.ToString();
+                        string maHoaDon = this.banAnHienTai.MaHoaDon;
+                        if (soLuong <= 0 ) {
+                            MessageBox.Show("Số lượng phải lớn hơn 0");
+                        } else {
+                            if (maMon == "") {
+                                MessageBox.Show("Nhập đầy đủ thông tin");
+                            } else {
+                                DateTime currentTime = DateTime.Now;
+                                string maNV = "NV001";
+                                string maKH = "KH000";
+                                int chietKhau = 0;
+                                HoaDon hoaDon = new HoaDon(currentTime, maKH, maNV, 0, chietKhau, 0);
+                                int res = Bus.InsertHoaDon(hoaDon);
+                                if (res == 1) {
+                                    DataTable dataTable = new DataTable();
+                                    dataTable = Bus.GetLastHoaDon();
+                                    string maHD = dataTable.Rows[0]["MaHD"].ToString();
+                                    this.textEditMaHoaDon.Text = maHD;
+                                    this.banAnHienTai.TrangThai = "Đang dùng";
+                                    this.banAnHienTai.MaHoaDon = maHD;
+                                    Bus.UpdateBanAn(banAnHienTai);
+                                    CreateChiTietHoaDon();
+                                    LoadListMonAnBanAn();
+                                    LoadBanAn();
+                                    Console.WriteLine();
+                                }
+                            }
+                        }
+                    } catch {
+                        MessageBox.Show("Nhập đầy đủ thông tin");
+                    }
+
                 }
             }
         }

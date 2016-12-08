@@ -57,12 +57,24 @@ namespace Title.BUS {
             return Dao.GetListBanAn();
         }
 
+        public static int UpdateBanAn(BanAn banAn) {
+            return Dao.UpdateBanAn(banAn);
+        }
+
         public static DataTable GetListChiTietHoaDon(BanAn banAn) {
             return Dao.GetListChiTietHoaDon(banAn);
         }
 
         public static int InsertChiTietHoaDon(ChiTietHoaDon chiTietHoaDon) {
             return Dao.InsertChiTietHoaDon(chiTietHoaDon);
+        }
+
+        public static int InsertHoaDon(HoaDon hoaDon) {
+            return Dao.InsertHoaDon(hoaDon);
+        }
+
+        public static DataTable GetLastHoaDon() {
+            return Dao.GetLastHoaDon();
         }
     }
 }
