@@ -25,10 +25,10 @@ namespace iRes{
 
         private string currentTabName;
 
-        private void tclItem1_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e) {
-        }
+        private void tclItem1_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e) { }
 
         private void navBarItemNhanVien_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e) {
+            utcQuanLyNhanVien.LoadData();
             utcQuanLyNhanVien.Dock = DockStyle.Fill;
             this.groupControlClientArea.Controls.Clear();
             this.groupControlClientArea.Controls.Add(utcQuanLyNhanVien);
@@ -36,14 +36,15 @@ namespace iRes{
         }
 
         private void navBarItemKhachHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e) {
+            utcQuanLyKhachHang.LoadData();
             utcQuanLyKhachHang.Dock = DockStyle.Fill;
             this.groupControlClientArea.Controls.Clear();
             this.groupControlClientArea.Controls.Add(utcQuanLyKhachHang);
             this.currentTabName = config.TAB_KHACH_HANG;
         }
 
-        private void navBarItemMonAn_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
+        private void navBarItemMonAn_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e) {
+            utcQuanLyMonAn.LoadData();
             utcQuanLyMonAn.Dock = DockStyle.Fill;
             this.groupControlClientArea.Controls.Clear();
             this.groupControlClientArea.Controls.Add(utcQuanLyMonAn);

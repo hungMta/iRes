@@ -36,54 +36,57 @@ namespace Title.GUI {
             }
         }
 
-        public void LoadListMonAnBanAn() {
-            try {
-                DataTable dataTable = Bus.GetListChiTietHoaDon(this.banAnHienTai);
-                this.gridControlBanAnGoiMon.DataSource = dataTable;
-
-
-
-            } catch { }
-            this.labelControl1.Text = "Bàn " + this.banAnHienTai.MaBan;
-            this.textEditMaHoaDon.Text = this.banAnHienTai.MaHoaDon;
-            if (this.textEditMaHoaDon.Text == "") simpleButtonSua.Enabled = false;
-            try
-            {
-                DataTable dt_HoaDon = Bus.GetInfoHoaDon(this.banAnHienTai.MaHoaDon);
-                this.textEditChietKhau.Text = dt_HoaDon.Rows[0]["ChietKhau"].ToString();
-            }
-            catch { }
-
-
+        public void LoadLookUpEditKhachHang() {
             DataTable dataTableKH = new DataTable();
             dataTableKH = Bus.GetListKhachHang();
-            try
-            {
-                this.lookUpEditKH.Properties.DisplayMember = "MaKH";
-                this.lookUpEditKH.Properties.ValueMember = "MaKH";
+            try {
+                this.lookUpEditKH.Properties.DisplayMember = config.HOA_DON_MA_KHACH_HANG;
+                this.lookUpEditKH.Properties.ValueMember = config.HOA_DON_MA_KHACH_HANG;
                 this.lookUpEditKH.Properties.DataSource = dataTableKH;
             }
             catch { }
-
-
-            DataTable dt = Bus.GetInfoKhachHangTheoMaHoaDon(this.banAnHienTai);
-            try
-            {
-                this.comboBoxEditMaKH.Text = dt.Rows[0]["MaKH"].ToString();
-                this.lookUpEditKH.Text = dt.Rows[0]["MaKH"].ToString();
-                
-            }
-            catch {
-                this.comboBoxEditMaKH.Text = "KH000";
-            }
-            lookUpEditKH.Enabled = false;
-                 textEditChietKhau.Enabled = false;
-                comboBoxEditMaKH.Enabled = false;
-                simpleButtonLuu.Enabled = false;
-                simpleButtonSua.Enabled = true;
         }
 
-        public void LoadBanAn() {
+        public void SetLookUpEditKhachHangText() {
+            DataTable dt = Bus.GetInfoKhachHangTheoMaHoaDon(this.banAnHienTai);
+            try {
+                this.lookUpEditKH.Text = dt.Rows[0][config.HOA_DON_MA_KHACH_HANG].ToString();
+            }
+            catch { }
+        }
+
+        public void LoadListChiTietHoaDon() {
+            try {
+                DataTable dataTable = Bus.GetListChiTietHoaDon(this.banAnHienTai);
+                this.gridControlBanAnGoiMon.DataSource = dataTable;
+            } catch { }
+        }
+
+        public void LoadHoaDon() {
+            this.labelControl1.Text = "Bàn " + this.banAnHienTai.MaBan;
+            this.textEditMaHoaDon.Text = this.banAnHienTai.MaHoaDon;
+            if (this.textEditMaHoaDon.Text == "") {
+                simpleButtonSua.Enabled = false;
+            } 
+            try {
+                DataTable dt_HoaDon = Bus.GetInfoHoaDon(this.banAnHienTai.MaHoaDon);
+                this.textEditChietKhau.Text = dt_HoaDon.Rows[0][config.HOA_DON_CHIET_KHAU].ToString();
+            }
+            catch { }
+
+            LoadListChiTietHoaDon();
+
+            LoadLookUpEditKhachHang();
+
+            SetLookUpEditKhachHangText();
+
+            lookUpEditKH.Enabled = false;
+            textEditChietKhau.Enabled = false;
+            simpleButtonLuu.Enabled = false;
+            simpleButtonSua.Enabled = true;
+        }
+
+        public void LoadImageListBoxBanAn() {
             this.imageListBoxBanAn.Items.Clear();
             ImageList imageList = new ImageList();
             imageList.ImageSize = new Size(50, 50);
@@ -104,8 +107,24 @@ namespace Title.GUI {
             this.imageListBoxBanAn.ColumnWidth = 100;
         }
 
+        public void LoadGridControlMonAn() {
+            DataTable dataTableMonAn = new DataTable();
+            dataTableMonAn = Bus.GetListMonAn();
+            this.gridControlSearchMonAn.DataSource = dataTableMonAn;
+        }
+
+        public void LoadLookUpEditNhomMon() {
+            DataTable dataTableNhomMon = new DataTable();
+            dataTableNhomMon = Bus.GetListNhomMon();
+            try {
+                this.lookUpEditNhomMon.Properties.DisplayMember = "TenNhom";
+                this.lookUpEditNhomMon.Properties.ValueMember = "MaNhom";
+                this.lookUpEditNhomMon.Properties.DataSource = dataTableNhomMon;
+            } catch { }
+        }
+
         private void UctGoiMonTheoBan_Load(object sender, EventArgs e) {
-            LoadBanAn();
+            LoadImageListBoxBanAn();
         }
 
         private void imageListBoxBanAn_MouseMove(object sender, MouseEventArgs e) {
@@ -116,29 +135,23 @@ namespace Title.GUI {
         }
 
         private void imageListBoxBanAn_Click(object sender, EventArgs e) {
-            int index = this.imageListBoxBanAn.SelectedIndex;
-            this.banAnHienTai = listBanAn[index];
-            LoadListMonAnBanAn();
+            try {
+                int index = this.imageListBoxBanAn.SelectedIndex;
+                this.banAnHienTai = listBanAn[index];
+                LoadHoaDon();
+            } catch { }
         }
 
-        private void simpleButtonThemMon_Click(object sender, EventArgs e) {
 
-            comboBoxEditMaKH.Enabled = false;
+        private void simpleButtonGoiMon_Click(object sender, EventArgs e) {
             textEditChietKhau.Enabled = false;
             simpleButtonSua.Enabled = true;
             simpleButtonLuu.Enabled = false;
             this.groupControlThemMon.Enabled = true;
-            DataTable dataTableMonAn = new DataTable();
-            dataTableMonAn = Bus.GetListMonAn();
-            this.gridControlSearchMonAn.DataSource = dataTableMonAn;
 
-            DataTable dataTableNhomMon = new DataTable();
-            dataTableNhomMon = Bus.GetListNhomMon();
-            try {
-                this.lookUpEditNhomMon.Properties.DisplayMember = "TenNhom";
-                this.lookUpEditNhomMon.Properties.ValueMember = "MaNhom";
-                this.lookUpEditNhomMon.Properties.DataSource = dataTableNhomMon;
-            } catch { }
+            LoadGridControlMonAn();
+            LoadLookUpEditNhomMon();
+
         }
 
         private void gridControlSearchMonAn_Click(object sender, EventArgs e) {
@@ -174,9 +187,8 @@ namespace Title.GUI {
                 MessageBox.Show("Chưa chọn bàn");
             } else {
                 if (this.banAnHienTai.MaHoaDon != "") {
-                    // if current table has have a HoaDon, then create a ChiTietHoaDon only
                     CreateChiTietHoaDon();
-                    LoadListMonAnBanAn();
+                    LoadHoaDon();
                 } else {
                     try {
                         int soLuong = int.Parse(this.textEditSoLuong.Text);
@@ -190,9 +202,8 @@ namespace Title.GUI {
                             } else {
                                 DateTime currentTime = DateTime.Now;
                                 string maNV = "NV001";
-                                //string maKH = textEditMaKhachHang.Text;
                                 int chietKhau = int.Parse(textEditChietKhau.Text);
-                                string maKH = comboBoxEditMaKH.SelectedItem.ToString();
+                                string maKH = this.lookUpEditKH.Text;
                                 HoaDon hoaDon = new HoaDon(currentTime, maKH, maNV, 0, chietKhau, 0);
                                 int res = Bus.InsertHoaDon(hoaDon);
                                 if (res == 1) {
@@ -204,8 +215,8 @@ namespace Title.GUI {
                                     this.banAnHienTai.MaHoaDon = maHD;
                                     Bus.UpdateBanAn(banAnHienTai);
                                     CreateChiTietHoaDon();
-                                    LoadListMonAnBanAn();
-                                    LoadBanAn();
+                                    LoadHoaDon();
+                                    LoadImageListBoxBanAn();
                                     Console.WriteLine();
                                 }
                             }
@@ -213,7 +224,6 @@ namespace Title.GUI {
                     } catch {
                         MessageBox.Show("Nhập đầy đủ thông tin");
                     }
-
                 }
             }
         }
@@ -242,28 +252,22 @@ namespace Title.GUI {
             FrmThanhToan frmThanhToan = new FrmThanhToan(this.banAnHienTai);
             frmThanhToan.ShowDialog();
 
-            if (frmThanhToan.getPrintHoaDon().Equals(config.PRINT_HOA_DON))
-            {
+            if (frmThanhToan.getPrintHoaDon().Equals(config.PRINT_HOA_DON)) {
                 MessageBox.Show(banAnHienTai.MaBan + "Đã thanh toán và in hóa đơn");
                 Bus.setBanAnTrong(this.banAnHienTai);
-                LoadBanAn();
+                LoadImageListBoxBanAn();
             }
         }
 
-        private void simpleButtonEditMaKH_Click(object sender, EventArgs e)
-        {
+        private void simpleButtonEditMaKH_Click(object sender, EventArgs e) {
             textEditChietKhau.Enabled = true;
-            comboBoxEditMaKH.Enabled = true;
             simpleButtonLuu.Enabled = true;
             simpleButtonSua.Enabled = false;
             lookUpEditKH.Enabled = true;
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-
+        private void simpleButtonLuu_Click(object sender, EventArgs e) {
             textEditChietKhau.Enabled = false;
-            comboBoxEditMaKH.Enabled = false;
             simpleButtonLuu.Enabled = false;
             simpleButtonSua.Enabled = true;
             lookUpEditKH.Enabled = false;
@@ -274,11 +278,6 @@ namespace Title.GUI {
             string maKH = lookUpEditKH.Text;
             HoaDon hoaDon = new HoaDon(maHD,currentTime, maKH, maNV, 0, chietKhau, 0);
             int res = Bus.EditHoaDon(hoaDon);
-        }
-
-        private void groupControlBanAn_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
