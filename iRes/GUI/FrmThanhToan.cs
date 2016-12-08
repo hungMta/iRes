@@ -12,28 +12,25 @@ using Title;
 using Title.Config;
 using Title.VO;
 using Title.BUS;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace Title.GUI
 {
     public partial class FrmThanhToan : Form
     {
-    
-
         private UctGoiMonTheoBan uctGoiMonTheoBan;
         private string printHoaDon = "";
+        private DataTable dataTable;
         Configuration config = new Configuration();
     
-        public FrmThanhToan(BanAn banAn)
-        {
-             
+        public FrmThanhToan(BanAn banAn) {
             InitializeComponent();
             LoadFormThanhToan(banAn);
         }
-        public void LoadFormThanhToan(BanAn banAn)
-        {
+
+        public void LoadHeaderHoaDon(BanAn banAn) {
             lblMaHD.Text = banAn.MaHoaDon;
             lblNgayThang.Text = DateTime.UtcNow.Date.ToString();
-
             DataTable dt = Bus.GetInfoKhachHangTheoMaHoaDon(banAn);
             lblMaKH.Text =  dt.Rows[0]["MaKH"].ToString();
             lblTenKH.Text = dt.Rows[0]["TenKH"].ToString();
@@ -41,63 +38,57 @@ namespace Title.GUI
             lblDiaChi.Text = dt.Rows[0]["DiaChi"].ToString();
             DataTable dt_HoaDon = Bus.GetInfoHoaDonTheoBanAn(banAn);
             lblTongTien.Text = dt_HoaDon.Rows[0]["TongTien"].ToString();
-            this.gridControl1.DataSource = Bus.GetListChiTietHoaDon(banAn);
         }
 
-        public string getPrintHoaDon()
-        {
+        public void LoadChiTietHoaDon(BanAn banAn) {
+            DataTable dataTable = Bus.GetListChiTietHoaDon(banAn);
+            this.dataTable = dataTable;
+            this.gridControl1.DataSource = this.dataTable;
+        }
+
+        public void LoadFormThanhToan(BanAn banAn) {
+            LoadHeaderHoaDon(banAn);
+            LoadChiTietHoaDon(banAn);
+        }
+
+        public string getPrintHoaDon() {
             return printHoaDon;
         }
 
-        public FrmThanhToan(UctGoiMonTheoBan uctGoiMonTheoBan)
-        {
+        public FrmThanhToan(UctGoiMonTheoBan uctGoiMonTheoBan) {
             // TODO: Complete member initialization
             this.uctGoiMonTheoBan = uctGoiMonTheoBan;
         }
 
-        private void FrmThanhToan_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnPrint_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pd_PrintPage(object sender, PrintPageEventArgs ev)
-        {
-            //ev.Graphics.DrawString("Hóa Đơn", new Font("Arial", 50), Brushes.Black,
-            //                     ev.MarginBounds.Left, 0, new StringFormat());
-            //ev.Graphics.DrawString("=========================Hóa Đơn====================", new Font("Arial", 10), Brushes.Black,
-            //                     ev.MarginBounds.Left, 0, new StringFormat());
-
-
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
+        private void FrmThanhToan_Load(object sender, EventArgs e) {
         }
 
         public UctGoiMonTheoBan mainForm { get; set; }
 
-        private void panelControl1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void simpleButtonPrint_Click(object sender, EventArgs e) {
             PrintDocument printDialog = new PrintDocument();
-            printDialog.PrintPage += new PrintPageEventHandler(pd_PrintPage);
+            printDialog.PrintPage += new PrintPageEventHandler(printDocumentHoaDon_PrintPage);
             printDialog.Print();
             printHoaDon = config.PRINT_HOA_DON;
             printHoaDon = "printed";
             this.Close();
-
         }
 
         private void simpleButtonCancel_Click(object sender, EventArgs e) {
             this.Close();
+        }
+
+        private void simpleButtonPreview_Click(object sender, EventArgs e) {
+            this.printPreviewHoaDon.Document = this.printDocumentHoaDon;
+            this.printPreviewHoaDon.ShowDialog();
+        }
+
+        private void printDocumentHoaDon_PrintPage(object sender, PrintPageEventArgs e) {
+            e.Graphics.DrawString("Hóa Đơn", new Font("Century", 40, FontStyle.Bold), Brushes.Red, new Point(300, 50));
+            e.Graphics.DrawRectangle(Pens.Black, 100, 400, this.gridControl1.Width, this.gridControl1.Height);
+
+            //Fills the above drawn rectangle with a light gray colour just to distinguish the header 
+            e.Graphics.FillRectangle(Brushes.LightGray, new Rectangle(100, 400, this.gridControl1.Width, this.gridControl1.Height));
         }
     }
 }

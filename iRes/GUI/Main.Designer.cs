@@ -309,6 +309,7 @@
             this.navBarGroupGoiMon.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navBarGroupGoiMon.Appearance.Options.UseFont = true;
             this.navBarGroupGoiMon.Caption = "Gọi Món";
+            this.navBarGroupGoiMon.Expanded = true;
             this.navBarGroupGoiMon.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
             this.navBarGroupGoiMon.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarGoiMonTheoBan)});

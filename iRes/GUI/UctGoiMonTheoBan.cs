@@ -246,13 +246,14 @@ namespace Title.GUI {
         }
 
         private void simpleButtonThanhToan_Click(object sender, EventArgs e) {
-            FrmThanhToan frmThanhToan = new FrmThanhToan(this.banAnHienTai);
-            frmThanhToan.ShowDialog();
-
-            if (frmThanhToan.getPrintHoaDon().Equals(config.PRINT_HOA_DON)) {
-                MessageBox.Show(banAnHienTai.MaBan + "Đã thanh toán và in hóa đơn");
-                Bus.setBanAnTrong(this.banAnHienTai);
-                LoadImageListBoxBanAn();
+            if (this.banAnHienTai.MaHoaDon != "") {
+                FrmThanhToan frmThanhToan = new FrmThanhToan(this.banAnHienTai);
+                frmThanhToan.ShowDialog();
+                if (frmThanhToan.getPrintHoaDon().Equals(config.PRINT_HOA_DON)) {
+                    MessageBox.Show(banAnHienTai.MaBan + "Đã thanh toán và in hóa đơn");
+                    Bus.setBanAnTrong(this.banAnHienTai);
+                    LoadImageListBoxBanAn();
+                }
             }
         }
 
