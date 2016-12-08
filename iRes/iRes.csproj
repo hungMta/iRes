@@ -87,6 +87,12 @@
     <Compile Include="GUI\UctGoiMonTheoBan.Designer.cs">
       <DependentUpon>UctGoiMonTheoBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UctNhapHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UctNhapHang.Designer.cs">
+      <DependentUpon>UctNhapHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UctQuanLyNhomMon.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -137,10 +143,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VO\BanAn.cs" />
     <Compile Include="VO\ChiTietHoaDon.cs" />
+    <Compile Include="VO\ChiTietPhieuNhap.cs" />
     <Compile Include="VO\HoaDon.cs" />
     <Compile Include="VO\KhachHang.cs" />
     <Compile Include="VO\MonAn.cs" />
+    <Compile Include="VO\NguyenLieu.cs" />
     <Compile Include="VO\NhanVien.cs" />
+    <Compile Include="VO\PhieuNhap.cs" />
     <EmbeddedResource Include="GUI\FrmThanhToan.resx">
       <DependentUpon>FrmThanhToan.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UctGoiMonTheoBan.resx">
       <DependentUpon>UctGoiMonTheoBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UctNhapHang.resx">
+      <DependentUpon>UctNhapHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UctQuanLyNhomMon.resx">
       <DependentUpon>UctQuanLyNhomMon.cs</DependentUpon>

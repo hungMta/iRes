@@ -197,5 +197,41 @@ namespace Title.DAO {
             };
             return DataProvider.GetDataByParameter(config.PROC_INFO_HOA_DON, para);
         }
+
+        public static DataTable GetListPhieuNhap() {
+            return DataProvider.GetData(config.PROC_GET_LIST_PHIEU_NHAP);
+        }
+
+        public static int InsertPhieuNhap(PhieuNhap phieuNhap)
+        {
+            SqlParameter[] para = new SqlParameter[] {
+                new SqlParameter("@"+config.PHIEU_NHAP_THOI_GIAN, phieuNhap.ThoiGian),            
+                new SqlParameter("@"+config.PHIEU_NHAP_TONG_TIEN, phieuNhap.TongTien),            
+                new SqlParameter("@"+config.PHIEU_NHAP_MA_NHAN_VIEN, phieuNhap.MaNhanVien)           
+            };
+            return DataProvider.ExecuteNonQuery(config.PROC_GET_INSERT_PHIEU_NHAP, para);
+        }
+
+        public static DataTable GetListNguyenLieu() {
+            return DataProvider.GetData(config.PROC_GET_LIST_NGUYEN_LIEU);
+        }
+
+        public static DataTable GetListChiTietPhieuNhapByMaPhieuNhap(string maPhieuNhap) {
+            SqlParameter[] para = new SqlParameter[] {
+                new SqlParameter("@"+config.PHIEU_NHAP_MA_PHIEU_NHAP, maPhieuNhap)           
+            };
+            return DataProvider.GetDataByParameter(config.PROC_INSERT_GET_CHI_TIET_PHIEU_NHAP_BY_MA_PHIEU_NHAP, para);
+        }
+
+        public static int InsertChiTietPhieuNhap(ChiTietPhieuNhap chiTietPhieuNhap)
+        {
+            SqlParameter[] para = new SqlParameter[] {
+                new SqlParameter("@"+config.CHI_TIET_PHIEU_NHAP_MA_PHIEU_NHAP, chiTietPhieuNhap.MaPhieuNhap),            
+                new SqlParameter("@"+config.CHI_TIET_PHIEU_NHAP_MA_NGUYEN_LIEU, chiTietPhieuNhap.MaNguyenLieu),            
+                new SqlParameter("@"+config.CHI_TIET_PHIEU_NHAP_SO_LUONG, chiTietPhieuNhap.SoLuong),            
+                new SqlParameter("@"+config.CHI_TIET_PHIEU_NHAP_DON_GIA, chiTietPhieuNhap.DonGia),            
+            };
+            return DataProvider.ExecuteNonQuery(config.PROC_INSERT_CHI_TIET_PHIEU_NHAP, para);
+        }
     }
 }

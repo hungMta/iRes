@@ -15,6 +15,8 @@ namespace Title.Config {
             return projectLink;
         }
 
+        public string CURRENT_NHAN_VIEN = "001";
+
         public string DATA_SOURCE = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
         //public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyNhaHang;Integrated Security=True";
         //public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
@@ -62,6 +64,26 @@ namespace Title.Config {
         public string HOA_DON_TONG_TIEN = "TongTien";
         public string PRINT_HOA_DON = "printed";
 
+        // Property of NguyenLieu
+        public string NGUYEN_LIEU_MA_NGUYEN_LIEU = "MaNL";
+        public string NGUYEN_LIEU_TEN_NGUYEN_LIEU= "TenNL";
+        public string NGUYEN_LIEU_DON_VI = "DonVi";
+        public string NGUYEN_LIEU_DON_GIA = "DonGia";
+
+        // Property of PhieuNhap
+        public string PHIEU_NHAP_MA_PHIEU_NHAP = "MaPN";
+        public string PHIEU_NHAP_TONG_TIEN = "TongTien";
+        public string PHIEU_NHAP_THOI_GIAN = "ThoiGianNhap";
+        public string PHIEU_NHAP_MA_NHAN_VIEN = "MaNV";
+
+        // Property of ChiTietPhieuNhap
+        public string CHI_TIET_PHIEU_NHAP_MA_PHIEU_NHAP = "MaPN";
+        public string CHI_TIET_PHIEU_NHAP_MA_NGUYEN_LIEU = "MaNL";
+        public string CHI_TIET_PHIEU_NHAP_DON_GIA = "DonGia";
+        public string CHI_TIET_PHIEU_NHAP_SO_LUONG = "SoLuong";
+        public string CHI_TIET_PHIEU_NHAP_THANH_TIEN = "ThanhTien";
+        public string CHI_TIET_PHIEU_NHAP_GHI_CHU = "GhiChu";
+        
         // Proceduces of NhanVien
         public string PROC_GET_LIST_NHANVIEN = "DanhSachNhanVien";
         public string PROC_INSERT_NHANVIEN = "ThemNhanVien";
@@ -113,12 +135,24 @@ namespace Title.Config {
         public string PROC_EDIT_HOADON = "SuaHoaDon";
         public string PROC_GET_INFO_HOADON = "XemThongTinHoaDon";
 
+        // Procedures of PhieuNhap
+        public string PROC_GET_LIST_PHIEU_NHAP = "DanhSachPhieuNhap";
+        public string PROC_GET_INSERT_PHIEU_NHAP = "ThemPhieuNhap";
+
+        // Procedures of NguyenLieu
+        public string PROC_GET_LIST_NGUYEN_LIEU = "DanhSachNguyenLieu";
+
+        // Procedures of ChiTietPhieuNhap
+        public string PROC_INSERT_CHI_TIET_PHIEU_NHAP = "ThemChiTietPhieuNhap";
+        public string PROC_INSERT_GET_CHI_TIET_PHIEU_NHAP_BY_MA_PHIEU_NHAP = "GetChiTietPhieuNhapByMaPhieuNhap";
+
         // Tab Name
         public string TAB_NHAN_VIEN = "TabNhanVien";
         public string TAB_KHACH_HANG = "TabKhachHang";
         public string TAB_MON_AN = "TabMonAn";
         public string TAB_NHOM_MON = "TabNhomMon";
         public string TAB_GOI_MON_THEO_BAN = "TabGoiMonTheoBan";
+        public string TAB_NHAP_HANG = "TabNhapHang";
 
         // Resource Path
         public string NHANVIEN_IMAGE_RESOURCE = @"\Resources\NhanVien\";

@@ -101,5 +101,25 @@ namespace Title.BUS {
         {
             return Dao.GetInfoHoaDonTheoBanAn(banAn);
         }
+
+        public static DataTable GetListPhieuNhap() {
+            return Dao.GetListPhieuNhap();
+        }
+
+        public static int InsertPhieuNhap(PhieuNhap phieuNhap) {
+            return Dao.InsertPhieuNhap(phieuNhap);
+        }
+
+        public static int InsertChiTietPhieuNhap(ChiTietPhieuNhap chiTietPhieuNhap) {
+            return Dao.InsertChiTietPhieuNhap(chiTietPhieuNhap);
+        }
+
+        public static DataTable GetChiTietPhieuNhapByMaPhieuNhap(string maPhieuNhap) {
+            return Dao.GetListChiTietPhieuNhapByMaPhieuNhap(maPhieuNhap);
+        }
+
+        public static DataTable GetListNguyenLieu() {
+            return Dao.GetListNguyenLieu();
+        }
     }
 }

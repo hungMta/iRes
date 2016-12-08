@@ -275,6 +275,7 @@
             this.navBarNhapHangMoi.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarNhapHangMoi.LargeImage")));
             this.navBarNhapHangMoi.Name = "navBarNhapHangMoi";
             this.navBarNhapHangMoi.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarNhapHangMoi.SmallImage")));
+            this.navBarNhapHangMoi.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarNhapHangMoi_LinkClicked);
             // 
             // navBarItem3
             // 

@@ -22,6 +22,7 @@ namespace iRes{
         UtcQuanLyMonAn utcQuanLyMonAn = new UtcQuanLyMonAn();
         UctQuanLyNhomMon uctQuanLyNhomMon = new UctQuanLyNhomMon();
         UctGoiMonTheoBan uctGoiMonTheoBan = new UctGoiMonTheoBan();
+        UctNhapHang uctNhapHang = new UctNhapHang();
 
         private string currentTabName;
 
@@ -63,6 +64,13 @@ namespace iRes{
             this.groupControlClientArea.Controls.Clear();
             this.groupControlClientArea.Controls.Add(uctGoiMonTheoBan);
             this.currentTabName = config.TAB_GOI_MON_THEO_BAN;
+        }
+
+        private void navBarNhapHangMoi_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e) {
+            uctNhapHang.Dock = DockStyle.Fill;
+            this.groupControlClientArea.Controls.Clear();
+            this.groupControlClientArea.Controls.Add(uctNhapHang);
+            this.currentTabName = config.TAB_NHAP_HANG;
         }
 
         public void DisableButtonBar() {
