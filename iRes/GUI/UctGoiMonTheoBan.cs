@@ -36,6 +36,28 @@ namespace Title.GUI {
             }
         }
 
+        public void LoadHoaDon() {
+            this.labelControl1.Text = "Bàn " + this.banAnHienTai.MaBan;
+            this.textEditMaHoaDon.Text = this.banAnHienTai.MaHoaDon;
+            if (this.textEditMaHoaDon.Text == "") {
+                simpleButtonSua.Enabled = false;
+            } 
+            try {
+                DataTable dt_HoaDon = Bus.GetInfoHoaDon(this.banAnHienTai.MaHoaDon);
+                this.textEditChietKhau.Text = dt_HoaDon.Rows[0][config.HOA_DON_CHIET_KHAU].ToString();
+            }
+            catch { }
+
+            LoadListChiTietHoaDon();
+            LoadLookUpEditKhachHang();
+            SetLookUpEditKhachHangText();
+
+            lookUpEditKH.Enabled = false;
+            textEditChietKhau.Enabled = false;
+            simpleButtonLuu.Enabled = false;
+            simpleButtonSua.Enabled = true;
+        }
+
         public void LoadLookUpEditKhachHang() {
             DataTable dataTableKH = new DataTable();
             dataTableKH = Bus.GetListKhachHang();
@@ -60,30 +82,6 @@ namespace Title.GUI {
                 DataTable dataTable = Bus.GetListChiTietHoaDon(this.banAnHienTai);
                 this.gridControlBanAnGoiMon.DataSource = dataTable;
             } catch { }
-        }
-
-        public void LoadHoaDon() {
-            this.labelControl1.Text = "Bàn " + this.banAnHienTai.MaBan;
-            this.textEditMaHoaDon.Text = this.banAnHienTai.MaHoaDon;
-            if (this.textEditMaHoaDon.Text == "") {
-                simpleButtonSua.Enabled = false;
-            } 
-            try {
-                DataTable dt_HoaDon = Bus.GetInfoHoaDon(this.banAnHienTai.MaHoaDon);
-                this.textEditChietKhau.Text = dt_HoaDon.Rows[0][config.HOA_DON_CHIET_KHAU].ToString();
-            }
-            catch { }
-
-            LoadListChiTietHoaDon();
-
-            LoadLookUpEditKhachHang();
-
-            SetLookUpEditKhachHangText();
-
-            lookUpEditKH.Enabled = false;
-            textEditChietKhau.Enabled = false;
-            simpleButtonLuu.Enabled = false;
-            simpleButtonSua.Enabled = true;
         }
 
         public void LoadImageListBoxBanAn() {
@@ -123,6 +121,26 @@ namespace Title.GUI {
             } catch { }
         }
 
+        public void CreateChiTietHoaDon() {
+            try {
+                int soLuong = int.Parse(this.textEditSoLuong.Text);
+                string maMon = this.lookUpEditMaMon.Text.ToString();
+                string maHoaDon = this.banAnHienTai.MaHoaDon;
+                if (soLuong <= 0 ) {
+                    MessageBox.Show("Số lượng phải lớn hơn 0");
+                } else {
+                    if (maMon == "") {
+                        MessageBox.Show("Nhập đầy đủ thông tin");
+                    } else {
+                        ChiTietHoaDon chitietHoaDon = new ChiTietHoaDon(maHoaDon, maMon, soLuong);
+                        Bus.InsertChiTietHoaDon(chitietHoaDon);
+                    }
+                }
+            } catch {
+                MessageBox.Show("Nhập đầy đủ thông tin");
+            }
+        }
+
         private void UctGoiMonTheoBan_Load(object sender, EventArgs e) {
             LoadImageListBoxBanAn();
         }
@@ -141,7 +159,6 @@ namespace Title.GUI {
                 LoadHoaDon();
             } catch { }
         }
-
 
         private void simpleButtonGoiMon_Click(object sender, EventArgs e) {
             textEditChietKhau.Enabled = false;
@@ -162,24 +179,20 @@ namespace Title.GUI {
             this.textEditTenMon.Text = selRow["TenMon"].ToString();
         }
 
-        public void CreateChiTietHoaDon() {
+        private void lookUpEditNhomMon_EditValueChanged(object sender, EventArgs e) {
+            string maNhomMon = this.lookUpEditNhomMon.EditValue.ToString();
+            DataTable dataTable = new DataTable();
+            dataTable = Bus.GetListMonAnByNhomMon(maNhomMon);
+            this.gridControlSearchMonAn.DataSource = dataTable;
             try {
-                int soLuong = int.Parse(this.textEditSoLuong.Text);
-                string maMon = this.lookUpEditMaMon.Text.ToString();
-                string maHoaDon = this.banAnHienTai.MaHoaDon;
-                if (soLuong <= 0 ) {
-                    MessageBox.Show("Số lượng phải lớn hơn 0");
-                } else {
-                    if (maMon == "") {
-                        MessageBox.Show("Nhập đầy đủ thông tin");
-                    } else {
-                        ChiTietHoaDon chitietHoaDon = new ChiTietHoaDon(maHoaDon, maMon, soLuong);
-                        Bus.InsertChiTietHoaDon(chitietHoaDon);
-                    }
-                }
-            } catch {
-                MessageBox.Show("Nhập đầy đủ thông tin");
-            }
+                this.lookUpEditMaMon.Properties.DisplayMember = "MaMon";
+                this.lookUpEditMaMon.Properties.ValueMember= "TenMon";
+                this.lookUpEditMaMon.Properties.DataSource = dataTable;
+            } catch { }
+        }
+
+        private void lookUpEditMaMon_EditValueChanged(object sender, EventArgs e) {
+            this.textEditTenMon.Text = this.lookUpEditMaMon.EditValue.ToString();
         }
 
         private void simpleButtonThem_Click(object sender, EventArgs e) {
@@ -230,22 +243,6 @@ namespace Title.GUI {
 
         private void simpleButtonHuy_Click(object sender, EventArgs e) {
             this.groupControlThemMon.Enabled = false;
-        }
-
-        private void lookUpEditNhomMon_EditValueChanged(object sender, EventArgs e) {
-            string maNhomMon = this.lookUpEditNhomMon.EditValue.ToString();
-            DataTable dataTable = new DataTable();
-            dataTable = Bus.GetListMonAnByNhomMon(maNhomMon);
-            this.gridControlSearchMonAn.DataSource = dataTable;
-            try {
-                this.lookUpEditMaMon.Properties.DisplayMember = "MaMon";
-                this.lookUpEditMaMon.Properties.ValueMember= "TenMon";
-                this.lookUpEditMaMon.Properties.DataSource = dataTable;
-            } catch { }
-        }
-
-        private void lookUpEditMaMon_EditValueChanged(object sender, EventArgs e) {
-            this.textEditTenMon.Text = this.lookUpEditMaMon.EditValue.ToString();
         }
 
         private void simpleButtonThanhToan_Click(object sender, EventArgs e) {

@@ -193,6 +193,7 @@
             this.lookUpEditKH.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lookUpEditKH.Properties.NullText = "";
+            this.lookUpEditKH.Properties.PopupFormMinSize = new System.Drawing.Size(700, 0);
             this.lookUpEditKH.Size = new System.Drawing.Size(111, 20);
             this.lookUpEditKH.TabIndex = 10;
             // 

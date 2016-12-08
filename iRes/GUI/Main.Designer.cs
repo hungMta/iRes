@@ -278,8 +278,10 @@
             // 
             // navBarItem3
             // 
-            this.navBarItem3.Caption = "navBarItem3";
+            this.navBarItem3.Caption = "Doanh thu";
+            this.navBarItem3.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem3.LargeImage")));
             this.navBarItem3.Name = "navBarItem3";
+            this.navBarItem3.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem3.SmallImage")));
             // 
             // navBarItem4
             // 
@@ -318,7 +320,6 @@
             this.navBarGroupQuanLyMonAn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navBarGroupQuanLyMonAn.Appearance.Options.UseFont = true;
             this.navBarGroupQuanLyMonAn.Caption = "Nhập hàng";
-            this.navBarGroupQuanLyMonAn.Expanded = true;
             this.navBarGroupQuanLyMonAn.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
             this.navBarGroupQuanLyMonAn.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarNhapHangMoi)});
@@ -330,6 +331,7 @@
             this.navBarGroupNhapHang.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navBarGroupNhapHang.Appearance.Options.UseFont = true;
             this.navBarGroupNhapHang.Caption = "Thống kê";
+            this.navBarGroupNhapHang.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
             this.navBarGroupNhapHang.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3)});
             this.navBarGroupNhapHang.Name = "navBarGroupNhapHang";
