@@ -49,7 +49,7 @@
             this.navBarItemMonAn = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemNhomMon = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGoiMonTheoBan = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarNhapHangMoi = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroupQuanLy = new DevExpress.XtraNavBar.NavBarGroup();
@@ -211,10 +211,10 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(3, 361);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(2, 362);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbonControlTop;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(827, 27);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(829, 27);
             // 
             // defaultLookAndFeel1
             // 
@@ -269,10 +269,12 @@
             this.navBarGoiMonTheoBan.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGoiMonTheoBan.SmallImage")));
             this.navBarGoiMonTheoBan.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarGoiMonTheoBan_LinkClicked);
             // 
-            // navBarItem2
+            // navBarNhapHangMoi
             // 
-            this.navBarItem2.Caption = "navBarItem2";
-            this.navBarItem2.Name = "navBarItem2";
+            this.navBarNhapHangMoi.Caption = "Nhập hàng mới";
+            this.navBarNhapHangMoi.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarNhapHangMoi.LargeImage")));
+            this.navBarNhapHangMoi.Name = "navBarNhapHangMoi";
+            this.navBarNhapHangMoi.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarNhapHangMoi.SmallImage")));
             // 
             // navBarItem3
             // 
@@ -289,7 +291,6 @@
             this.navBarGroupQuanLy.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navBarGroupQuanLy.Appearance.Options.UseFont = true;
             this.navBarGroupQuanLy.Caption = "Quản lý";
-            this.navBarGroupQuanLy.Expanded = true;
             this.navBarGroupQuanLy.GroupCaptionUseImage = DevExpress.XtraNavBar.NavBarImage.Small;
             this.navBarGroupQuanLy.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
             this.navBarGroupQuanLy.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -317,8 +318,10 @@
             this.navBarGroupQuanLyMonAn.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navBarGroupQuanLyMonAn.Appearance.Options.UseFont = true;
             this.navBarGroupQuanLyMonAn.Caption = "Nhập hàng";
+            this.navBarGroupQuanLyMonAn.Expanded = true;
+            this.navBarGroupQuanLyMonAn.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
             this.navBarGroupQuanLyMonAn.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarNhapHangMoi)});
             this.navBarGroupQuanLyMonAn.Name = "navBarGroupQuanLyMonAn";
             this.navBarGroupQuanLyMonAn.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroupQuanLyMonAn.SmallImage")));
             // 
@@ -348,14 +351,14 @@
             this.navBarItemMonAn,
             this.navBarItemNhomMon,
             this.navBarGoiMonTheoBan,
-            this.navBarItem2,
+            this.navBarNhapHangMoi,
             this.navBarItem3,
             this.navBarItem4});
             this.navBarControl1.Location = new System.Drawing.Point(0, 141);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 237;
             this.navBarControl1.OptionsNavPane.ShowGroupImageInHeader = true;
-            this.navBarControl1.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.NavigationPane;
+            this.navBarControl1.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.ExplorerBar;
             this.navBarControl1.Size = new System.Drawing.Size(237, 391);
             this.navBarControl1.TabIndex = 1;
             this.navBarControl1.Text = "navBarControl1";
@@ -401,7 +404,7 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItemMonAn;
         private DevExpress.XtraNavBar.NavBarItem navBarItemNhomMon;
         private DevExpress.XtraNavBar.NavBarItem navBarGoiMonTheoBan;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem2;
+        private DevExpress.XtraNavBar.NavBarItem navBarNhapHangMoi;
         private DevExpress.XtraNavBar.NavBarItem navBarItem3;
         private DevExpress.XtraNavBar.NavBarItem navBarItem4;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroupQuanLy;

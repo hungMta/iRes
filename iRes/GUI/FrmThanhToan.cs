@@ -62,12 +62,6 @@ namespace Title.GUI
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            PrintDocument printDialog = new PrintDocument();
-            printDialog.PrintPage += new PrintPageEventHandler(pd_PrintPage);
-            printDialog.Print();
-            printHoaDon = config.PRINT_HOA_DON;
-            printHoaDon = "printed";
-            this.Close();
 
         }
 
@@ -83,7 +77,6 @@ namespace Title.GUI
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
         }
 
         public UctGoiMonTheoBan mainForm { get; set; }
@@ -91,6 +84,20 @@ namespace Title.GUI
         private void panelControl1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void simpleButtonPrint_Click(object sender, EventArgs e) {
+            PrintDocument printDialog = new PrintDocument();
+            printDialog.PrintPage += new PrintPageEventHandler(pd_PrintPage);
+            printDialog.Print();
+            printHoaDon = config.PRINT_HOA_DON;
+            printHoaDon = "printed";
+            this.Close();
+
+        }
+
+        private void simpleButtonCancel_Click(object sender, EventArgs e) {
+            this.Close();
         }
     }
 }

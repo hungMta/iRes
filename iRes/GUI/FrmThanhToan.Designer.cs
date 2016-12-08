@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmThanhToan));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.lblNgayThang = new System.Windows.Forms.Label();
             this.lblTenKH = new System.Windows.Forms.Label();
             this.lblDiaChi = new System.Windows.Forms.Label();
@@ -49,7 +49,8 @@
             this.panelControlChiTietHoaDon = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridViewCTHD = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButtonPrint = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -59,26 +60,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCTHD)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Location = new System.Drawing.Point(133, 5);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(75, 23);
-            this.btnPrint.TabIndex = 1;
-            this.btnPrint.Text = "print";
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(366, 5);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 2;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // panelControl1
             // 
@@ -103,6 +84,14 @@
             this.panelControl1.Size = new System.Drawing.Size(561, 152);
             this.panelControl1.TabIndex = 3;
             this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(366, 60);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(50, 13);
+            this.labelControl2.TabIndex = 3;
+            this.labelControl2.Text = "Thời gian :";
             // 
             // lblNgayThang
             // 
@@ -233,10 +222,10 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.btnPrint);
-            this.panelControl2.Controls.Add(this.btnCancel);
+            this.panelControl2.Controls.Add(this.simpleButtonCancel);
+            this.panelControl2.Controls.Add(this.simpleButtonPrint);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl2.Location = new System.Drawing.Point(0, 391);
+            this.panelControl2.Location = new System.Drawing.Point(0, 576);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(561, 52);
             this.panelControl2.TabIndex = 4;
@@ -247,7 +236,7 @@
             this.panelControlChiTietHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlChiTietHoaDon.Location = new System.Drawing.Point(0, 152);
             this.panelControlChiTietHoaDon.Name = "panelControlChiTietHoaDon";
-            this.panelControlChiTietHoaDon.Size = new System.Drawing.Size(561, 239);
+            this.panelControlChiTietHoaDon.Size = new System.Drawing.Size(561, 424);
             this.panelControlChiTietHoaDon.TabIndex = 5;
             // 
             // gridControl1
@@ -256,7 +245,7 @@
             this.gridControl1.Location = new System.Drawing.Point(2, 2);
             this.gridControl1.MainView = this.gridViewCTHD;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(557, 235);
+            this.gridControl1.Size = new System.Drawing.Size(557, 420);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewCTHD});
@@ -266,24 +255,37 @@
             this.gridViewCTHD.GridControl = this.gridControl1;
             this.gridViewCTHD.Name = "gridViewCTHD";
             // 
-            // labelControl2
+            // simpleButtonPrint
             // 
-            this.labelControl2.Location = new System.Drawing.Point(366, 60);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(50, 13);
-            this.labelControl2.TabIndex = 3;
-            this.labelControl2.Text = "Thời gian :";
+            this.simpleButtonPrint.Image = ((System.Drawing.Image)(resources.GetObject("simpleButtonPrint.Image")));
+            this.simpleButtonPrint.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.simpleButtonPrint.Location = new System.Drawing.Point(199, 6);
+            this.simpleButtonPrint.Name = "simpleButtonPrint";
+            this.simpleButtonPrint.Size = new System.Drawing.Size(75, 23);
+            this.simpleButtonPrint.TabIndex = 3;
+            this.simpleButtonPrint.Text = "Print";
+            this.simpleButtonPrint.Click += new System.EventHandler(this.simpleButtonPrint_Click);
+            // 
+            // simpleButtonCancel
+            // 
+            this.simpleButtonCancel.Location = new System.Drawing.Point(292, 6);
+            this.simpleButtonCancel.Name = "simpleButtonCancel";
+            this.simpleButtonCancel.Size = new System.Drawing.Size(75, 23);
+            this.simpleButtonCancel.TabIndex = 4;
+            this.simpleButtonCancel.Text = "Cancel";
+            this.simpleButtonCancel.Click += new System.EventHandler(this.simpleButtonCancel_Click);
             // 
             // FrmThanhToan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(88)))), ((int)(((byte)(88)))));
-            this.ClientSize = new System.Drawing.Size(561, 443);
+            this.ClientSize = new System.Drawing.Size(561, 628);
             this.Controls.Add(this.panelControlChiTietHoaDon);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmThanhToan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmThanhToan";
             this.Load += new System.EventHandler(this.FrmThanhToan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -300,9 +302,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.Button btnCancel;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.Label lblNgayThang;
@@ -323,5 +322,7 @@
         private System.Windows.Forms.Label lblTongTien;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonCancel;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonPrint;
     }
 }
