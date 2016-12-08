@@ -47,8 +47,6 @@
             this.simpleButtonThemMon = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonThanhToan = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.groupControlThemMon = new DevExpress.XtraEditors.GroupControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -183,7 +181,6 @@
             this.groupControlBanAn.Controls.Add(this.simpleButtonThanhToan);
             this.groupControlBanAn.Controls.Add(this.labelControl1);
             this.groupControlBanAn.Controls.Add(this.gridControlBanAnGoiMon);
-            this.groupControlBanAn.Controls.Add(this.shapeContainer1);
             this.groupControlBanAn.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControlBanAn.Location = new System.Drawing.Point(309, 0);
             this.groupControlBanAn.Name = "groupControlBanAn";
@@ -309,26 +306,6 @@
             this.labelControl1.Size = new System.Drawing.Size(66, 25);
             this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "Bàn ăn";
-            // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(2, 20);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(504, 506);
-            this.shapeContainer1.TabIndex = 8;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // lineShape1
-            // 
-            this.lineShape1.BorderColor = System.Drawing.Color.DimGray;
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = -3;
-            this.lineShape1.X2 = 504;
-            this.lineShape1.Y1 = 66;
-            this.lineShape1.Y2 = 66;
             // 
             // groupControlThemMon
             // 
@@ -544,8 +521,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButtonSua;
         private DevExpress.XtraEditors.TextEdit textEditChietKhau;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditMaKH;
         private DevExpress.XtraEditors.LookUpEdit lookUpEditKH;
     }
