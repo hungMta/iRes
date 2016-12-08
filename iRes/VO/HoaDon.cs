@@ -17,6 +17,18 @@ namespace Title.VO
             this.ChietKhau = chietKhau;
             this.TongTien = tongTien;
         }
+
+        public HoaDon(string maHD ,DateTime thoiGian, string maKH, string maNV, int thanhTien, int chietKhau, int tongTien)
+        {
+            this.MaHD = maHD;
+            this.ThoiGian = thoiGian;
+            this.MaKH = maKH;
+            this.MaNV = maNV;
+            this.ThanhTien = thanhTien;
+            this.ChietKhau = chietKhau;
+            this.TongTien = tongTien;
+        }
+
         public string MaHD { get; set; }
         public DateTime ThoiGian { get; set; }
         public string MaKH { get; set; }

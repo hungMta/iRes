@@ -61,6 +61,11 @@ namespace Title.BUS {
             return Dao.UpdateBanAn(banAn);
         }
 
+        public static int setBanAnTrong(BanAn banAn)
+        {
+            return Dao.SetBanAnTrong(banAn);
+        }
+
         public static DataTable GetListChiTietHoaDon(BanAn banAn) {
             return Dao.GetListChiTietHoaDon(banAn);
         }
@@ -75,6 +80,26 @@ namespace Title.BUS {
 
         public static DataTable GetLastHoaDon() {
             return Dao.GetLastHoaDon();
+        }
+
+        public static int EditHoaDon(HoaDon hoaDon)
+        {
+            return Dao.EditHoaDon(hoaDon);
+        }
+
+        public static DataTable GetInfoHoaDon(string maHD)
+        {
+            return Dao.GetInfoHoaDon(maHD);
+        }
+
+        public static DataTable GetInfoKhachHangTheoMaHoaDon(BanAn banAn)
+        {
+            return Dao.GetInfoKhachHangQuaMaHoaDon(banAn);
+        }
+
+        public static DataTable GetInfoHoaDonTheoBanAn(BanAn banAn)
+        {
+            return Dao.GetInfoHoaDonTheoBanAn(banAn);
         }
     }
 }

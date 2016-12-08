@@ -124,6 +124,14 @@ namespace Title.DAO {
             return DataProvider.ExecuteNonQuery(config.PROC_UPDATE_BAN_AN, para);
         }
 
+        public static int SetBanAnTrong(BanAn banAn)
+        {
+            SqlParameter[] para = new SqlParameter[] {
+                new SqlParameter("@"+config.BANAN_MABAN, banAn.MaBan),                    
+            };
+            return DataProvider.ExecuteNonQuery(config.PROC_SET_BAN_AN_TRONG, para);
+        }
+
         public static DataTable GetListChiTietHoaDon(BanAn banAn) {
             SqlParameter[] para = new SqlParameter[] {
                 new SqlParameter("@"+config.BANAN_MAHOADON, banAn.MaHoaDon),            
@@ -150,8 +158,44 @@ namespace Title.DAO {
             return DataProvider.ExecuteNonQuery(config.PROC_INSERT_HOADON, para);
         }
 
+        public static DataTable GetInfoKhachHangQuaMaHoaDon(BanAn banAn)
+        {
+            SqlParameter[] para = new SqlParameter[] {
+                new SqlParameter("@"+config.HOA_DON_MA_HOA_DON, banAn.MaHoaDon),                       
+            };
+            return DataProvider.GetDataByParameter(config.PROC_HOA_DON_GET_INFO_KHACH_HANG, para);
+        }
+
         public static DataTable GetLastHoaDon() {
             return DataProvider.GetData(config.PROC_GET_LAST_HOADON);
+        }
+
+        public static DataTable GetInfoHoaDon(string maHoaDon)
+        {
+            SqlParameter[] para = new SqlParameter[] {
+                new SqlParameter("@"+config.HOA_DON_MA_HOA_DON,maHoaDon),
+            };
+            return DataProvider.GetDataByParameter(config.PROC_GET_INFO_HOADON, para);
+        }
+
+        public static int EditHoaDon(HoaDon hoaDon)
+        {
+            SqlParameter[] para = new SqlParameter[] {
+                new SqlParameter("@"+config.HOA_DON_MA_HOA_DON,hoaDon.MaHD),
+                new SqlParameter("@"+config.HOA_DON_THOI_GIAN, hoaDon.ThoiGian),            
+                new SqlParameter("@"+config.HOA_DON_MA_KHACH_HANG, hoaDon.MaKH),            
+                new SqlParameter("@"+config.HOA_DON_MA_NHAN_VIEN, hoaDon.MaNV),            
+                new SqlParameter("@"+config.HOA_DON_CHIET_KHAU, hoaDon.ChietKhau),            
+            };
+            return DataProvider.ExecuteNonQuery(config.PROC_EDIT_HOADON,para);
+        }
+
+        public static DataTable GetInfoHoaDonTheoBanAn(BanAn banAn)
+        {
+            SqlParameter[] para = new SqlParameter[] {
+                new SqlParameter("@"+config.HOA_DON_MA_HOA_DON, banAn.MaHoaDon),                       
+            };
+            return DataProvider.GetDataByParameter(config.PROC_INFO_HOA_DON, para);
         }
     }
 }
