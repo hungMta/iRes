@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ribbonControlTop = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonClipBoardCut = new DevExpress.XtraBars.BarButtonItem();
@@ -41,7 +42,7 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageView = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.defaultLookAndFeelMain = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.groupControlClientArea = new DevExpress.XtraEditors.GroupControl();
             this.navBarItemNhanVien = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemKhachHang = new DevExpress.XtraNavBar.NavBarItem();
@@ -215,9 +216,9 @@
             this.ribbonStatusBar.Ribbon = this.ribbonControlTop;
             this.ribbonStatusBar.Size = new System.Drawing.Size(829, 27);
             // 
-            // defaultLookAndFeel1
+            // defaultLookAndFeelMain
             // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "DevExpress Dark Style";
+            this.defaultLookAndFeelMain.LookAndFeel.SkinName = "DevExpress Dark Style";
             // 
             // groupControlClientArea
             // 
@@ -310,7 +311,6 @@
             this.navBarGroupGoiMon.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navBarGroupGoiMon.Appearance.Options.UseFont = true;
             this.navBarGroupGoiMon.Caption = "Gọi Món";
-            this.navBarGroupGoiMon.Expanded = true;
             this.navBarGroupGoiMon.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
             this.navBarGroupGoiMon.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarGoiMonTheoBan)});
@@ -333,7 +333,6 @@
             this.navBarGroupNhapHang.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navBarGroupNhapHang.Appearance.Options.UseFont = true;
             this.navBarGroupNhapHang.Caption = "Thống kê";
-            this.navBarGroupNhapHang.Expanded = true;
             this.navBarGroupNhapHang.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
             this.navBarGroupNhapHang.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarDoanhThu)});
@@ -393,7 +392,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControlTop;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageHome;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupClipBoard;
-        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeelMain;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageView;
         private DevExpress.XtraBars.BarButtonItem barButtonClipBoardCut;
         private DevExpress.XtraBars.BarButtonItem barButtonClipBoardCopy;
