@@ -278,6 +278,12 @@ select *from HoaDon
 select * from KhachHang
 select *from ChiTietHD
 
+alter proc GetMaMonAnTiepTheo
+as
+ begin
+	select dbo.func_ma_next ((select Top 1 MaMon from MonAn order by MaMon desc),'M','5') MaMon
+ end
+
 /*
 	Hóa đơn được update khi gọi món --> lúc đó có chiTietHD --> sẽ lấy Thành tiền ở ChiTietHD update vào TongTien trong HoaDon
 */
@@ -490,7 +496,6 @@ select *from ChiTietHD
 select *from HoaDon
 	select ThanhTien from ChiTietHD where MaHD ='HD0005'
 --------------- Chi tiết phiếu nhập 
-
 select *from ChiTietPN
 
 
@@ -513,3 +518,74 @@ select *from MonAn
 	select *from HoaDon 
 	
 	select *from ChiTietHD
+
+	select * from MonAn
+
+	
+------------- Đếm số lượng món ăn theo từng nhóm món
+
+Update NhomMon
+set TongSoMon = Abc.SoLuong
+from ( select MaNhom, count (MaMon) as SoLuong from MonAn group by MaNhom) as Abc
+where NhomMon.MaNhom = Abc.MaNhom
+
+----------- trigger tự động update Tổng số món trong NhomMon khi thêm hoặc xóa MonAn
+
+create trigger tg_CapNhatTongSoMon on MonAn for insert, delete
+as 
+declare @MaNhom1 char(10), @MaNhom2 char(10)
+begin 
+	select @MaNhom1 = MaNhom from inserted
+	select @MaNhom2 = MaNhom from deleted
+			Update NhomMon
+			set TongSoMon = TongSoMon -1 
+			where MaNhom = @MaNhom2
+
+			Update NhomMon
+			set TongSoMon = TongSoMon +1 
+			where MaNhom = @MaNhom1
+end
+
+
+----------- Khi xóa 1 NhomMon thì  sẽ tự động  cập nhật MaNhom trong MonAn thanh null
+
+create trigger tg_XoaNhomMon on NhomMon instead of delete
+as 
+declare @MaNhom char(10)
+begin 
+	select @MaNhom = MaNhom from deleted
+
+	Update MonAn
+	set MaNhom = null
+	where MaNhom = @MaNhom
+end
+
+create trigger tg_XoaCTHD on ChiTietHD for delete
+as
+declare @MaMon  nchar(10) , @SoLuong int
+ begin
+  select @MaMon = MaMon from deleted
+  select @SoLuong = SoLuong from deleted
+
+  Update MonAn
+  set SoLuongDangCo = SoLuongDangCo + @SoLuong
+  where MaMon = @MaMon
+
+  end
+
+  DROP TRIGGER [tg_XoaCTHD]
+
+  select * from ChiTietHD where MaHD = 'HD0031'
+  select * from MonAn
+
+
+
+
+  ALTER proc XoaChiTietHD (@MaHD nchar(10), @MaMon nchar(10))
+  as
+   begin
+	  DELETE ChiTietHD WHERE MaHD = @MaHD and MaMon = @MaMon
+   end
+
+   XoaChiTietHD 'HD0031','M002'
+

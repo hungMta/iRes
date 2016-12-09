@@ -15,9 +15,9 @@ namespace Title.Config {
             return projectLink;
         }
 
-        public string DATA_SOURCE = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
+        //public string DATA_SOURCE = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
         //public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyNhaHang;Integrated Security=True";
-        //public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
+        public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
 
         // Property of KhachHang
         public string KHACHHANG_MAKH = "MaKH";
@@ -36,6 +36,10 @@ namespace Title.Config {
         public string MONAN_HINHANH = "HinhAnh";
         public string MONAN_SOLUONG = "SoLuong";
         public string MONAN_DONGIA = "DonGia";
+
+        public string NhomMon_MaNhom = "MaNhom";
+        public string NhomMon_TenNhom = "TenNhom";
+
 
         // Property of BanAn
         public string BANAN_MABAN = "MaBan";
@@ -77,21 +81,24 @@ namespace Title.Config {
         // Proceduces of MonAn
         public string PROC_GET_LIST_MONAN = "DanhSachMonAn";
         public string PROC_GET_LIST_MONAN_BY_NHOM_MON = "DanhSachMonAnByNhomMon";
-        public string GET_LIST_MONAN_AND_IMAGE = @"select Cast('C:\Users\khanhlq\Documents\Visual Studio 2015\Projects\DevExpress\iRes\iRes\Resources\MonAn\'
+//        public string GET_LIST_MONAN_AND_IMAGE = @"select Cast('C:\Users\khanhlq\Documents\Visual Studio 2015\Projects\DevExpress\iRes\iRes\Resources\MonAn\'
+//                                                + HinhAnh as nvarchar(4000)) as [Hình ảnh],
+//                                                MaMon as [Mã món ăn], 
+//                                                TenMon as [Tên món ăn],
+//                                                MaNhom as [Mã nhóm],
+//                                                DonGia as [Đơn giá],
+//                                                SoLuongDangCo as [Số lương] from MonAn";
+
+        public string GET_LIST_MONAN_AND_IMAGE = @"select Cast('C:\Users\tran\Documents\Visual Studio 2012\Projects\iRes\iRes\Resources\MonAn\'
                                                 + HinhAnh as nvarchar(4000)) as [Hình ảnh],
                                                 MaMon as [Mã món ăn], 
                                                 TenMon as [Tên món ăn],
                                                 MaNhom as [Mã nhóm],
                                                 DonGia as [Đơn giá],
                                                 SoLuongDangCo as [Số lương] from MonAn";
+        public string PROC_THEM_MON = "ThemMonAn";
+        public string PROC_GET_MA_MON_NEXT = "GetMaMonAnTiepTheo";
 
-        //public string GET_LIST_MONAN_AND_IMAGE = @"select Cast('C:\Users\tran\Documents\Visual Studio 2012\Projects\iRes\iRes\Resources\MonAn\'
-        //                                        + HinhAnh as nvarchar(4000)) as [Hình ảnh],
-        //                                        MaMon as [Mã món ăn], 
-        //                                        TenMon as [Tên món ăn],
-        //                                        MaNhom as [Mã nhóm],
-        //                                        DonGia as [Đơn giá],
-        //                                        SoLuongDangCo as [Số lương] from MonAn";
 
         // Proceduces of NhomMon
         public string PROC_GET_LIST_NHOMMON = "DanhSachNhomMon";
@@ -104,6 +111,7 @@ namespace Title.Config {
         // Procedures of ChiTietHoaDon
         public string PROC_GET_LIST_CHITIET_HOADON = "DanhSachChiTietHoaDon";
         public string PROC_INSET_CHITIET_HOADON = "ThemChiTietHoaDon";
+        public string PROC_DELETE_CHITIET_HOADON = "XoaChiTietHD";
 
         // Procedures of HoaDon
         public string PROC_INSERT_HOADON = "ThemHoaDon";

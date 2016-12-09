@@ -100,6 +100,23 @@ namespace Title.DAO {
             return DataProvider.GetData(config.PROC_GET_LIST_MONAN);
         }
 
+        public static DataTable GetMaMonNext()
+        {
+            return DataProvider.GetData(config.PROC_GET_MA_MON_NEXT);
+        }
+
+        public static int InsertMonAn(MonAn monAn)
+        {
+            SqlParameter[] para = new SqlParameter[] {  
+                new SqlParameter("@"+config.MONAN_TENMON, monAn.TenMon),  
+                new SqlParameter("@"+config.MONAN_DONGIA, monAn.DonGia),  
+                new SqlParameter("@"+config.MONAN_MANHOM, monAn.MaNhom),  
+                new SqlParameter("@"+config.MONAN_SOLUONG, monAn.SoLuong),  
+                new SqlParameter("@"+config.MONAN_HINHANH, monAn.hinhanh),  
+            };
+            return DataProvider.ExecuteNonQuery(config.PROC_THEM_MON, para);
+        }
+
         public static DataTable GetListMonAnByNhomMon(string maNhom) {
             SqlParameter[] para = new SqlParameter[] {
                 new SqlParameter("@"+config.MONAN_MANHOM, maNhom),            
@@ -176,6 +193,15 @@ namespace Title.DAO {
                 new SqlParameter("@"+config.HOA_DON_MA_HOA_DON,maHoaDon),
             };
             return DataProvider.GetDataByParameter(config.PROC_GET_INFO_HOADON, para);
+        }
+
+        public static int DeleteChiTietHD(string maHD , string maMon)
+        {
+            SqlParameter[] para = new SqlParameter[] {
+                new SqlParameter("@"+config.HOA_DON_MA_HOA_DON,maHD),
+                new SqlParameter("@"+config.MONAN_MAMON,maMon),
+            };
+            return DataProvider.ExecuteNonQuery(config.PROC_DELETE_CHITIET_HOADON, para);
         }
 
         public static int EditHoaDon(HoaDon hoaDon)

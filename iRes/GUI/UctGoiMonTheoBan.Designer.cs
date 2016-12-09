@@ -61,6 +61,8 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.lookUpEditNhomMon = new DevExpress.XtraEditors.LookUpEdit();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.contextMenuStripChiTietHD = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItemXoaCTHD = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.imageListBoxBanAn)).BeginInit();
             this.contextMenuBanAn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlBanAnGoiMon)).BeginInit();
@@ -80,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditSoLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditTenMon.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditNhomMon.Properties)).BeginInit();
+            this.contextMenuStripChiTietHD.SuspendLayout();
             this.SuspendLayout();
             // 
             // imageListBoxBanAn
@@ -156,6 +159,7 @@
             this.gridControlBanAnGoiMon.TabIndex = 1;
             this.gridControlBanAnGoiMon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewBanAnGoiMon});
+            this.gridControlBanAnGoiMon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.gridControlBanAnGoiMon_MouseClick);
             // 
             // gridViewBanAnGoiMon
             // 
@@ -430,6 +434,23 @@
             this.lookUpEditNhomMon.TabIndex = 3;
             this.lookUpEditNhomMon.EditValueChanged += new System.EventHandler(this.lookUpEditNhomMon_EditValueChanged);
             // 
+            // contextMenuStripChiTietHD
+            // 
+            this.contextMenuStripChiTietHD.BackColor = System.Drawing.Color.White;
+            this.contextMenuStripChiTietHD.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemXoaCTHD});
+            this.contextMenuStripChiTietHD.Name = "contextMenuStripChiTietHD";
+            this.contextMenuStripChiTietHD.Size = new System.Drawing.Size(123, 26);
+            // 
+            // toolStripMenuItemXoaCTHD
+            // 
+            this.toolStripMenuItemXoaCTHD.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.toolStripMenuItemXoaCTHD.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.toolStripMenuItemXoaCTHD.Name = "toolStripMenuItemXoaCTHD";
+            this.toolStripMenuItemXoaCTHD.Size = new System.Drawing.Size(122, 22);
+            this.toolStripMenuItemXoaCTHD.Text = "Xóa món";
+            this.toolStripMenuItemXoaCTHD.Click += new System.EventHandler(this.toolStripMenuItemXoaCTHD_Click);
+            // 
             // UctGoiMonTheoBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -461,6 +482,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditSoLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditTenMon.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditNhomMon.Properties)).EndInit();
+            this.contextMenuStripChiTietHD.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -504,5 +526,7 @@
         private DevExpress.XtraEditors.TextEdit textEditChietKhau;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LookUpEdit lookUpEditKH;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripChiTietHD;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemXoaCTHD;
     }
 }

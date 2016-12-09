@@ -8,6 +8,17 @@ namespace Title.VO
 {
     public class MonAn
     {
+        
+        public MonAn( string tenMon, string maNhom, decimal donGia, int soLuong, string hinhanh)
+        {
+            // TODO: Complete member initialization
+            //this.MaMon = maMon;
+            this.TenMon = tenMon;
+            this.MaNhom = maNhom;
+            this.DonGia = donGia;
+            this.SoLuong = soLuong;
+            this.hinhanh = hinhanh;
+        }
         public string MaMon { get; set; }
         public string TenMon { get; set; }
         public string MaNhom { get; set; }

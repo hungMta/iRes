@@ -46,11 +46,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonPrint = new DevExpress.XtraEditors.SimpleButton();
             this.panelControlChiTietHoaDon = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridViewCTHD = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.simpleButtonPrint = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -230,6 +230,26 @@
             this.panelControl2.Size = new System.Drawing.Size(561, 52);
             this.panelControl2.TabIndex = 4;
             // 
+            // simpleButtonCancel
+            // 
+            this.simpleButtonCancel.Location = new System.Drawing.Point(292, 6);
+            this.simpleButtonCancel.Name = "simpleButtonCancel";
+            this.simpleButtonCancel.Size = new System.Drawing.Size(75, 23);
+            this.simpleButtonCancel.TabIndex = 4;
+            this.simpleButtonCancel.Text = "Cancel";
+            this.simpleButtonCancel.Click += new System.EventHandler(this.simpleButtonCancel_Click);
+            // 
+            // simpleButtonPrint
+            // 
+            this.simpleButtonPrint.Image = ((System.Drawing.Image)(resources.GetObject("simpleButtonPrint.Image")));
+            this.simpleButtonPrint.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.simpleButtonPrint.Location = new System.Drawing.Point(199, 6);
+            this.simpleButtonPrint.Name = "simpleButtonPrint";
+            this.simpleButtonPrint.Size = new System.Drawing.Size(75, 23);
+            this.simpleButtonPrint.TabIndex = 3;
+            this.simpleButtonPrint.Text = "Print";
+            this.simpleButtonPrint.Click += new System.EventHandler(this.simpleButtonPrint_Click);
+            // 
             // panelControlChiTietHoaDon
             // 
             this.panelControlChiTietHoaDon.Controls.Add(this.gridControl1);
@@ -254,26 +274,6 @@
             // 
             this.gridViewCTHD.GridControl = this.gridControl1;
             this.gridViewCTHD.Name = "gridViewCTHD";
-            // 
-            // simpleButtonPrint
-            // 
-            this.simpleButtonPrint.Image = ((System.Drawing.Image)(resources.GetObject("simpleButtonPrint.Image")));
-            this.simpleButtonPrint.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.simpleButtonPrint.Location = new System.Drawing.Point(199, 6);
-            this.simpleButtonPrint.Name = "simpleButtonPrint";
-            this.simpleButtonPrint.Size = new System.Drawing.Size(75, 23);
-            this.simpleButtonPrint.TabIndex = 3;
-            this.simpleButtonPrint.Text = "Print";
-            this.simpleButtonPrint.Click += new System.EventHandler(this.simpleButtonPrint_Click);
-            // 
-            // simpleButtonCancel
-            // 
-            this.simpleButtonCancel.Location = new System.Drawing.Point(292, 6);
-            this.simpleButtonCancel.Name = "simpleButtonCancel";
-            this.simpleButtonCancel.Size = new System.Drawing.Size(75, 23);
-            this.simpleButtonCancel.TabIndex = 4;
-            this.simpleButtonCancel.Text = "Cancel";
-            this.simpleButtonCancel.Click += new System.EventHandler(this.simpleButtonCancel_Click);
             // 
             // FrmThanhToan
             // 

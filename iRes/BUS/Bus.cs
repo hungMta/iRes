@@ -45,6 +45,16 @@ namespace Title.BUS {
             return Dao.GetListMonAn();
         }
 
+        public static DataTable GetMaMonNext()
+        {
+            return Dao.GetMaMonNext();
+        }
+
+        public static int InsertMonAn(MonAn monAn)
+        {
+            return Dao.InsertMonAn(monAn);
+        }
+
         public static DataTable GetListMonAnByNhomMon(string maNhom) {
             return Dao.GetListMonAnByNhomMon(maNhom);
         }
@@ -90,6 +100,11 @@ namespace Title.BUS {
         public static DataTable GetInfoHoaDon(string maHD)
         {
             return Dao.GetInfoHoaDon(maHD);
+        }
+
+        public static int DeleteChiTieHD(string maHD,string maMon)
+        {
+            return Dao.DeleteChiTietHD(maHD,maMon);
         }
 
         public static DataTable GetInfoKhachHangTheoMaHoaDon(BanAn banAn)
