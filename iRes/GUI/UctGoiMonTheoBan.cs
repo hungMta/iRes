@@ -11,7 +11,6 @@ using Title.BUS;
 using Title.VO;
 using Title.Config;
 using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 
 namespace Title.GUI {
     public partial class UctGoiMonTheoBan : UserControl {
@@ -22,7 +21,6 @@ namespace Title.GUI {
         public UctGoiMonTheoBan() {
             InitializeComponent();
             this.imageListBoxBanAn.ContextMenuStrip = this.contextMenuBanAn;
-            LoadGridControlMonAn();
         }
 
         public void GetListBanAn() {
@@ -203,7 +201,6 @@ namespace Title.GUI {
             } else {
                 if (this.banAnHienTai.MaHoaDon != "") {
                     CreateChiTietHoaDon();
-                    LoadGridControlMonAn();
                     LoadHoaDon();
                 } else {
                     try {
@@ -233,7 +230,7 @@ namespace Title.GUI {
                                     CreateChiTietHoaDon();
                                     LoadHoaDon();
                                     LoadImageListBoxBanAn();
-                                    LoadGridControlMonAn();
+                                    LoadListChiTietHoaDon();
                                     Console.WriteLine();
                                 }
                             }
@@ -250,13 +247,14 @@ namespace Title.GUI {
         }
 
         private void simpleButtonThanhToan_Click(object sender, EventArgs e) {
-            FrmThanhToan frmThanhToan = new FrmThanhToan(this.banAnHienTai);
-            frmThanhToan.ShowDialog();
-
-            if (frmThanhToan.getPrintHoaDon().Equals(config.PRINT_HOA_DON)) {
-                MessageBox.Show(banAnHienTai.MaBan + "Đã thanh toán và in hóa đơn");
-                Bus.setBanAnTrong(this.banAnHienTai);
-                LoadImageListBoxBanAn();
+            if (this.banAnHienTai.MaHoaDon != "") {
+                FrmThanhToan frmThanhToan = new FrmThanhToan(this.banAnHienTai);
+                frmThanhToan.ShowDialog();
+                if (frmThanhToan.getPrintHoaDon().Equals(config.PRINT_HOA_DON)) {
+                    MessageBox.Show(banAnHienTai.MaBan + "Đã thanh toán và in hóa đơn");
+                    Bus.setBanAnTrong(this.banAnHienTai);
+                    LoadImageListBoxBanAn();
+                }
             }
         }
 
@@ -279,25 +277,6 @@ namespace Title.GUI {
             string maKH = lookUpEditKH.Text;
             HoaDon hoaDon = new HoaDon(maHD,currentTime, maKH, maNV, 0, chietKhau, 0);
             int res = Bus.EditHoaDon(hoaDon);
-        }
-
-        private void gridControlBanAnGoiMon_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                contextMenuStripChiTietHD.Show(Cursor.Position);
-            }
-        }
-
-        private void toolStripMenuItemXoaCTHD_Click(object sender, EventArgs e)
-        {
-            int[] selRows = ((GridView)gridViewBanAnGoiMon).GetSelectedRows();
-            DataRowView selRow = (DataRowView)(((GridView)gridViewBanAnGoiMon).GetRow(selRows[0]));
-            string maMon = selRow["MaMon"].ToString();
-            string maHD = this.banAnHienTai.MaHoaDon;
-            int res = Bus.DeleteChiTieHD(maHD,maMon);
-            LoadHoaDon();
-            LoadGridControlMonAn();
         }
     }
 }
