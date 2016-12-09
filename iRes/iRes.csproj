@@ -38,10 +38,14 @@
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Bunifu Technologies\Bunifu Framework Manager\bin\updates\Bunifu_UI_1.5\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.BonusSkins.v16.1" />
+    <Reference Include="DevExpress.Charts.v16.1.Core, Version=16.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v16.1" />
     <Reference Include="DevExpress.Utils.v16.1" />
     <Reference Include="DevExpress.Sparkline.v16.1.Core" />
     <Reference Include="DevExpress.XtraBars.v16.1, Version=16.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v16.1, Version=16.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v16.1.UI, Version=16.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v16.1.Wizard, Version=16.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v16.1" />
     <Reference Include="DevExpress.Printing.v16.1.Core" />
     <Reference Include="DevExpress.XtraGrid.v16.1, Version=16.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -98,6 +102,12 @@
     </Compile>
     <Compile Include="GUI\UctQuanLyNhomMon.Designer.cs">
       <DependentUpon>UctQuanLyNhomMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UctThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UctThongKe.Designer.cs">
+      <DependentUpon>UctThongKe.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UtcQuanLyKhachHang.cs">
       <SubType>UserControl</SubType>
@@ -164,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UctQuanLyNhomMon.resx">
       <DependentUpon>UctQuanLyNhomMon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UctThongKe.resx">
+      <DependentUpon>UctThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UtcQuanLyKhachHang.resx">
       <DependentUpon>UtcQuanLyKhachHang.cs</DependentUpon>
