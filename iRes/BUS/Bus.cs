@@ -102,6 +102,11 @@ namespace Title.BUS {
             return Dao.GetInfoHoaDonTheoBanAn(banAn);
         }
 
+        public static DataTable GetListEarnMoneyByDay()
+        {
+            return Dao.GetListEarnMoneyByDay();
+        }
+
         public static DataTable GetListPhieuNhap() {
             return Dao.GetListPhieuNhap();
         }

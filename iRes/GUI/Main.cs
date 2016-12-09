@@ -23,6 +23,7 @@ namespace iRes{
         UctQuanLyNhomMon uctQuanLyNhomMon = new UctQuanLyNhomMon();
         UctGoiMonTheoBan uctGoiMonTheoBan = new UctGoiMonTheoBan();
         UctNhapHang uctNhapHang = new UctNhapHang();
+        UctThongKe uctThongKe = new UctThongKe();
 
         private string currentTabName;
 
@@ -70,6 +71,14 @@ namespace iRes{
             uctNhapHang.Dock = DockStyle.Fill;
             this.groupControlClientArea.Controls.Clear();
             this.groupControlClientArea.Controls.Add(uctNhapHang);
+            this.currentTabName = config.TAB_NHAP_HANG;
+        }
+
+        private void navBarDoanhThu_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e) {
+            uctThongKe.LoadData();
+            uctThongKe.Dock = DockStyle.Fill;
+            this.groupControlClientArea.Controls.Clear();
+            this.groupControlClientArea.Controls.Add(uctThongKe);
             this.currentTabName = config.TAB_NHAP_HANG;
         }
 

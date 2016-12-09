@@ -230,6 +230,7 @@ namespace Title.GUI {
                                     CreateChiTietHoaDon();
                                     LoadHoaDon();
                                     LoadImageListBoxBanAn();
+                                    LoadListChiTietHoaDon();
                                     Console.WriteLine();
                                 }
                             }

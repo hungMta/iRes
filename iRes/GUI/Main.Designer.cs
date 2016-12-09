@@ -23,7 +23,6 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ribbonControlTop = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonClipBoardCut = new DevExpress.XtraBars.BarButtonItem();
@@ -42,7 +41,7 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageView = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             this.groupControlClientArea = new DevExpress.XtraEditors.GroupControl();
             this.navBarItemNhanVien = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemKhachHang = new DevExpress.XtraNavBar.NavBarItem();
@@ -50,7 +49,7 @@
             this.navBarItemNhomMon = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGoiMonTheoBan = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarNhapHangMoi = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarDoanhThu = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroupQuanLy = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroupGoiMon = new DevExpress.XtraNavBar.NavBarGroup();
@@ -277,12 +276,13 @@
             this.navBarNhapHangMoi.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarNhapHangMoi.SmallImage")));
             this.navBarNhapHangMoi.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarNhapHangMoi_LinkClicked);
             // 
-            // navBarItem3
+            // navBarDoanhThu
             // 
-            this.navBarItem3.Caption = "Doanh thu";
-            this.navBarItem3.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem3.LargeImage")));
-            this.navBarItem3.Name = "navBarItem3";
-            this.navBarItem3.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem3.SmallImage")));
+            this.navBarDoanhThu.Caption = "Doanh thu";
+            this.navBarDoanhThu.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarDoanhThu.LargeImage")));
+            this.navBarDoanhThu.Name = "navBarDoanhThu";
+            this.navBarDoanhThu.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarDoanhThu.SmallImage")));
+            this.navBarDoanhThu.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarDoanhThu_LinkClicked);
             // 
             // navBarItem4
             // 
@@ -332,9 +332,10 @@
             this.navBarGroupNhapHang.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navBarGroupNhapHang.Appearance.Options.UseFont = true;
             this.navBarGroupNhapHang.Caption = "Thống kê";
+            this.navBarGroupNhapHang.Expanded = true;
             this.navBarGroupNhapHang.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
             this.navBarGroupNhapHang.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarDoanhThu)});
             this.navBarGroupNhapHang.Name = "navBarGroupNhapHang";
             this.navBarGroupNhapHang.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroupNhapHang.SmallImage")));
             // 
@@ -355,7 +356,7 @@
             this.navBarItemNhomMon,
             this.navBarGoiMonTheoBan,
             this.navBarNhapHangMoi,
-            this.navBarItem3,
+            this.navBarDoanhThu,
             this.navBarItem4});
             this.navBarControl1.Location = new System.Drawing.Point(0, 141);
             this.navBarControl1.Name = "navBarControl1";
@@ -408,7 +409,7 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItemNhomMon;
         private DevExpress.XtraNavBar.NavBarItem navBarGoiMonTheoBan;
         private DevExpress.XtraNavBar.NavBarItem navBarNhapHangMoi;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem3;
+        private DevExpress.XtraNavBar.NavBarItem navBarDoanhThu;
         private DevExpress.XtraNavBar.NavBarItem navBarItem4;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroupQuanLy;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroupGoiMon;

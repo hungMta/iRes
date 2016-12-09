@@ -134,6 +134,7 @@ namespace Title.Config {
         public string PROC_INFO_HOA_DON = "XemThongTinHoaDonTheoMa";
         public string PROC_EDIT_HOADON = "SuaHoaDon";
         public string PROC_GET_INFO_HOADON = "XemThongTinHoaDon";
+        public string PROC_GET_LIST_SUM_MONEY_BY_DAY = "DanhSachThuTheoNgay";
 
         // Procedures of PhieuNhap
         public string PROC_GET_LIST_PHIEU_NHAP = "DanhSachPhieuNhap";
@@ -153,6 +154,7 @@ namespace Title.Config {
         public string TAB_NHOM_MON = "TabNhomMon";
         public string TAB_GOI_MON_THEO_BAN = "TabGoiMonTheoBan";
         public string TAB_NHAP_HANG = "TabNhapHang";
+        public string TAB_THONG_KE = "TabThongKe";
 
         // Resource Path
         public string NHANVIEN_IMAGE_RESOURCE = @"\Resources\NhanVien\";

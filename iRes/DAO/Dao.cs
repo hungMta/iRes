@@ -198,6 +198,11 @@ namespace Title.DAO {
             return DataProvider.GetDataByParameter(config.PROC_INFO_HOA_DON, para);
         }
 
+        public static DataTable GetListEarnMoneyByDay()
+        {
+            return DataProvider.GetData(config.PROC_GET_LIST_SUM_MONEY_BY_DAY);
+        }
+
         public static DataTable GetListPhieuNhap() {
             return DataProvider.GetData(config.PROC_GET_LIST_PHIEU_NHAP);
         }
