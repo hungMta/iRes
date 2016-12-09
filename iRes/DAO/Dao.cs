@@ -100,6 +100,11 @@ namespace Title.DAO {
             return DataProvider.GetData(config.PROC_GET_LIST_MONAN);
         }
 
+        public static DataTable GetMaMonNext()
+        {
+            return DataProvider.GetData(config.PROC_GET_MA_MON_NEXT);
+        }
+
         public static DataTable GetListMonAnByNhomMon(string maNhom) {
             SqlParameter[] para = new SqlParameter[] {
                 new SqlParameter("@"+config.MONAN_MANHOM, maNhom),            
@@ -237,6 +242,18 @@ namespace Title.DAO {
                 new SqlParameter("@"+config.CHI_TIET_PHIEU_NHAP_DON_GIA, chiTietPhieuNhap.DonGia),            
             };
             return DataProvider.ExecuteNonQuery(config.PROC_INSERT_CHI_TIET_PHIEU_NHAP, para);
+        }
+
+        internal static int InsertMonAn(MonAn monAn)
+        {
+            SqlParameter[] para = new SqlParameter[] {
+                new SqlParameter("@"+config.MONAN_TENMON,monAn.TenMon),
+               new SqlParameter("@"+config.MONAN_MANHOM,monAn.MaNhom),
+              new SqlParameter("@"+config.MONAN_DONGIA,monAn.DonGia),
+              new SqlParameter("@"+config.MONAN_SOLUONG,monAn.SoLuong),
+              new SqlParameter("@"+config.MONAN_HINHANH,monAn.hinhanh),
+            };
+            return DataProvider.ExecuteNonQuery(config.PROC_INSERT_MON_AN, para);
         }
     }
 }

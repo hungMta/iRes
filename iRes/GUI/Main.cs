@@ -126,6 +126,12 @@ namespace iRes{
                 case "TabKhachHang":
                     utcQuanLyKhachHang.Add();
                     break;
+                case "TabMonAn":
+                    FrmThemMonAn frmThemMonAn = new FrmThemMonAn();
+                    frmThemMonAn.ShowDialog();
+                    utcQuanLyMonAn.LoadData();
+                    EnableButtonBar();
+                    break;
             }
         }
 
