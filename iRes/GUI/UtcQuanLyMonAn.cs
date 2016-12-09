@@ -42,7 +42,17 @@ namespace Title.GUI
         public DataTable LoadDataTable() {
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
-            da.SelectCommand = new SqlCommand(config.GET_LIST_MONAN_AND_IMAGE, conn);
+            string projectDirectoryPath = config.GetProjectLinkDirectory();
+            string monAnImagePath = config.GetProjectLinkDirectory() + config.MONAN_IMAGE_RESOURCE;
+
+            string GET_LIST_MONAN_AND_IMAGE = @"select Cast('" + monAnImagePath + @"'
+                                                        + HinhAnh as nvarchar(4000)) as [Hình ảnh],
+                                                        MaMon as [Mã món ăn], 
+                                                        TenMon as [Tên món ăn],
+                                                        MaNhom as [Mã nhóm],
+                                                        DonGia as [Đơn giá],
+                                                        SoLuongDangCo as [Số lương] from MonAn";
+            da.SelectCommand = new SqlCommand(GET_LIST_MONAN_AND_IMAGE, conn);
             da.Fill(dt);
             return dt;
         }

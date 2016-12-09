@@ -1,5 +1,33 @@
-# iRes - Software to manage restaurant
+# iRes 
+> Software to manage restaurant
 
-## Version 2.2.0 built in 02/12/2016
-## Version 2.3.0 built in 08/12/2016
-## Version 2.4.0 built in 09/12/2016
+This repository contains:
+1. Readme file to guide.
+2. Code
+3. Database
+
+## Table of contents
+- [Requirements](#Requirements)
+- [Usage](#Usage)
+- [Install](#Install)
+
+## Requirements
+> This is the requirements you have to prepare before contribute this project
+- MS SQL 
+- Visual Studio
+- DevExpress
+
+## Usage 
+- Manage
+ - Employee 
+ - Food 
+ - Customer
+- Order Food
+- Print Bill
+- Statitics
+
+## Install
+- Attach database from iRes/Resources/Database/QuanLyGoiMon.mdf
+- Change DataSource from file configuration.cs to your DataSource
+
+

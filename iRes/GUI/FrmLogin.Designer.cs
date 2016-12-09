@@ -109,6 +109,7 @@
             this.Controls.Add(this.textEditPassword);
             this.Controls.Add(this.lookUpEditUsername);
             this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.textEditPassword.Properties)).EndInit();
