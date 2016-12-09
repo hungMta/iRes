@@ -51,5 +51,19 @@ namespace Title.GUI
             LoadData();
         }
 
+        private void layoutView1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void layoutView1_CardClick(object sender, DevExpress.XtraGrid.Views.Layout.Events.CardClickEventArgs e)
+        {
+
+            
+                //do something;  
+                MessageBox.Show("","");
+            
+        }
+
     }
 }

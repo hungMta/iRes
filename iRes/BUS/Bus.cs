@@ -45,6 +45,11 @@ namespace Title.BUS {
             return Dao.GetListMonAn();
         }
 
+        public static DataTable GetMaMonNext()
+        {
+            return Dao.GetMaMonNext();
+        }
+
         public static DataTable GetListMonAnByNhomMon(string maNhom) {
             return Dao.GetListMonAnByNhomMon(maNhom);
         }
@@ -125,6 +130,11 @@ namespace Title.BUS {
 
         public static DataTable GetListNguyenLieu() {
             return Dao.GetListNguyenLieu();
+        }
+
+        internal static int InsertMonAn(MonAn monAn)
+        {
+            return Dao.InsertMonAn(monAn);
         }
     }
 }
