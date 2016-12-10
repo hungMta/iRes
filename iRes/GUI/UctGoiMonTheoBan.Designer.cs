@@ -23,9 +23,10 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.imageListBoxBanAn = new DevExpress.XtraEditors.ImageListBoxControl();
-            this.imageListBanAn = new System.Windows.Forms.ImageList();
-            this.contextMenuBanAn = new System.Windows.Forms.ContextMenuStrip();
+            this.imageListBanAn = new System.Windows.Forms.ImageList(this.components);
+            this.contextMenuBanAn = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.làmTrốngBànToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đangDùngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bậnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,7 +60,7 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.lookUpEditNhomMon = new DevExpress.XtraEditors.LookUpEdit();
-            this.timer1 = new System.Windows.Forms.Timer();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.imageListBoxBanAn)).BeginInit();
             this.contextMenuBanAn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlBanAnGoiMon)).BeginInit();

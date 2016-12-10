@@ -111,6 +111,7 @@ namespace Title.GUI
 
         private void clearTextBox() {
             textEditMaKH.Text = "";
+            textEditMaKH.Text = GetMaKHNext();
             textEditTen.Text = "";
             textEditDiaChi.Text = "";
             textEditSDT.Text = "";
@@ -134,5 +135,15 @@ namespace Title.GUI
                 this.cbxPhanLoai.Text = selRow[config.KHACHHANG_PHANLOAI].ToString();
             } catch { }
         }
+
+        private string GetMaKHNext()
+        {
+            DataTable dt_KH = new DataTable();
+            dt_KH = Bus.GetMaKHNext();
+            string maKH = dt_KH.Rows[0]["MaKH"].ToString();
+            return maKH;
+        }
     }
+
+     
 }

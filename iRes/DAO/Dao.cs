@@ -314,5 +314,15 @@ namespace Title.DAO {
             };
             return DataProvider.ExecuteNonQuery(config.PROC_UPDATE_NHOMMON, para);
         }
+
+        internal static DataTable GetMaKHNext()
+        {      
+            return DataProvider.GetData(config.PROC_GET_MAKH_NEXT);
+        }
+
+        internal static DataTable GetMaNVNext()
+        {
+            return DataProvider.GetData(config.PROC_GET_MANNV_NEXT);
+        }
     }
 }

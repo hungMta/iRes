@@ -60,6 +60,7 @@ namespace Title.GUI {
 
         public void ClearText() {
             this.textEditMaNV.Text = "";
+            this.textEditMaNV.Text = GetMaNVNext();
             this.textEditTenNV.Text = "";
             this.textEditLuong.Text = "";
             this.textEditMatKhau.Text = "";
@@ -135,6 +136,14 @@ namespace Title.GUI {
             } catch (Exception e){
                 MessageBox.Show(e.Message);
             }
+        }
+
+        private string GetMaNVNext()
+        {
+            DataTable dt_NV = new DataTable();
+            dt_NV = Bus.GetMaNVNext();
+            string maNV = dt_NV.Rows[0]["MaKH"].ToString();
+            return maNV;
         }
     }
 }

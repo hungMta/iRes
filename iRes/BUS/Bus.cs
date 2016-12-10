@@ -166,5 +166,15 @@ namespace Title.BUS {
         {
             return Dao.UpdateNhomMon(nhomMon);
         }
+
+        internal static DataTable GetMaKHNext()
+        {
+            return Dao.GetMaKHNext();
+        }
+
+        internal static DataTable GetMaNVNext()
+        {
+            return Dao.GetMaNVNext();
+        }
     }
 }

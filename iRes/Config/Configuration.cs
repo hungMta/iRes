@@ -101,12 +101,15 @@ namespace Title.Config {
         public string PROC_INSERT_NHANVIEN = "ThemNhanVien";
         public string PROC_DELETE_NHANVIEN = "XoaNhanVien";
         public string PROC_UPDATE_NHANVIEN = "SuaNhanVien";
+        public string PROC_GET_MANNV_NEXT = "GetMaNhanVienTiepTheo";
 
         // Proceduces of KhachHang
         public string PROC_GET_LIST_KHACHHANG = "DanhSachKhachHang";
         public string PROC_UPDATE_KHACHHANG = "SuaKhachHang";
         public string PROC_DELETE_KHACHHANG = "XoaKhachHang";
         public string PROC_INSERT_KHACHHANG = "ThemKhachHang";
+        public string PROC_GET_MAKH_NEXT = "GetMaKhachHangTiepTheo";
+
 
         // Proceduces of MonAn
         public string PROC_INSERT_MON_AN = "ThemMonAn";
