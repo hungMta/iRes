@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 using System.IO;
 
 namespace Title.Config {
-    public class Configuration {
+    public class Configuration
+    {
 
-        public string GetProjectLinkDirectory() {
+        public string GetProjectLinkDirectory()
+        {
             string currentLink = Directory.GetCurrentDirectory();
             string binLink = Directory.GetParent(currentLink).FullName;
             string projectLink = Directory.GetParent(binLink).FullName;
@@ -17,7 +19,7 @@ namespace Title.Config {
 
         public string CURRENT_NHAN_VIEN = "001";
 
-      //  public string DATA_SOURCE = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
+        //  public string DATA_SOURCE = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
         //public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyNhaHang;Integrated Security=True";
         public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
 
@@ -39,6 +41,11 @@ namespace Title.Config {
         public string MONAN_SOLUONG = "SoLuong";
         public string MONAN_SOLUONG_DANGCO = "SoLuongDangCo";
         public string MONAN_DONGIA = "DonGia";
+
+        // Property of NhomMon
+        public string NHOMMON_MANHOM = "MaNhom";
+        public string NHOMMON_TENNHOM = "TenNhom";
+        public string NHOMMON_TONGSOMON = "TongSoMon";
 
         // Property of BanAn
         public string BANAN_MABAN = "MaBan";
@@ -67,7 +74,7 @@ namespace Title.Config {
 
         // Property of NguyenLieu
         public string NGUYEN_LIEU_MA_NGUYEN_LIEU = "MaNL";
-        public string NGUYEN_LIEU_TEN_NGUYEN_LIEU= "TenNL";
+        public string NGUYEN_LIEU_TEN_NGUYEN_LIEU = "TenNL";
         public string NGUYEN_LIEU_DON_VI = "DonVi";
         public string NGUYEN_LIEU_DON_GIA = "DonGia";
 
@@ -88,7 +95,7 @@ namespace Title.Config {
         // property of NhomMon
         public string NhomMon_TenNhom = "TenNhom";
         public string NhomMon_MaNhom = "MaNhom";
-        
+
         // Proceduces of NhanVien
         public string PROC_GET_LIST_NHANVIEN = "DanhSachNhanVien";
         public string PROC_INSERT_NHANVIEN = "ThemNhanVien";
@@ -99,7 +106,7 @@ namespace Title.Config {
         public string PROC_GET_LIST_KHACHHANG = "DanhSachKhachHang";
         public string PROC_UPDATE_KHACHHANG = "SuaKhachHang";
         public string PROC_DELETE_KHACHHANG = "XoaKhachHang";
-        public string PROC_INSERT_KHACHHANG  = "ThemKhachHang";
+        public string PROC_INSERT_KHACHHANG = "ThemKhachHang";
 
         // Proceduces of MonAn
         public string PROC_INSERT_MON_AN = "ThemMonAn";
@@ -110,8 +117,12 @@ namespace Title.Config {
         public string PROC_DELETE_MON_AN = "XoaMonAn";
         public string PROC_GET_MONAN_TONTAI = "GetMonAnTonTai";
 
+
         // Proceduces of NhomMon
         public string PROC_GET_LIST_NHOMMON = "DanhSachNhomMon";
+        public string PROC_INSERT_NHOMMON = "ThemNhomMon";
+        public string PROC_DELETE_NHOMMON = "XoaNhomMon";
+        public string PROC_UPDATE_NHOMMON = "SuaNhomMon";
 
         // Proceduces of BanAn
         public string PROC_GET_LIST_BANAN = "DanhSachBanAn";
@@ -157,5 +168,9 @@ namespace Title.Config {
         public string NHANVIEN_IMAGE_RESOURCE = @"\Resources\NhanVien\";
         public string BANAN_IMAGE_RESOURCE = @"\Resources\BanAn\";
 
+
+
+        public string GET_ID_MANHOM = "GetMaNhomTiepTheo";
     }
+
 }

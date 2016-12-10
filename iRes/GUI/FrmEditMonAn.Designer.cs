@@ -45,17 +45,17 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButtonHuy = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonLuu = new DevExpress.XtraEditors.SimpleButton();
             this.MaMon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TenMon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DonGia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MaNhom = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HinhAnh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.simpleButtonSua = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.simpleButtonXoa = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonSua = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonHuy = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonLuu = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEditMonAn.Properties)).BeginInit();
@@ -225,40 +225,6 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.simpleButtonXoa);
-            this.panelControl2.Controls.Add(this.simpleButtonSua);
-            this.panelControl2.Controls.Add(this.simpleButtonHuy);
-            this.panelControl2.Controls.Add(this.simpleButtonLuu);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl2.Location = new System.Drawing.Point(0, 500);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(896, 100);
-            this.panelControl2.TabIndex = 4;
-            // 
-            // simpleButtonHuy
-            // 
-            this.simpleButtonHuy.Enabled = false;
-            this.simpleButtonHuy.Image = ((System.Drawing.Image)(resources.GetObject("simpleButtonHuy.Image")));
-            this.simpleButtonHuy.Location = new System.Drawing.Point(559, 29);
-            this.simpleButtonHuy.Name = "simpleButtonHuy";
-            this.simpleButtonHuy.Size = new System.Drawing.Size(75, 39);
-            this.simpleButtonHuy.TabIndex = 0;
-            this.simpleButtonHuy.Text = "Hủy";
-            this.simpleButtonHuy.Click += new System.EventHandler(this.simpleButtonHuy_Click);
-            // 
-            // simpleButtonLuu
-            // 
-            this.simpleButtonLuu.Enabled = false;
-            this.simpleButtonLuu.Image = ((System.Drawing.Image)(resources.GetObject("simpleButtonLuu.Image")));
-            this.simpleButtonLuu.Location = new System.Drawing.Point(436, 29);
-            this.simpleButtonLuu.Name = "simpleButtonLuu";
-            this.simpleButtonLuu.Size = new System.Drawing.Size(75, 39);
-            this.simpleButtonLuu.TabIndex = 0;
-            this.simpleButtonLuu.Text = "Lưu";
-            this.simpleButtonLuu.Click += new System.EventHandler(this.simpleButtonLuu_Click);
-            // 
             // MaMon
             // 
             this.MaMon.Caption = "Ma Mon";
@@ -307,15 +273,17 @@
             this.HinhAnh.Visible = true;
             this.HinhAnh.VisibleIndex = 5;
             // 
-            // simpleButtonSua
+            // panelControl2
             // 
-            this.simpleButtonSua.Image = ((System.Drawing.Image)(resources.GetObject("simpleButtonSua.Image")));
-            this.simpleButtonSua.Location = new System.Drawing.Point(218, 28);
-            this.simpleButtonSua.Name = "simpleButtonSua";
-            this.simpleButtonSua.Size = new System.Drawing.Size(75, 40);
-            this.simpleButtonSua.TabIndex = 1;
-            this.simpleButtonSua.Text = "Sửa";
-            this.simpleButtonSua.Click += new System.EventHandler(this.simpleButtonSua_Click);
+            this.panelControl2.Controls.Add(this.simpleButtonXoa);
+            this.panelControl2.Controls.Add(this.simpleButtonSua);
+            this.panelControl2.Controls.Add(this.simpleButtonHuy);
+            this.panelControl2.Controls.Add(this.simpleButtonLuu);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl2.Location = new System.Drawing.Point(0, 500);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(896, 100);
+            this.panelControl2.TabIndex = 4;
             // 
             // simpleButtonXoa
             // 
@@ -326,6 +294,38 @@
             this.simpleButtonXoa.TabIndex = 2;
             this.simpleButtonXoa.Text = "Xóa";
             this.simpleButtonXoa.Click += new System.EventHandler(this.simpleButtonXoa_Click);
+            // 
+            // simpleButtonSua
+            // 
+            this.simpleButtonSua.Image = ((System.Drawing.Image)(resources.GetObject("simpleButtonSua.Image")));
+            this.simpleButtonSua.Location = new System.Drawing.Point(218, 28);
+            this.simpleButtonSua.Name = "simpleButtonSua";
+            this.simpleButtonSua.Size = new System.Drawing.Size(75, 40);
+            this.simpleButtonSua.TabIndex = 1;
+            this.simpleButtonSua.Text = "Sửa";
+            this.simpleButtonSua.Click += new System.EventHandler(this.simpleButtonSua_Click);
+            // 
+            // simpleButtonHuy
+            // 
+            this.simpleButtonHuy.Enabled = false;
+            this.simpleButtonHuy.Image = ((System.Drawing.Image)(resources.GetObject("simpleButtonHuy.Image")));
+            this.simpleButtonHuy.Location = new System.Drawing.Point(559, 29);
+            this.simpleButtonHuy.Name = "simpleButtonHuy";
+            this.simpleButtonHuy.Size = new System.Drawing.Size(75, 39);
+            this.simpleButtonHuy.TabIndex = 0;
+            this.simpleButtonHuy.Text = "Hủy";
+            this.simpleButtonHuy.Click += new System.EventHandler(this.simpleButtonHuy_Click);
+            // 
+            // simpleButtonLuu
+            // 
+            this.simpleButtonLuu.Enabled = false;
+            this.simpleButtonLuu.Image = ((System.Drawing.Image)(resources.GetObject("simpleButtonLuu.Image")));
+            this.simpleButtonLuu.Location = new System.Drawing.Point(436, 29);
+            this.simpleButtonLuu.Name = "simpleButtonLuu";
+            this.simpleButtonLuu.Size = new System.Drawing.Size(75, 39);
+            this.simpleButtonLuu.TabIndex = 0;
+            this.simpleButtonLuu.Text = "Lưu";
+            this.simpleButtonLuu.Click += new System.EventHandler(this.simpleButtonLuu_Click);
             // 
             // FrmEditMonAn
             // 

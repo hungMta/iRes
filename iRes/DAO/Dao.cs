@@ -277,5 +277,42 @@ namespace Title.DAO {
             };
             return DataProvider.ExecuteNonQuery(config.PROC_DELETE_MON_AN, para);
         }
+
+        internal static int DeleteNhomMon(NhomMon nhomMon)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@"+config.NHOMMON_MANHOM, nhomMon.MaNhom)
+               
+            };
+            return DataProvider.ExecuteNonQuery(config.PROC_DELETE_NHOMMON, para);
+        }
+
+        internal static DataTable GetIDNhomMon()
+        {
+            return DataProvider.GetData(config.GET_ID_MANHOM);
+        }
+
+        internal static int InsertNhomMon(NhomMon nhomMon)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@MaNhom",nhomMon.MaNhom),
+                new SqlParameter("@TenNhom",nhomMon.TenNhom),
+                new SqlParameter("@TongSoMon",nhomMon.TongSoMon)
+            };
+            return DataProvider.ExecuteNonQuery(config.PROC_INSERT_NHOMMON, para);
+        }
+
+        internal static int UpdateNhomMon(NhomMon nhomMon)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@MaNhom",nhomMon.MaNhom),
+                new SqlParameter("@TenNhom",nhomMon.TenNhom),
+                new SqlParameter("@TongSoMon",nhomMon.TongSoMon)
+            };
+            return DataProvider.ExecuteNonQuery(config.PROC_UPDATE_NHOMMON, para);
+        }
     }
 }

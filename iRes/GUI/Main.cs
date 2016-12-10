@@ -108,6 +108,9 @@ namespace iRes{
                     frmEditMonAN.ShowDialog();
                     EnableButtonBar();
                     break;
+                case "TabNhomMon":
+                    uctQuanLyNhomMon.Edit();
+                    break;
             }
         }
 
@@ -118,6 +121,9 @@ namespace iRes{
                     break;
                 case "TabKhachHang":
                     utcQuanLyKhachHang.Delete();
+                    break;
+                case "TabNhomMon":
+                    uctQuanLyNhomMon.Delete();
                     break;
             }
         }
@@ -137,6 +143,9 @@ namespace iRes{
                     utcQuanLyMonAn.LoadData();
                     EnableButtonBar();
                     break;
+                case "TabNhomMon":
+                    uctQuanLyNhomMon.Add();
+                    break;
             }
         }
 
@@ -147,6 +156,9 @@ namespace iRes{
                     break;
                 case "TabKhachHang":
                     utcQuanLyKhachHang.Save();
+                    break;
+                case "TabNhomMon":
+                    uctQuanLyNhomMon.Save();
                     break;
             }
             EnableButtonBar();
