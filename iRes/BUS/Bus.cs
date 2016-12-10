@@ -146,5 +146,25 @@ namespace Title.BUS {
         {
             return Dao.DeleteMonAn(maMon);
         }
+
+        internal static int DeleteNhomMon(NhomMon nhomMon)
+        {
+            return Dao.DeleteNhomMon(nhomMon);
+        }
+
+        internal static DataTable GetIDNhomMon()
+        {
+            return Dao.GetIDNhomMon();
+        }
+
+        internal static int InsertNhomMon(NhomMon nhomMon)
+        {
+            return Dao.InsertNhomMon(nhomMon);
+        }
+
+        internal static int UpdateNhomMon(NhomMon nhomMon)
+        {
+            return Dao.UpdateNhomMon(nhomMon);
+        }
     }
 }

@@ -177,6 +177,7 @@
     <Compile Include="VO\MonAn.cs" />
     <Compile Include="VO\NguyenLieu.cs" />
     <Compile Include="VO\NhanVien.cs" />
+    <Compile Include="VO\NhomMon.cs" />
     <Compile Include="VO\PhieuNhap.cs" />
     <EmbeddedResource Include="GUI\FrmEditMonAn.resx">
       <DependentUpon>FrmEditMonAn.cs</DependentUpon>
