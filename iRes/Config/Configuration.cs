@@ -17,9 +17,9 @@ namespace Title.Config {
 
         public string CURRENT_NHAN_VIEN = "001";
 
-        public string DATA_SOURCE = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
+      //  public string DATA_SOURCE = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
         //public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyNhaHang;Integrated Security=True";
-        //public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
+        public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
 
         // Property of KhachHang
         public string KHACHHANG_MAKH = "MaKH";
@@ -37,6 +37,7 @@ namespace Title.Config {
         public string MONAN_MANHOM = "MaNhom";
         public string MONAN_HINHANH = "HinhAnh";
         public string MONAN_SOLUONG = "SoLuong";
+        public string MONAN_SOLUONG_DANGCO = "SoLuongDangCo";
         public string MONAN_DONGIA = "DonGia";
 
         // Property of BanAn
@@ -103,8 +104,11 @@ namespace Title.Config {
         // Proceduces of MonAn
         public string PROC_INSERT_MON_AN = "ThemMonAn";
         public string PROC_GET_MA_MON_NEXT = "GetMaMonAnTiepTheo";
-        public string PROC_GET_LIST_MONAN = "DanhSachMonAn";
+        public string PROC_GET_LIST_MONAN = "GetMonAnTonTai";
         public string PROC_GET_LIST_MONAN_BY_NHOM_MON = "DanhSachMonAnByNhomMon";
+        public string PROC_UPDATE_MON_AN = "SuaMonAn";
+        public string PROC_DELETE_MON_AN = "XoaMonAn";
+        public string PROC_GET_MONAN_TONTAI = "GetMonAnTonTai";
 
         // Proceduces of NhomMon
         public string PROC_GET_LIST_NHOMMON = "DanhSachNhomMon";
@@ -146,6 +150,7 @@ namespace Title.Config {
         public string TAB_GOI_MON_THEO_BAN = "TabGoiMonTheoBan";
         public string TAB_NHAP_HANG = "TabNhapHang";
         public string TAB_THONG_KE = "TabThongKe";
+        public string TAB_EDIT_MON_AN = "TabEditMonAn";
 
         // Resource Path
         public string MONAN_IMAGE_RESOURCE = @"\Resources\MonAn\";

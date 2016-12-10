@@ -86,7 +86,6 @@ namespace Title.GUI
         private void printDocumentHoaDon_PrintPage(object sender, PrintPageEventArgs e) {
             e.Graphics.DrawString("Hóa Đơn", new Font("Century", 40, FontStyle.Bold), Brushes.Red, new Point(300, 50));
             e.Graphics.DrawRectangle(Pens.Black, 100, 400, this.gridControl1.Width, this.gridControl1.Height);
-
             //Fills the above drawn rectangle with a light gray colour just to distinguish the header 
             e.Graphics.FillRectangle(Brushes.LightGray, new Rectangle(100, 400, this.gridControl1.Width, this.gridControl1.Height));
         }

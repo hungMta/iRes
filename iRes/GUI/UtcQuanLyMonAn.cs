@@ -21,6 +21,7 @@ namespace Title.GUI
 
         public UtcQuanLyMonAn() {
             InitializeComponent();
+            gridControlMonAn.UseEmbeddedNavigator = true;
         }
 
         public void TaoKetNoi() {
@@ -44,7 +45,6 @@ namespace Title.GUI
             SqlDataAdapter da = new SqlDataAdapter();
             string projectDirectoryPath = config.GetProjectLinkDirectory();
             string monAnImagePath = config.GetProjectLinkDirectory() + config.MONAN_IMAGE_RESOURCE;
-
             string GET_LIST_MONAN_AND_IMAGE = @"select Cast('" + monAnImagePath + @"'
                                                         + HinhAnh as nvarchar(4000)) as [Hình ảnh],
                                                         MaMon as [Mã món ăn], 
@@ -62,17 +62,19 @@ namespace Title.GUI
         }
 
         private void layoutView1_Click(object sender, EventArgs e)
-        {
-            
+        {           
         }
 
         private void layoutView1_CardClick(object sender, DevExpress.XtraGrid.Views.Layout.Events.CardClickEventArgs e)
+        {        
+              //do something;  
+                MessageBox.Show("","");          
+        }
+
+        private void Edit()
         {
 
-            
-                //do something;  
-                MessageBox.Show("","");
-            
+
         }
 
     }

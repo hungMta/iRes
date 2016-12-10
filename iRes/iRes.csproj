@@ -73,6 +73,12 @@
     <Compile Include="Config\Configuration.cs" />
     <Compile Include="DAO\Dao.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="GUI\FrmEditMonAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FrmEditMonAn.Designer.cs">
+      <DependentUpon>FrmEditMonAn.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     <Compile Include="VO\NguyenLieu.cs" />
     <Compile Include="VO\NhanVien.cs" />
     <Compile Include="VO\PhieuNhap.cs" />
+    <EmbeddedResource Include="GUI\FrmEditMonAn.resx">
+      <DependentUpon>FrmEditMonAn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
