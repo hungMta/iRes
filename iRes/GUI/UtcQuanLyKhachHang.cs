@@ -58,7 +58,7 @@ namespace Title.GUI
                LoadData();
             }
             catch (Exception e) {
-                MessageBox.Show("Xóa thành công!");
+                MessageBox.Show("Xóa không thành công!");
             }
         }
 

@@ -103,6 +103,11 @@ namespace iRes{
                 case "TabKhachHang":
                     utcQuanLyKhachHang.Edit();
                     break;
+                case "TabMonAn":
+                    FrmEditMonAn frmEditMonAN = new FrmEditMonAn();
+                    frmEditMonAN.ShowDialog();
+                    EnableButtonBar();
+                    break;
             }
         }
 
@@ -150,6 +155,7 @@ namespace iRes{
         private void barButtonCancel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
             EnableButtonBar();
         }
+
 
     }
 }

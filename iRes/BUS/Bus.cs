@@ -136,5 +136,15 @@ namespace Title.BUS {
         {
             return Dao.InsertMonAn(monAn);
         }
+
+        public static int UpdateMonAn(MonAn monAn)
+        {
+            return Dao.UpdateMonAN(monAn);
+        }
+
+        internal static int DeleteMonAn(string maMon)
+        {
+            return Dao.DeleteMonAn(maMon);
+        }
     }
 }

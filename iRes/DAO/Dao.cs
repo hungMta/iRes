@@ -255,5 +255,27 @@ namespace Title.DAO {
             };
             return DataProvider.ExecuteNonQuery(config.PROC_INSERT_MON_AN, para);
         }
+
+        internal static int UpdateMonAN(MonAn monAn)
+        {
+            SqlParameter[] para = new SqlParameter[] {
+                
+                new SqlParameter("@"+config.MONAN_MAMON,monAn.MaMon),
+                new SqlParameter("@"+config.MONAN_TENMON,monAn.TenMon),
+               new SqlParameter("@"+config.MONAN_MANHOM,monAn.MaNhom),
+              new SqlParameter("@"+config.MONAN_DONGIA,monAn.DonGia),
+              new SqlParameter("@"+config.MONAN_SOLUONG,monAn.SoLuong),
+              new SqlParameter("@"+config.MONAN_HINHANH,monAn.hinhanh),
+            };
+            return DataProvider.ExecuteNonQuery(config.PROC_UPDATE_MON_AN, para);
+        }
+
+        internal static int DeleteMonAn(string maMon)
+        {
+            SqlParameter[] para = new SqlParameter[] {
+                new SqlParameter("@"+config.MONAN_MAMON,maMon), 
+            };
+            return DataProvider.ExecuteNonQuery(config.PROC_DELETE_MON_AN, para);
+        }
     }
 }
