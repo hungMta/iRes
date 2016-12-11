@@ -54,6 +54,7 @@
             this.layoutView1.OptionsBehavior.Editable = false;
             this.layoutView1.OptionsView.ViewMode = DevExpress.XtraGrid.Views.Layout.LayoutViewMode.MultiColumn;
             this.layoutView1.TemplateCard = this.layoutViewCard1;
+            this.layoutView1.DoubleClick += new System.EventHandler(this.layoutView1_DoubleClick);
             // 
             // layoutViewCard1
             // 

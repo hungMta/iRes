@@ -86,12 +86,16 @@ namespace iRes{
             this.barButtonAdd.Enabled = false;
             this.barButtonEdit.Enabled = false;
             this.barButtonDelete.Enabled = false;
+            this.barButtonSave.Enabled = true;
+            this.barButtonCancel.Enabled = true;
         }
 
         public void EnableButtonBar() {
             this.barButtonAdd.Enabled = true;
             this.barButtonEdit.Enabled = true;
             this.barButtonDelete.Enabled = true;
+            this.barButtonSave.Enabled = false;
+            this.barButtonCancel.Enabled = false;
         }
 
         private void barButtonEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
@@ -138,8 +142,6 @@ namespace iRes{
                     utcQuanLyKhachHang.Add();
                     break;
                 case "TabMonAn":
-                    FrmThemMonAn frmThemMonAn = new FrmThemMonAn();
-                    frmThemMonAn.ShowDialog();
                     utcQuanLyMonAn.LoadData();
                     EnableButtonBar();
                     break;
@@ -165,6 +167,16 @@ namespace iRes{
         }
 
         private void barButtonCancel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) {
+            switch (this.currentTabName) {
+                case "TabNhanVien":
+                    utcQuanLyNhanVien.Cancel();
+                    break;
+                case "TabKhachHang":
+                    utcQuanLyKhachHang.Cancel();
+                    break;
+                case "TabNhomMon":
+                    break;
+            }
             EnableButtonBar();
         }
 

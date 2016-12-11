@@ -109,31 +109,32 @@
             this.lookUpEditNhomMon.Name = "lookUpEditNhomMon";
             this.lookUpEditNhomMon.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEditNhomMon.Size = new System.Drawing.Size(100, 20);
+            this.lookUpEditNhomMon.Properties.NullText = "";
+            this.lookUpEditNhomMon.Size = new System.Drawing.Size(118, 20);
             this.lookUpEditNhomMon.TabIndex = 2;
             // 
             // textEditSoLuong
             // 
             this.textEditSoLuong.Enabled = false;
-            this.textEditSoLuong.Location = new System.Drawing.Point(345, 81);
+            this.textEditSoLuong.Location = new System.Drawing.Point(301, 47);
             this.textEditSoLuong.Name = "textEditSoLuong";
-            this.textEditSoLuong.Size = new System.Drawing.Size(100, 20);
+            this.textEditSoLuong.Size = new System.Drawing.Size(135, 20);
             this.textEditSoLuong.TabIndex = 1;
             // 
             // textEditHinhAnh
             // 
             this.textEditHinhAnh.Enabled = false;
-            this.textEditHinhAnh.Location = new System.Drawing.Point(581, 84);
+            this.textEditHinhAnh.Location = new System.Drawing.Point(301, 84);
             this.textEditHinhAnh.Name = "textEditHinhAnh";
-            this.textEditHinhAnh.Size = new System.Drawing.Size(100, 20);
+            this.textEditHinhAnh.Size = new System.Drawing.Size(135, 20);
             this.textEditHinhAnh.TabIndex = 1;
             // 
             // textEditDonGia
             // 
             this.textEditDonGia.Enabled = false;
-            this.textEditDonGia.Location = new System.Drawing.Point(345, 45);
+            this.textEditDonGia.Location = new System.Drawing.Point(301, 14);
             this.textEditDonGia.Name = "textEditDonGia";
-            this.textEditDonGia.Size = new System.Drawing.Size(100, 20);
+            this.textEditDonGia.Size = new System.Drawing.Size(135, 20);
             this.textEditDonGia.TabIndex = 1;
             // 
             // textEditTenMon
@@ -146,7 +147,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(285, 81);
+            this.labelControl5.Location = new System.Drawing.Point(241, 50);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(49, 13);
             this.labelControl5.TabIndex = 0;
@@ -154,7 +155,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(521, 84);
+            this.labelControl6.Location = new System.Drawing.Point(241, 84);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(49, 13);
             this.labelControl6.TabIndex = 0;
@@ -165,12 +166,12 @@
             this.textEditMaMon.Enabled = false;
             this.textEditMaMon.Location = new System.Drawing.Point(84, 45);
             this.textEditMaMon.Name = "textEditMaMon";
-            this.textEditMaMon.Size = new System.Drawing.Size(71, 20);
+            this.textEditMaMon.Size = new System.Drawing.Size(118, 20);
             this.textEditMaMon.TabIndex = 1;
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(285, 45);
+            this.labelControl4.Location = new System.Drawing.Point(241, 17);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(44, 13);
             this.labelControl4.TabIndex = 0;
@@ -178,7 +179,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(20, 14);
+            this.labelControl3.Location = new System.Drawing.Point(15, 12);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(57, 13);
             this.labelControl3.TabIndex = 0;
@@ -186,7 +187,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(24, 84);
+            this.labelControl2.Location = new System.Drawing.Point(20, 84);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(48, 13);
             this.labelControl2.TabIndex = 0;
@@ -223,6 +224,7 @@
             this.HinhAnh});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             // 
             // MaMon

@@ -8,12 +8,9 @@ namespace Title.VO
 {
     public class MonAn
     {
-     
+        public MonAn() { }
 
-
-        public MonAn(string tenMon, string maNhom, decimal donGia, int soLuong, string hinhanh)
-        {
-            // TODO: Complete member initialization
+        public MonAn(string tenMon, string maNhom, decimal donGia, int soLuong, string hinhanh) {
             this.TenMon = tenMon;
             this.MaNhom = maNhom;
             this.DonGia = donGia;
@@ -21,9 +18,7 @@ namespace Title.VO
             this.hinhanh = hinhanh;
         }
 
-        public MonAn(string maMon, string tenMon, string maNhom, decimal donGia, int soLuong, string hinhanh)
-        {
-            // TODO: Complete member initialization
+        public MonAn(string maMon, string tenMon, string maNhom, decimal donGia, int soLuong, string hinhanh) {
             this.MaMon = maMon;
             this.TenMon = tenMon;
             this.MaNhom = maNhom;

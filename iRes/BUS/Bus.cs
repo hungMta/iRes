@@ -54,6 +54,10 @@ namespace Title.BUS {
             return Dao.GetListMonAnByNhomMon(maNhom);
         }
 
+        public static DataTable GetMonAnByMaMon(string maMon) {
+            return Dao.GetMonAnByMaMon(maMon);
+        }
+
         public static DataTable GetListNhomMon() {
             return Dao.GetListNhomMon();
         }

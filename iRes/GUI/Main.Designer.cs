@@ -139,6 +139,7 @@
             // barButtonSave
             // 
             this.barButtonSave.Caption = "Save";
+            this.barButtonSave.Enabled = false;
             this.barButtonSave.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonSave.Glyph")));
             this.barButtonSave.Id = 7;
             this.barButtonSave.Name = "barButtonSave";
@@ -166,6 +167,7 @@
             // barButtonCancel
             // 
             this.barButtonCancel.Caption = "Cancel";
+            this.barButtonCancel.Enabled = false;
             this.barButtonCancel.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonCancel.Glyph")));
             this.barButtonCancel.Id = 11;
             this.barButtonCancel.Name = "barButtonCancel";

@@ -61,21 +61,12 @@ namespace Title.GUI
             LoadData();
         }
 
-        private void layoutView1_Click(object sender, EventArgs e)
-        {           
+        private void layoutView1_DoubleClick(object sender, EventArgs e) {
+            DataRowView dataViewRow = (DataRowView)this.layoutView1.GetFocusedRow();
+            string maMon = dataViewRow.Row.ItemArray[1].ToString();
+            FrmMonAn frmMonAn = new FrmMonAn(maMon);
+            frmMonAn.ShowDialog();
+            LoadData();
         }
-
-        private void layoutView1_CardClick(object sender, DevExpress.XtraGrid.Views.Layout.Events.CardClickEventArgs e)
-        {        
-              //do something;  
-                MessageBox.Show("","");          
-        }
-
-        private void Edit()
-        {
-
-
-        }
-
     }
 }

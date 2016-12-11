@@ -23,8 +23,9 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.gridControlKhachHang = new DevExpress.XtraGrid.GridControl();
-            this.khachHangBindingSource = new System.Windows.Forms.BindingSource();
+            this.khachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iResDatabaseDataSet1 = new Title.iResDatabaseDataSet1();
             this.gridViewKhachHang = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaKH = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -106,6 +107,7 @@
             this.gridViewKhachHang.OptionsBehavior.Editable = false;
             this.gridViewKhachHang.OptionsFind.AlwaysVisible = true;
             this.gridViewKhachHang.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
+            this.gridViewKhachHang.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewKhachHang_FocusedRowChanged);
             // 
             // colMaKH
             // 
@@ -190,23 +192,23 @@
             this.panelTextBox.Location = new System.Drawing.Point(0, 0);
             this.panelTextBox.Name = "panelTextBox";
             this.panelTextBox.Size = new System.Drawing.Size(932, 111);
-            this.panelTextBox.TabIndex = 2;
+            this.panelTextBox.TabIndex = 0;
             // 
             // cbxPhanLoai
             // 
-            this.cbxPhanLoai.Location = new System.Drawing.Point(836, 55);
+            this.cbxPhanLoai.Location = new System.Drawing.Point(455, 68);
             this.cbxPhanLoai.Name = "cbxPhanLoai";
             this.cbxPhanLoai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbxPhanLoai.Properties.Items.AddRange(new object[] {
             "VIP",
             "Normal"});
-            this.cbxPhanLoai.Size = new System.Drawing.Size(145, 20);
-            this.cbxPhanLoai.TabIndex = 25;
+            this.cbxPhanLoai.Size = new System.Drawing.Size(251, 20);
+            this.cbxPhanLoai.TabIndex = 7;
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(755, 55);
+            this.labelControl10.Location = new System.Drawing.Point(364, 71);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(59, 13);
             this.labelControl10.TabIndex = 23;
@@ -214,7 +216,7 @@
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(770, 6);
+            this.labelControl9.Location = new System.Drawing.Point(770, 10);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(44, 13);
             this.labelControl9.TabIndex = 22;
@@ -222,7 +224,7 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(23, 58);
+            this.labelControl8.Location = new System.Drawing.Point(28, 71);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(32, 13);
             this.labelControl8.TabIndex = 20;
@@ -230,7 +232,7 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(770, 29);
+            this.labelControl7.Location = new System.Drawing.Point(774, 40);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(40, 13);
             this.labelControl7.TabIndex = 16;
@@ -238,7 +240,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(399, 32);
+            this.labelControl5.Location = new System.Drawing.Point(399, 40);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(24, 13);
             this.labelControl5.TabIndex = 18;
@@ -246,7 +248,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(26, 32);
+            this.labelControl4.Location = new System.Drawing.Point(28, 40);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(34, 13);
             this.labelControl4.TabIndex = 17;
@@ -254,7 +256,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(399, 6);
+            this.labelControl2.Location = new System.Drawing.Point(399, 10);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(20, 13);
             this.labelControl2.TabIndex = 15;
@@ -262,7 +264,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(26, 6);
+            this.labelControl1.Location = new System.Drawing.Point(32, 10);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(30, 13);
             this.labelControl1.TabIndex = 14;
@@ -270,50 +272,51 @@
             // 
             // textEditTongChi
             // 
-            this.textEditTongChi.Location = new System.Drawing.Point(836, 29);
+            this.textEditTongChi.Location = new System.Drawing.Point(836, 37);
             this.textEditTongChi.Name = "textEditTongChi";
             this.textEditTongChi.Size = new System.Drawing.Size(251, 20);
-            this.textEditTongChi.TabIndex = 12;
+            this.textEditTongChi.TabIndex = 5;
             // 
             // textEditEmail
             // 
-            this.textEditEmail.Location = new System.Drawing.Point(455, 29);
+            this.textEditEmail.Location = new System.Drawing.Point(455, 37);
             this.textEditEmail.Name = "textEditEmail";
             this.textEditEmail.Size = new System.Drawing.Size(251, 20);
-            this.textEditEmail.TabIndex = 7;
+            this.textEditEmail.TabIndex = 4;
             // 
             // textEditSoLanAn
             // 
-            this.textEditSoLanAn.Location = new System.Drawing.Point(836, 3);
+            this.textEditSoLanAn.Location = new System.Drawing.Point(836, 7);
             this.textEditSoLanAn.Name = "textEditSoLanAn";
             this.textEditSoLanAn.Size = new System.Drawing.Size(251, 20);
-            this.textEditSoLanAn.TabIndex = 6;
+            this.textEditSoLanAn.TabIndex = 2;
             // 
             // textEditSDT
             // 
-            this.textEditSDT.Location = new System.Drawing.Point(455, 3);
+            this.textEditSDT.Location = new System.Drawing.Point(455, 7);
             this.textEditSDT.Name = "textEditSDT";
             this.textEditSDT.Size = new System.Drawing.Size(251, 20);
-            this.textEditSDT.TabIndex = 5;
+            this.textEditSDT.TabIndex = 1;
             // 
             // textEditDiaChi
             // 
-            this.textEditDiaChi.Location = new System.Drawing.Point(81, 55);
+            this.textEditDiaChi.Location = new System.Drawing.Point(81, 68);
             this.textEditDiaChi.Name = "textEditDiaChi";
-            this.textEditDiaChi.Size = new System.Drawing.Size(431, 20);
-            this.textEditDiaChi.TabIndex = 2;
+            this.textEditDiaChi.Size = new System.Drawing.Size(251, 20);
+            this.textEditDiaChi.TabIndex = 6;
             // 
             // textEditTen
             // 
-            this.textEditTen.Location = new System.Drawing.Point(81, 29);
+            this.textEditTen.Location = new System.Drawing.Point(81, 37);
             this.textEditTen.Name = "textEditTen";
             this.textEditTen.Size = new System.Drawing.Size(251, 20);
-            this.textEditTen.TabIndex = 1;
+            this.textEditTen.TabIndex = 3;
             // 
             // textEditMaKH
             // 
-            this.textEditMaKH.Location = new System.Drawing.Point(81, 3);
+            this.textEditMaKH.Location = new System.Drawing.Point(81, 7);
             this.textEditMaKH.Name = "textEditMaKH";
+            this.textEditMaKH.Properties.ReadOnly = true;
             this.textEditMaKH.Size = new System.Drawing.Size(251, 20);
             this.textEditMaKH.TabIndex = 0;
             // 

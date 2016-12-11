@@ -18,10 +18,9 @@ namespace Title.DAO {
 
         public static int InsertNhanVien(NhanVien nv) {
             SqlParameter[] para = new SqlParameter[] {
-                new SqlParameter("@MaNV", nv.MaNV),
                 new SqlParameter("@TenNV", nv.TenNV),
                 new SqlParameter("@NgaySinh", nv.NgaySinh),
-                new SqlParameter("@GioiTinh", nv.DiaChi),
+                new SqlParameter("@GioiTinh", nv.GioiTinh),
                 new SqlParameter("@SDT", nv.SDT),
                 new SqlParameter("@DiaChi", nv.DiaChi),
                 new SqlParameter("@Luong", nv.Luong),
@@ -63,7 +62,6 @@ namespace Title.DAO {
 
         public static int InsertKhachHang(KhachHang kh) {
             SqlParameter[] para = new SqlParameter[] {
-                new SqlParameter("@"+config.KHACHHANG_MAKH, kh.MaKH),
                 new SqlParameter("@"+config.KHACHHANG_TENKH, kh.TenKH),
                 new SqlParameter("@"+config.KHACHHANG_DIACHI, kh.DiaChi),
                 new SqlParameter("@"+config.KHACHHANG_SDT, kh.SDT),
@@ -110,6 +108,13 @@ namespace Title.DAO {
                 new SqlParameter("@"+config.MONAN_MANHOM, maNhom),            
             };
             return DataProvider.GetDataByParameter(config.PROC_GET_LIST_MONAN_BY_NHOM_MON, para);
+        }
+
+        public static DataTable GetMonAnByMaMon(string maMon) {
+            SqlParameter[] para = new SqlParameter[] {
+                new SqlParameter("@"+config.MONAN_MAMON, maMon),            
+            };
+            return DataProvider.GetDataByParameter(config.PROC_GET_MONAN_BY_MA_MON, para);
         }
 
         public static DataTable GetListNhomMon() {

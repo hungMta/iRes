@@ -84,6 +84,11 @@ namespace Title.GUI
             }
             LoadData();
             clearTextBox(); 
+            this.panelTextBox.Enabled = false;
+        }
+
+        public void Cancel() {
+            this.panelTextBox.Enabled = false;
         }
 
         private void getKhachHang() {
@@ -120,7 +125,7 @@ namespace Title.GUI
             cbxPhanLoai.Text = "";
         }
 
-        private void gridView1_RowClick(object sender, RowClickEventArgs e) {
+        public void LoadGroupBoxKhachHang() {
             int[] selRows = ((GridView)gridControlKhachHang.MainView).GetSelectedRows();
             DataRowView selRow = (DataRowView)(((GridView)gridControlKhachHang.MainView).GetRow(selRows[0]));
             try {
@@ -133,6 +138,14 @@ namespace Title.GUI
                 this.textEditTongChi.Text = selRow[config.KHACHHANG_TONGTIEN].ToString();
                 this.cbxPhanLoai.Text = selRow[config.KHACHHANG_PHANLOAI].ToString();
             } catch { }
+        }
+
+        private void gridView1_RowClick(object sender, RowClickEventArgs e) {
+            LoadGroupBoxKhachHang();
+        }
+
+        private void gridViewKhachHang_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {
+            LoadGroupBoxKhachHang();
         }
     }
 }

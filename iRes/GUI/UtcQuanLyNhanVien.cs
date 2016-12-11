@@ -15,13 +15,12 @@ using Title.VO;
 
 namespace Title.GUI {
     public partial class UtcQuanLyNhanVien : UserControl {
+        Configuration config = new Configuration();
+        public string currentAction;
+
         public UtcQuanLyNhanVien() {
             InitializeComponent();
         }
-
-        Configuration config = new Configuration();
-
-        public string currentAction;
 
         public void LoadData() {
             DataTable dataTable = new DataTable();
@@ -29,24 +28,20 @@ namespace Title.GUI {
             this.gridControlNhanVien.DataSource = dataTable;
         }
 
-        private void UtcQuanLyNhanVien_Load(object sender, EventArgs e) {
-            LoadData();
-        }
-
-        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e) {
+        public void LoadPannelBox() {
             int[] selRows = ((GridView)gridControlNhanVien.MainView).GetSelectedRows();
             DataRowView selRow = (DataRowView)(((GridView)gridControlNhanVien.MainView).GetRow(selRows[0]));
-            this.textEditMaNV.Text = selRow["MaNV"].ToString();
-            this.textEditTenNV.Text = selRow["TenNV"].ToString();
-            this.textEditSDT.Text = selRow["SDT"].ToString();
-            this.textEditQueQuan.Text = selRow["DiaChi"].ToString();
-            this.textEditLuong.Text = selRow["Luong"].ToString();
-            this.textEditMatKhau.Text = selRow["MatKhau"].ToString();
-            this.dateEditNgaySinh.EditValue = selRow["NgaySinh"];
-            this.comboBoxTrangThai.Text = selRow["TrangThai"].ToString();
-            this.comboBoxGioiTinh.Text = selRow["GioiTinh"].ToString();
-            this.textEditChucVu.Text = selRow["ChucVu"].ToString();
-            this.textEditHinhAnh.Text = selRow["HinhAnh"].ToString();
+            this.textEditMaNV.Text = selRow[config.NHANVIEN_MANV].ToString();
+            this.textEditTenNV.Text = selRow[config.NHANVIEN_TENNV].ToString();
+            this.textEditSDT.Text = selRow[config.NHANVIEN_SDT].ToString();
+            this.textEditQueQuan.Text = selRow[config.NHANVIEN_DIACHI].ToString();
+            this.textEditLuong.Text = selRow[config.NHANVIEN_LUONG].ToString();
+            this.textEditMatKhau.Text = selRow[config.NHANVIEN_MATKHAU].ToString();
+            this.dateEditNgaySinh.EditValue = selRow[config.NHANVIEN_NGAYSINH];
+            this.comboBoxTrangThai.Text = selRow[config.NHANVIEN_TRANGTHAI].ToString();
+            this.comboBoxGioiTinh.Text = selRow[config.NHANVIEN_GIOITINH].ToString();
+            this.textEditChucVu.Text = selRow[config.NHANVIEN_CHUCVU].ToString();
+            this.textEditHinhAnh.Text = selRow[config.NHANVIEN_HINHANH].ToString();
             try {
                 if (this.textEditHinhAnh.Text != "") {
                     string imagePath = config.GetProjectLinkDirectory() + config.NHANVIEN_IMAGE_RESOURCE + this.textEditHinhAnh.Text;
@@ -56,6 +51,14 @@ namespace Title.GUI {
                     this.pictureEditAvatar.Image = Image.FromFile(imagePath);
                 }
             } catch { }
+        }
+
+        private void UtcQuanLyNhanVien_Load(object sender, EventArgs e) {
+            LoadData();
+        }
+
+        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e) {
+            LoadPannelBox();
         }
 
         public void ClearText() {
@@ -99,23 +102,28 @@ namespace Title.GUI {
             this.panelTextBox.Enabled = false;
         }
 
+        public NhanVien GetNhanVienInPanelBox() {
+            string maNV, tenNV, gioiTinh, SDT, diaChi, chucVu, matKhau, hinhAnh, tinhTrang;
+            int luong;
+            DateTime ngaySinh;
+            maNV = this.textEditMaNV.Text;
+            tenNV = this.textEditTenNV.Text;
+            ngaySinh = (DateTime)this.dateEditNgaySinh.DateTime;
+            gioiTinh = this.comboBoxGioiTinh.SelectedItem.ToString() ;
+            SDT = this.textEditSDT.Text;
+            diaChi = this.textEditQueQuan.Text;
+            luong = int.Parse(this.textEditLuong.Text);
+            chucVu = this.textEditChucVu.Text;
+            matKhau = this.textEditMatKhau.Text;
+            hinhAnh = this.textEditHinhAnh.Text;
+            tinhTrang = this.comboBoxTrangThai.SelectedItem.ToString();
+            NhanVien nv = new NhanVien(maNV, tenNV, ngaySinh, gioiTinh, SDT ,diaChi, luong, chucVu, matKhau, hinhAnh, tinhTrang);
+            return nv;
+        }
+
         public void Save() {
+            NhanVien nv = GetNhanVienInPanelBox();
             try {
-                string maNV, tenNV, gioiTinh, SDT, diaChi, chucVu, matKhau, hinhAnh, tinhTrang;
-                int luong;
-                DateTime ngaySinh;
-                maNV = this.textEditMaNV.Text;
-                tenNV = this.textEditTenNV.Text;
-                ngaySinh = (DateTime)this.dateEditNgaySinh.DateTime;
-                gioiTinh = this.comboBoxGioiTinh.SelectedItem.ToString() ;
-                SDT = this.textEditSDT.Text;
-                diaChi = this.textEditQueQuan.Text;
-                luong = int.Parse(this.textEditLuong.Text);
-                chucVu = this.textEditChucVu.Text;
-                matKhau = this.textEditMatKhau.Text;
-                hinhAnh = this.textEditHinhAnh.Text;
-                tinhTrang = this.comboBoxTrangThai.SelectedItem.ToString();
-                NhanVien nv = new NhanVien(maNV, tenNV, ngaySinh, gioiTinh, SDT ,diaChi, luong, chucVu, matKhau, hinhAnh, tinhTrang);
                 if (this.currentAction == "Add") {
                     int res = Bus.InsertNhanVien(nv);
                     if (res == 1) {
@@ -135,6 +143,14 @@ namespace Title.GUI {
             } catch (Exception e){
                 MessageBox.Show(e.Message);
             }
+        }
+
+        public void Cancel() {
+            this.panelTextBox.Enabled = false;
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {
+            LoadPannelBox();
         }
     }
 }

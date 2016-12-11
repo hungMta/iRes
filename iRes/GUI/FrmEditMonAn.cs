@@ -69,8 +69,8 @@ namespace Title.GUI
             dataTableNhomMon = Bus.GetListNhomMon();
             try
             {
-                this.lookUpEditNhomMon.Properties.DisplayMember = config.NhomMon_MaNhom;
-                this.lookUpEditNhomMon.Properties.ValueMember = config.NhomMon_MaNhom;
+                this.lookUpEditNhomMon.Properties.DisplayMember = config.NHOMMON_MANHOM;
+                this.lookUpEditNhomMon.Properties.ValueMember = config.NHOMMON_MANHOM;
                 this.lookUpEditNhomMon.Properties.DataSource = dataTableNhomMon;
             }
             catch { }

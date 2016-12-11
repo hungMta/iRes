@@ -17,11 +17,24 @@ namespace Title.Config {
             return projectLink;
         }
 
-        public string CURRENT_NHAN_VIEN = "001";
+        public string CURRENT_NHAN_VIEN = "NV001";
 
-        //  public string DATA_SOURCE = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
+        public string DATA_SOURCE = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
         //public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyNhaHang;Integrated Security=True";
-        public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
+        //public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
+
+        // Property of NhanVien
+        public string NHANVIEN_MANV = "MaNV";
+        public string NHANVIEN_TENNV = "TenNV";
+        public string NHANVIEN_NGAYSINH = "NgaySinh";
+        public string NHANVIEN_GIOITINH = "GioiTinh";
+        public string NHANVIEN_SDT = "SDT";
+        public string NHANVIEN_DIACHI = "DiaChi";
+        public string NHANVIEN_LUONG = "Luong";
+        public string NHANVIEN_CHUCVU = "ChucVu";
+        public string NHANVIEN_MATKHAU = "MatKhau";
+        public string NHANVIEN_HINHANH = "HinhAnh";
+        public string NHANVIEN_TRANGTHAI = "TrangThai";
 
         // Property of KhachHang
         public string KHACHHANG_MAKH = "MaKH";
@@ -92,10 +105,6 @@ namespace Title.Config {
         public string CHI_TIET_PHIEU_NHAP_THANH_TIEN = "ThanhTien";
         public string CHI_TIET_PHIEU_NHAP_GHI_CHU = "GhiChu";
 
-        // property of NhomMon
-        public string NhomMon_TenNhom = "TenNhom";
-        public string NhomMon_MaNhom = "MaNhom";
-
         // Proceduces of NhanVien
         public string PROC_GET_LIST_NHANVIEN = "DanhSachNhanVien";
         public string PROC_INSERT_NHANVIEN = "ThemNhanVien";
@@ -116,7 +125,7 @@ namespace Title.Config {
         public string PROC_UPDATE_MON_AN = "SuaMonAn";
         public string PROC_DELETE_MON_AN = "XoaMonAn";
         public string PROC_GET_MONAN_TONTAI = "GetMonAnTonTai";
-
+        public string PROC_GET_MONAN_BY_MA_MON = "GetMonAnByMaMon";
 
         // Proceduces of NhomMon
         public string PROC_GET_LIST_NHOMMON = "DanhSachNhomMon";
