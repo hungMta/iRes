@@ -23,9 +23,8 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
             this.gridControlKhachHang = new DevExpress.XtraGrid.GridControl();
-            this.khachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.khachHangBindingSource = new System.Windows.Forms.BindingSource();
             this.iResDatabaseDataSet1 = new Title.iResDatabaseDataSet1();
             this.gridViewKhachHang = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaKH = new DevExpress.XtraGrid.Columns.GridColumn();

@@ -9,6 +9,8 @@
 ## Delete 
 - FrmThemMonAn
 
+## Updated
+- Database
 
 [2.4.0] 09/12/2016
 ## Version 2.4.0 built in 09/12/2016
