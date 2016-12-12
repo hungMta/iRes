@@ -357,5 +357,26 @@ namespace Title.DAO {
         {
             return DataProvider.GetData(config.PROC_GET_MA_NGUYEN_LIEU_NEXT);
         }
+
+        internal static int EditChiTietHoaDon(ChiTietHoaDon chiTietHoaDon)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@"+config.CHI_TIET_HOA_DON_MA_HOA_DON,chiTietHoaDon.MaHoaDon),
+                new SqlParameter ("@"+config.CHI_TIET_HOA_DON_MA_MON,chiTietHoaDon.MaMon),
+                new SqlParameter("@"+config.CHI_TIET_HOA_DON_SO_LUONG,chiTietHoaDon.SoLuong)
+            };
+            return DataProvider.ExecuteNonQuery(config.PROC_EDIT_CHITIET_HOADON, para);
+        }
+
+        internal static int DeleteChiTietHD(ChiTietHoaDon chiTietHoaDon)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@"+config.CHI_TIET_HOA_DON_MA_HOA_DON,chiTietHoaDon.MaHoaDon),
+                new SqlParameter("@"+config.CHI_TIET_HOA_DON_MA_MON,chiTietHoaDon.MaMon)
+            };
+            return DataProvider.ExecuteNonQuery(config.PROC_DELETE_CHITIET_HOADON, para);
+        }
     }
 }
