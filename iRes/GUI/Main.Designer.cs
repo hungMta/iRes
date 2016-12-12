@@ -53,6 +53,7 @@
             this.navBarDoanhThu = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroupQuanLy = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroupGoiMon = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroupQuanLyMonAn = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroupNhapHang = new DevExpress.XtraNavBar.NavBarGroup();
@@ -297,16 +298,26 @@
             this.navBarGroupQuanLy.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navBarGroupQuanLy.Appearance.Options.UseFont = true;
             this.navBarGroupQuanLy.Caption = "Quản lý";
+            this.navBarGroupQuanLy.Expanded = true;
             this.navBarGroupQuanLy.GroupCaptionUseImage = DevExpress.XtraNavBar.NavBarImage.Small;
             this.navBarGroupQuanLy.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
             this.navBarGroupQuanLy.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemNhanVien),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemKhachHang),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemMonAn),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemNhomMon)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItemNhomMon),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1)});
             this.navBarGroupQuanLy.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarGroupQuanLy.LargeImage")));
             this.navBarGroupQuanLy.Name = "navBarGroupQuanLy";
             this.navBarGroupQuanLy.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroupQuanLy.SmallImage")));
+            // 
+            // navBarItem1
+            // 
+            this.navBarItem1.Caption = "Nguyên liệu";
+            this.navBarItem1.LargeImage = global::Title.Properties.Resources.nguyelieu;
+            this.navBarItem1.Name = "navBarItem1";
+            this.navBarItem1.SmallImage = global::Title.Properties.Resources.nguyelieu;
+            this.navBarItem1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked);
             // 
             // navBarGroupGoiMon
             // 
@@ -359,7 +370,8 @@
             this.navBarGoiMonTheoBan,
             this.navBarNhapHangMoi,
             this.navBarDoanhThu,
-            this.navBarItem4});
+            this.navBarItem4,
+            this.navBarItem1});
             this.navBarControl1.Location = new System.Drawing.Point(0, 141);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 237;
@@ -423,6 +435,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private DevExpress.XtraBars.BarButtonItem barButtonCancel;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem1;
     }
 }
 
