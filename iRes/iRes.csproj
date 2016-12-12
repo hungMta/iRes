@@ -91,6 +91,12 @@
     <Compile Include="GUI\FrmMonAn.Designer.cs">
       <DependentUpon>FrmMonAn.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\FrmSuaChiTietHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FrmSuaChiTietHoaDon.Designer.cs">
+      <DependentUpon>FrmSuaChiTietHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FrmThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmMonAn.resx">
       <DependentUpon>FrmMonAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FrmSuaChiTietHoaDon.resx">
+      <DependentUpon>FrmSuaChiTietHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmThanhToan.resx">
       <DependentUpon>FrmThanhToan.cs</DependentUpon>

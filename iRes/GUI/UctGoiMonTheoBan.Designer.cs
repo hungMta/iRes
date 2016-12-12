@@ -61,6 +61,9 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.lookUpEditNhomMon = new DevExpress.XtraEditors.LookUpEdit();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.contextMenuStripChiTietHD = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.SuaCTHDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.XoaCTHDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.imageListBoxBanAn)).BeginInit();
             this.contextMenuBanAn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlBanAnGoiMon)).BeginInit();
@@ -80,6 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditSoLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditTenMon.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditNhomMon.Properties)).BeginInit();
+            this.contextMenuStripChiTietHD.SuspendLayout();
             this.SuspendLayout();
             // 
             // imageListBoxBanAn
@@ -430,6 +434,28 @@
             this.lookUpEditNhomMon.TabIndex = 3;
             this.lookUpEditNhomMon.EditValueChanged += new System.EventHandler(this.lookUpEditNhomMon_EditValueChanged);
             // 
+            // contextMenuStripChiTietHD
+            // 
+            this.contextMenuStripChiTietHD.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SuaCTHDToolStripMenuItem,
+            this.XoaCTHDToolStripMenuItem});
+            this.contextMenuStripChiTietHD.Name = "contextMenuStripChiTietHD";
+            this.contextMenuStripChiTietHD.Size = new System.Drawing.Size(181, 70);
+            // 
+            // SuaCTHDToolStripMenuItem
+            // 
+            this.SuaCTHDToolStripMenuItem.Name = "SuaCTHDToolStripMenuItem";
+            this.SuaCTHDToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SuaCTHDToolStripMenuItem.Text = "Sửa chi tiết hóa đơn";
+            this.SuaCTHDToolStripMenuItem.Click += new System.EventHandler(this.SuaCTHDToolStripMenuItem_Click);
+            // 
+            // XoaCTHDToolStripMenuItem
+            // 
+            this.XoaCTHDToolStripMenuItem.Name = "XoaCTHDToolStripMenuItem";
+            this.XoaCTHDToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.XoaCTHDToolStripMenuItem.Text = "Xóa chi tiết hóa đơn";
+            this.XoaCTHDToolStripMenuItem.Click += new System.EventHandler(this.XoaCTHDToolStripMenuItem_Click);
+            // 
             // UctGoiMonTheoBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -461,6 +487,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditSoLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditTenMon.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditNhomMon.Properties)).EndInit();
+            this.contextMenuStripChiTietHD.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -504,5 +531,8 @@
         private DevExpress.XtraEditors.TextEdit textEditChietKhau;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LookUpEdit lookUpEditKH;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripChiTietHD;
+        private System.Windows.Forms.ToolStripMenuItem SuaCTHDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem XoaCTHDToolStripMenuItem;
     }
 }

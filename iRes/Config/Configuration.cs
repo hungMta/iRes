@@ -141,6 +141,8 @@ namespace Title.Config {
         // Procedures of ChiTietHoaDon
         public string PROC_GET_LIST_CHITIET_HOADON = "DanhSachChiTietHoaDon";
         public string PROC_INSET_CHITIET_HOADON = "ThemChiTietHoaDon";
+        public string PROC_EDIT_CHITIET_HOADON = "SuaChiTietHoaDon";
+        public string PROC_DELETE_CHITIET_HOADON = "XoaChiTietHoaDon";
 
         // Procedures of HoaDon
         public string PROC_INSERT_HOADON = "ThemHoaDon";

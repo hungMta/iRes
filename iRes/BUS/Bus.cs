@@ -190,5 +190,15 @@ namespace Title.BUS {
         {
             return Dao.UpdateNguyenLieu(nguyenLieu);
         }
+
+        internal static int EditChiTietHoaDon(ChiTietHoaDon chiTietHoaDon)
+        {
+            return Dao.EditChiTietHoaDon(chiTietHoaDon);
+        }
+
+        internal static int DeleteChiTietHoaDon(ChiTietHoaDon chiTietHoaDon)
+        {
+            return Dao.DeleteChiTietHD(chiTietHoaDon);
+        }
     }
 }

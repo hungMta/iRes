@@ -21,6 +21,7 @@ namespace Title.GUI {
         public UctGoiMonTheoBan() {
             InitializeComponent();
             this.imageListBoxBanAn.ContextMenuStrip = this.contextMenuBanAn;
+            this.gridControlBanAnGoiMon.ContextMenuStrip = this.contextMenuStripChiTietHD;
         }
 
         public void GetListBanAn() {
@@ -277,6 +278,42 @@ namespace Title.GUI {
             string maKH = lookUpEditKH.Text;
             HoaDon hoaDon = new HoaDon(maHD,currentTime, maKH, maNV, 0, chietKhau, 0);
             int res = Bus.EditHoaDon(hoaDon);
+        }
+
+        private void SuaCTHDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int[] selRows = ((GridView)gridControlBanAnGoiMon.MainView).GetSelectedRows();
+            DataRowView selRow = (DataRowView)(((GridView)gridControlBanAnGoiMon.MainView).GetRow(selRows[0]));
+            string maMon = selRow[config.CHI_TIET_HOA_DON_MA_MON].ToString();
+            int soLuong = int.Parse(selRow[config.CHI_TIET_HOA_DON_SO_LUONG].ToString());
+            ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon(this.banAnHienTai.MaHoaDon, maMon, soLuong);
+            FrmSuaChiTietHoaDon frmSuaChiTietHoaDon = new FrmSuaChiTietHoaDon(chiTietHoaDon);
+            frmSuaChiTietHoaDon.ShowDialog();
+            LoadListChiTietHoaDon();
+        }
+
+        private void XoaCTHDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int[] selRows = ((GridView)gridControlBanAnGoiMon.MainView).GetSelectedRows();
+            DataRowView selRow = (DataRowView)(((GridView)gridControlBanAnGoiMon.MainView).GetRow(selRows[0]));
+            string maMon = selRow[config.CHI_TIET_HOA_DON_MA_MON].ToString();
+            ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon();
+            chiTietHoaDon.MaMon = maMon;
+            chiTietHoaDon.MaHoaDon = textEditMaHoaDon.Text;
+            DialogResult dialogResult = MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                int res = Bus.DeleteChiTietHoaDon(chiTietHoaDon);
+                if (res == -1)
+                {
+                    MessageBox.Show("Xóa không thành công!");
+                }
+                else
+                {
+                    MessageBox.Show("Đã xóa thành công!");
+                    LoadListChiTietHoaDon();
+                }
+            }
         }
     }
 }
