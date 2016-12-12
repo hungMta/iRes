@@ -46,12 +46,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButtonPreview = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonPrint = new DevExpress.XtraEditors.SimpleButton();
             this.panelControlChiTietHoaDon = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridViewCTHD = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.simpleButtonPreview = new DevExpress.XtraEditors.SimpleButton();
             this.printPreviewHoaDon = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocumentHoaDon = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -233,6 +233,17 @@
             this.panelControl2.Size = new System.Drawing.Size(567, 52);
             this.panelControl2.TabIndex = 4;
             // 
+            // simpleButtonPreview
+            // 
+            this.simpleButtonPreview.Image = ((System.Drawing.Image)(resources.GetObject("simpleButtonPreview.Image")));
+            this.simpleButtonPreview.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.simpleButtonPreview.Location = new System.Drawing.Point(118, 5);
+            this.simpleButtonPreview.Name = "simpleButtonPreview";
+            this.simpleButtonPreview.Size = new System.Drawing.Size(100, 40);
+            this.simpleButtonPreview.TabIndex = 5;
+            this.simpleButtonPreview.Text = "Preview";
+            this.simpleButtonPreview.Click += new System.EventHandler(this.simpleButtonPreview_Click);
+            // 
             // simpleButtonCancel
             // 
             this.simpleButtonCancel.Location = new System.Drawing.Point(344, 5);
@@ -277,17 +288,6 @@
             // 
             this.gridViewCTHD.GridControl = this.gridControl1;
             this.gridViewCTHD.Name = "gridViewCTHD";
-            // 
-            // simpleButtonPreview
-            // 
-            this.simpleButtonPreview.Image = ((System.Drawing.Image)(resources.GetObject("simpleButtonPreview.Image")));
-            this.simpleButtonPreview.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.simpleButtonPreview.Location = new System.Drawing.Point(118, 5);
-            this.simpleButtonPreview.Name = "simpleButtonPreview";
-            this.simpleButtonPreview.Size = new System.Drawing.Size(100, 40);
-            this.simpleButtonPreview.TabIndex = 5;
-            this.simpleButtonPreview.Text = "Preview";
-            this.simpleButtonPreview.Click += new System.EventHandler(this.simpleButtonPreview_Click);
             // 
             // printPreviewHoaDon
             // 

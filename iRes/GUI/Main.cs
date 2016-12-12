@@ -24,7 +24,7 @@ namespace iRes{
         UctGoiMonTheoBan uctGoiMonTheoBan = new UctGoiMonTheoBan();
         UctNhapHang uctNhapHang = new UctNhapHang();
         UctThongKe uctThongKe = new UctThongKe();
-
+        UctQuanLyNguyenLieu uctQuanLyNguyenLieu = new UctQuanLyNguyenLieu();
         private string currentTabName;
 
         private void tclItem1_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e) { }
@@ -115,6 +115,9 @@ namespace iRes{
                 case "TabNhomMon":
                     uctQuanLyNhomMon.Edit();
                     break;
+                case "TabNguyenLieu":
+                    uctQuanLyNguyenLieu.Edit();
+                    break;
             }
         }
 
@@ -128,6 +131,9 @@ namespace iRes{
                     break;
                 case "TabNhomMon":
                     uctQuanLyNhomMon.Delete();
+                    break;
+                case "TabNguyenLieu":
+                    uctQuanLyNguyenLieu.Delete();
                     break;
             }
         }
@@ -148,6 +154,9 @@ namespace iRes{
                 case "TabNhomMon":
                     uctQuanLyNhomMon.Add();
                     break;
+                case "TabNguyenLieu":
+                    uctQuanLyNguyenLieu.Add();
+                    break;
             }
         }
 
@@ -161,6 +170,9 @@ namespace iRes{
                     break;
                 case "TabNhomMon":
                     uctQuanLyNhomMon.Save();
+                    break;
+                case "TabNguyenLieu":
+                    uctQuanLyNguyenLieu.Save();
                     break;
             }
             EnableButtonBar();
@@ -178,6 +190,16 @@ namespace iRes{
                     break;
             }
             EnableButtonBar();
+        }
+
+        private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            uctQuanLyNguyenLieu.LoadData();
+            uctQuanLyNguyenLieu.Dock = DockStyle.Fill;
+            this.groupControlClientArea.Controls.Clear();
+            this.groupControlClientArea.Controls.Add(uctQuanLyNguyenLieu);
+            this.currentTabName = config.TAB_NGUYEN_LIEU;
+
         }
 
 

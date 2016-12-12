@@ -170,5 +170,25 @@ namespace Title.BUS {
         {
             return Dao.UpdateNhomMon(nhomMon);
         }
+
+        internal static DataTable GetIDNguyenLieu()
+        {
+            return Dao.GetIDNguyenLieu();
+        }
+
+        internal static int DeleteNguyenLieu(NguyenLieu nguyenLieu)
+        {
+            return Dao.DeleteNguyenLieu(nguyenLieu);
+        }
+
+        internal static int InsertNguyenLieu(NguyenLieu nguyenLieu)
+        {
+            return Dao.InsertNguyenLieu(nguyenLieu);
+        }
+
+        internal static int UpdateNguyenLieu(NguyenLieu nguyenLieu)
+        {
+            return Dao.UpdateNguyenLieu(nguyenLieu);
+        }
     }
 }

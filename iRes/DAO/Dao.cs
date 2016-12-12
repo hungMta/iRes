@@ -319,5 +319,43 @@ namespace Title.DAO {
             };
             return DataProvider.ExecuteNonQuery(config.PROC_UPDATE_NHOMMON, para);
         }
+
+        internal static int DeleteNguyenLieu(NguyenLieu nguyenLieu)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@MaNL",nguyenLieu.MaNguyenLieu)
+            };
+            return DataProvider.ExecuteNonQuery(config.PROC_DELETE_NGUYEN_LIEU, para);
+        }
+
+        internal static int InsertNguyenLieu(NguyenLieu nguyenLieu)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@MaNL",nguyenLieu.MaNguyenLieu),
+                new SqlParameter("@TenNL",nguyenLieu.TenNguyenLieu),
+                new SqlParameter("@DonVi",nguyenLieu.DonVi),
+                new SqlParameter("@DonGia",nguyenLieu.DonGia)             
+            };
+            return DataProvider.ExecuteNonQuery(config.PROC_INSERT_NGUYEN_LIEU, para);
+        }
+
+        internal static int UpdateNguyenLieu(NguyenLieu nguyenLieu)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@MaNL",nguyenLieu.MaNguyenLieu),
+                new SqlParameter("@TenNL",nguyenLieu.TenNguyenLieu),
+                new SqlParameter("@DonVi",nguyenLieu.DonVi),
+                new SqlParameter("@DonGia",nguyenLieu.DonGia)             
+            };
+            return DataProvider.ExecuteNonQuery(config.PROC_UPDATE_NGUYEN_LIEU, para);
+        }
+
+        internal static DataTable GetIDNguyenLieu()
+        {
+            return DataProvider.GetData(config.PROC_GET_MA_NGUYEN_LIEU_NEXT);
+        }
     }
 }
