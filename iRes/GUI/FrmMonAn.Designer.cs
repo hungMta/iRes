@@ -23,7 +23,6 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMonAn));
             this.textEditTenMon = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -40,7 +39,7 @@
             this.lookUpEditNhomMon = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textEditHinhAnh = new DevExpress.XtraEditors.TextEdit();
-            this.errorProviderMonAn = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderMonAn = new System.Windows.Forms.ErrorProvider();
             ((System.ComponentModel.ISupportInitialize)(this.textEditTenMon.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditDonGia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditSoLuong.Properties)).BeginInit();

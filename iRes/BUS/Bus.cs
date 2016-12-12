@@ -124,6 +124,10 @@ namespace Title.BUS {
             return Dao.InsertPhieuNhap(phieuNhap);
         }
 
+        public static DataTable GetLastPhieuNhap() {
+            return Dao.GetLastPhieuNhap();
+        }
+
         public static int InsertChiTietPhieuNhap(ChiTietPhieuNhap chiTietPhieuNhap) {
             return Dao.InsertChiTietPhieuNhap(chiTietPhieuNhap);
         }

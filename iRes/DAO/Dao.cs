@@ -227,6 +227,11 @@ namespace Title.DAO {
             return DataProvider.ExecuteNonQuery(config.PROC_GET_INSERT_PHIEU_NHAP, para);
         }
 
+        public static DataTable GetLastPhieuNhap() 
+        {
+            return DataProvider.GetData(config.PROC_GET_LAST_PHIEU_NHAP);
+        }
+
         public static DataTable GetListNguyenLieu() {
             return DataProvider.GetData(config.PROC_GET_LIST_NGUYEN_LIEU);
         }

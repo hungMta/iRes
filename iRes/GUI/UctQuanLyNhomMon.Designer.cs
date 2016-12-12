@@ -47,10 +47,10 @@
             gridLevelNode1.RelationName = "Level1";
             this.gridControlNhomMon.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gridControlNhomMon.Location = new System.Drawing.Point(0, 146);
+            this.gridControlNhomMon.Location = new System.Drawing.Point(0, 97);
             this.gridControlNhomMon.MainView = this.gridViewNhomMon;
             this.gridControlNhomMon.Name = "gridControlNhomMon";
-            this.gridControlNhomMon.Size = new System.Drawing.Size(1247, 370);
+            this.gridControlNhomMon.Size = new System.Drawing.Size(1247, 419);
             this.gridControlNhomMon.TabIndex = 0;
             this.gridControlNhomMon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewNhomMon});
@@ -62,6 +62,7 @@
             this.gridViewNhomMon.OptionsBehavior.Editable = false;
             this.gridViewNhomMon.OptionsFind.AlwaysVisible = true;
             this.gridViewNhomMon.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridViewNhomMon_RowClick);
+            this.gridViewNhomMon.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewNhomMon_FocusedRowChanged);
             // 
             // panelNhomMon
             // 
@@ -76,14 +77,14 @@
             this.panelNhomMon.Enabled = false;
             this.panelNhomMon.Location = new System.Drawing.Point(0, 0);
             this.panelNhomMon.Name = "panelNhomMon";
-            this.panelNhomMon.Size = new System.Drawing.Size(1247, 146);
+            this.panelNhomMon.Size = new System.Drawing.Size(1247, 97);
             this.panelNhomMon.TabIndex = 3;
             // 
             // textEditTongSoMon
             // 
             this.textEditTongSoMon.EditValue = "";
             this.textEditTongSoMon.Enabled = false;
-            this.textEditTongSoMon.Location = new System.Drawing.Point(88, 90);
+            this.textEditTongSoMon.Location = new System.Drawing.Point(868, 31);
             this.textEditTongSoMon.Name = "textEditTongSoMon";
             this.textEditTongSoMon.Size = new System.Drawing.Size(169, 20);
             this.textEditTongSoMon.TabIndex = 5;
@@ -92,7 +93,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(8, 93);
+            this.label2.Location = new System.Drawing.Point(788, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 4;
@@ -101,7 +102,7 @@
             // textEditTenNhom
             // 
             this.textEditTenNhom.EditValue = "";
-            this.textEditTenNhom.Location = new System.Drawing.Point(88, 51);
+            this.textEditTenNhom.Location = new System.Drawing.Point(537, 31);
             this.textEditTenNhom.Name = "textEditTenNhom";
             this.textEditTenNhom.Size = new System.Drawing.Size(169, 20);
             this.textEditTenNhom.TabIndex = 3;
@@ -110,7 +111,7 @@
             // 
             this.lbTenNhom.AutoSize = true;
             this.lbTenNhom.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbTenNhom.Location = new System.Drawing.Point(13, 54);
+            this.lbTenNhom.Location = new System.Drawing.Point(462, 34);
             this.lbTenNhom.Name = "lbTenNhom";
             this.lbTenNhom.Size = new System.Drawing.Size(63, 13);
             this.lbTenNhom.TabIndex = 2;
@@ -119,7 +120,7 @@
             // textEditMaNhom
             // 
             this.textEditMaNhom.Enabled = false;
-            this.textEditMaNhom.Location = new System.Drawing.Point(88, 9);
+            this.textEditMaNhom.Location = new System.Drawing.Point(166, 31);
             this.textEditMaNhom.Name = "textEditMaNhom";
             this.textEditMaNhom.Size = new System.Drawing.Size(169, 20);
             this.textEditMaNhom.TabIndex = 1;
@@ -128,7 +129,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(13, 12);
+            this.label1.Location = new System.Drawing.Point(91, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 0;

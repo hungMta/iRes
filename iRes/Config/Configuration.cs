@@ -19,9 +19,9 @@ namespace Title.Config {
 
         public string CURRENT_NHAN_VIEN = "NV001";
 
-        //public string DATA_SOURCE = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
+        public string DATA_SOURCE = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
         //public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyNhaHang;Integrated Security=True";
-        public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
+        //public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
 
         // Property of NhanVien
         public string NHANVIEN_MANV = "MaNV";
@@ -164,11 +164,10 @@ namespace Title.Config {
         public string PROC_DELETE_NGUYEN_LIEU = "XoaNguyenLieu";
         public string PROC_GET_MA_NGUYEN_LIEU_NEXT = "GetMaNguyenLieuTiepTheo";
 
-
         // Procedures of ChiTietPhieuNhap
         public string PROC_INSERT_CHI_TIET_PHIEU_NHAP = "ThemChiTietPhieuNhap";
         public string PROC_INSERT_GET_CHI_TIET_PHIEU_NHAP_BY_MA_PHIEU_NHAP = "GetChiTietPhieuNhapByMaPhieuNhap";
-
+        public string PROC_GET_LAST_PHIEU_NHAP = "GetLastPhieuNhap";
 
         // Tab Name
         public string TAB_NHAN_VIEN = "TabNhanVien";

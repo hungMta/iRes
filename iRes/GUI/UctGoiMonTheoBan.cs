@@ -81,6 +81,8 @@ namespace Title.GUI {
         public void LoadListChiTietHoaDon() {
             try {
                 DataTable dataTable = Bus.GetListChiTietHoaDon(this.banAnHienTai);
+                this.gridControlBanAnGoiMon.DataSource = null;
+                this.gridViewBanAnGoiMon.Columns.Clear();
                 this.gridControlBanAnGoiMon.DataSource = dataTable;
             } catch { }
         }
@@ -109,6 +111,7 @@ namespace Title.GUI {
         public void LoadGridControlMonAn() {
             DataTable dataTableMonAn = new DataTable();
             dataTableMonAn = Bus.GetListMonAn();
+            this.gridControlSearchMonAn.DataSource = null;
             this.gridControlSearchMonAn.DataSource = dataTableMonAn;
         }
 
@@ -120,26 +123,6 @@ namespace Title.GUI {
                 this.lookUpEditNhomMon.Properties.ValueMember = "MaNhom";
                 this.lookUpEditNhomMon.Properties.DataSource = dataTableNhomMon;
             } catch { }
-        }
-
-        public void CreateChiTietHoaDon() {
-            try {
-                int soLuong = int.Parse(this.textEditSoLuong.Text);
-                string maMon = this.lookUpEditMaMon.Text.ToString();
-                string maHoaDon = this.banAnHienTai.MaHoaDon;
-                if (soLuong <= 0 ) {
-                    MessageBox.Show("Số lượng phải lớn hơn 0");
-                } else {
-                    if (maMon == "") {
-                        MessageBox.Show("Nhập đầy đủ thông tin");
-                    } else {
-                        ChiTietHoaDon chitietHoaDon = new ChiTietHoaDon(maHoaDon, maMon, soLuong);
-                        Bus.InsertChiTietHoaDon(chitietHoaDon);
-                    }
-                }
-            } catch {
-                MessageBox.Show("Nhập đầy đủ thông tin");
-            }
         }
 
         private void UctGoiMonTheoBan_Load(object sender, EventArgs e) {
@@ -196,6 +179,26 @@ namespace Title.GUI {
             this.textEditTenMon.Text = this.lookUpEditMaMon.EditValue.ToString();
         }
 
+        public void CreateChiTietHoaDon() {
+            try {
+                int soLuong = int.Parse(this.textEditSoLuong.Text);
+                string maMon = this.lookUpEditMaMon.Text.ToString();
+                string maHoaDon = this.banAnHienTai.MaHoaDon;
+                if (soLuong <= 0 ) {
+                    MessageBox.Show("Số lượng phải lớn hơn 0");
+                } else {
+                    if (maMon == "") {
+                        MessageBox.Show("Nhập đầy đủ thông tin");
+                    } else {
+                        ChiTietHoaDon chitietHoaDon = new ChiTietHoaDon(maHoaDon, maMon, soLuong);
+                        Bus.InsertChiTietHoaDon(chitietHoaDon);
+                    }
+                }
+            } catch {
+                MessageBox.Show("Nhập đầy đủ thông tin");
+            }
+        }
+
         private void simpleButtonThem_Click(object sender, EventArgs e) {
             if (this.banAnHienTai == null) {
                 MessageBox.Show("Chưa chọn bàn");
@@ -203,6 +206,7 @@ namespace Title.GUI {
                 if (this.banAnHienTai.MaHoaDon != "") {
                     CreateChiTietHoaDon();
                     LoadHoaDon();
+                    LoadGridControlMonAn();
                 } else {
                     try {
                         int soLuong = int.Parse(this.textEditSoLuong.Text);
@@ -231,7 +235,7 @@ namespace Title.GUI {
                                     CreateChiTietHoaDon();
                                     LoadHoaDon();
                                     LoadImageListBoxBanAn();
-                                    LoadListChiTietHoaDon();
+                                    LoadGridControlMonAn();
                                     Console.WriteLine();
                                 }
                             }
@@ -255,6 +259,7 @@ namespace Title.GUI {
                     MessageBox.Show(banAnHienTai.MaBan + "Đã thanh toán và in hóa đơn");
                     Bus.setBanAnTrong(this.banAnHienTai);
                     LoadImageListBoxBanAn();
+                    LoadHoaDon();
                 }
             }
         }

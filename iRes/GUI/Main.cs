@@ -188,6 +188,9 @@ namespace iRes{
                     break;
                 case "TabNhomMon":
                     break;
+                case "TabNguyenLieu":
+                    uctQuanLyNguyenLieu.Cancel();
+                    break;
             }
             EnableButtonBar();
         }

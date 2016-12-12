@@ -23,7 +23,6 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ribbonControlTop = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonClipBoardCut = new DevExpress.XtraBars.BarButtonItem();
@@ -42,7 +41,7 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageView = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.defaultLookAndFeelMain = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.defaultLookAndFeelMain = new DevExpress.LookAndFeel.DefaultLookAndFeel();
             this.groupControlClientArea = new DevExpress.XtraEditors.GroupControl();
             this.navBarItemNhanVien = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItemKhachHang = new DevExpress.XtraNavBar.NavBarItem();
@@ -298,7 +297,6 @@
             this.navBarGroupQuanLy.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navBarGroupQuanLy.Appearance.Options.UseFont = true;
             this.navBarGroupQuanLy.Caption = "Quản lý";
-            this.navBarGroupQuanLy.Expanded = true;
             this.navBarGroupQuanLy.GroupCaptionUseImage = DevExpress.XtraNavBar.NavBarImage.Small;
             this.navBarGroupQuanLy.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
             this.navBarGroupQuanLy.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {

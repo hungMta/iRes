@@ -80,6 +80,7 @@
             this.gridViewNguyenLieu.OptionsBehavior.Editable = false;
             this.gridViewNguyenLieu.OptionsFind.AlwaysVisible = true;
             this.gridViewNguyenLieu.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridViewNguyenLieu_RowClick);
+            this.gridViewNguyenLieu.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewNguyenLieu_FocusedRowChanged);
             // 
             // MaNL
             // 

@@ -105,6 +105,7 @@ namespace Title.GUI {
                 DateTime currentTime = DateTime.Now;
                 this.currrentPhieuNhap = new PhieuNhap("", 0, currentTime, config.CURRENT_NHAN_VIEN);
                 int res = Bus.InsertPhieuNhap(this.currrentPhieuNhap);
+                this.currrentPhieuNhap.MaPhieuNhap = Bus.GetLastPhieuNhap().Rows[0][config.PHIEU_NHAP_MA_PHIEU_NHAP].ToString();
             }
         }
 
