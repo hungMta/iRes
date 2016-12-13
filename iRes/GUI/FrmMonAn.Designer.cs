@@ -78,6 +78,7 @@
             this.textEditDonGia.Name = "textEditDonGia";
             this.textEditDonGia.Size = new System.Drawing.Size(169, 20);
             this.textEditDonGia.TabIndex = 2;
+            this.textEditDonGia.EditValueChanged += new System.EventHandler(this.textEditDonGia_EditValueChanged);
             // 
             // labelControl3
             // 

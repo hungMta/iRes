@@ -220,7 +220,8 @@
             // 
             // defaultLookAndFeelMain
             // 
-            this.defaultLookAndFeelMain.LookAndFeel.SkinName = "DevExpress Dark Style";
+            this.defaultLookAndFeelMain.LookAndFeel.SkinMaskColor = System.Drawing.Color.Silver;
+            this.defaultLookAndFeelMain.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Silver;
             // 
             // groupControlClientArea
             // 

@@ -28,6 +28,7 @@
             this.gridControlPhieuNhap = new DevExpress.XtraGrid.GridControl();
             this.gridViewPhieuNhap = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControlChiTietPhieuNhap = new DevExpress.XtraEditors.GroupControl();
+            this.labelControlMaPhieuNhap = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControlSoLuong = new DevExpress.XtraEditors.LabelControl();
             this.labelControlDonGia = new DevExpress.XtraEditors.LabelControl();
@@ -47,7 +48,6 @@
             this.groupControlButton = new DevExpress.XtraEditors.GroupControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.labelControlMaPhieuNhap = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlPhieuNhap)).BeginInit();
             this.groupControlPhieuNhap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPhieuNhap)).BeginInit();
@@ -128,6 +128,19 @@
             this.groupControlChiTietPhieuNhap.Name = "groupControlChiTietPhieuNhap";
             this.groupControlChiTietPhieuNhap.Size = new System.Drawing.Size(529, 533);
             this.groupControlChiTietPhieuNhap.TabIndex = 1;
+            // 
+            // labelControlMaPhieuNhap
+            // 
+            this.labelControlMaPhieuNhap.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControlMaPhieuNhap.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.labelControlMaPhieuNhap.Appearance.Options.UseFont = true;
+            this.labelControlMaPhieuNhap.Appearance.Options.UseForeColor = true;
+            this.labelControlMaPhieuNhap.Location = new System.Drawing.Point(6, 23);
+            this.labelControlMaPhieuNhap.Name = "labelControlMaPhieuNhap";
+            this.labelControlMaPhieuNhap.Size = new System.Drawing.Size(159, 14);
+            this.labelControlMaPhieuNhap.TabIndex = 12;
+            this.labelControlMaPhieuNhap.Text = "labelControlMaPhieuNhap";
+            this.labelControlMaPhieuNhap.Visible = false;
             // 
             // labelControl3
             // 
@@ -304,19 +317,6 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(257, 199);
             this.groupControl1.TabIndex = 3;
-            // 
-            // labelControlMaPhieuNhap
-            // 
-            this.labelControlMaPhieuNhap.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControlMaPhieuNhap.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.labelControlMaPhieuNhap.Appearance.Options.UseFont = true;
-            this.labelControlMaPhieuNhap.Appearance.Options.UseForeColor = true;
-            this.labelControlMaPhieuNhap.Location = new System.Drawing.Point(6, 23);
-            this.labelControlMaPhieuNhap.Name = "labelControlMaPhieuNhap";
-            this.labelControlMaPhieuNhap.Size = new System.Drawing.Size(159, 14);
-            this.labelControlMaPhieuNhap.TabIndex = 12;
-            this.labelControlMaPhieuNhap.Text = "labelControlMaPhieuNhap";
-            this.labelControlMaPhieuNhap.Visible = false;
             // 
             // UctNhapHang
             // 

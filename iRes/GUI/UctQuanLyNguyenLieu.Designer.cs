@@ -116,7 +116,7 @@
             // 
             // panelNguyenLieu
             // 
-            this.panelNguyenLieu.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.panelNguyenLieu.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.panelNguyenLieu.Controls.Add(this.textEditDonGia);
             this.panelNguyenLieu.Controls.Add(this.label3);
             this.panelNguyenLieu.Controls.Add(this.textEditDonVi);
@@ -143,7 +143,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label3.Location = new System.Drawing.Point(500, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
@@ -161,7 +161,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Location = new System.Drawing.Point(500, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
@@ -179,7 +179,7 @@
             // lbTenNhom
             // 
             this.lbTenNhom.AutoSize = true;
-            this.lbTenNhom.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbTenNhom.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lbTenNhom.Location = new System.Drawing.Point(51, 78);
             this.lbTenNhom.Name = "lbTenNhom";
             this.lbTenNhom.Size = new System.Drawing.Size(89, 13);
@@ -197,7 +197,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(51, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);

@@ -148,8 +148,9 @@ namespace iRes{
                     utcQuanLyKhachHang.Add();
                     break;
                 case "TabMonAn":
+                    FrmMonAn frm = new FrmMonAn("add");
+                    frm.ShowDialog();
                     utcQuanLyMonAn.LoadData();
-                    EnableButtonBar();
                     break;
                 case "TabNhomMon":
                     uctQuanLyNhomMon.Add();

@@ -51,7 +51,7 @@ namespace Title.GUI
                                                         TenMon as [Tên món ăn],
                                                         MaNhom as [Mã nhóm],
                                                         DonGia as [Đơn giá],
-                                                        SoLuongDangCo as [Số lương] from MonAn";
+                                                        SoLuongDangCo as [Số lương] from MonAn where TonTai = 'Co'";
             da.SelectCommand = new SqlCommand(GET_LIST_MONAN_AND_IMAGE, conn);
             da.Fill(dt);
             return dt;

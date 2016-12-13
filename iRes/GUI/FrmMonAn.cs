@@ -17,11 +17,19 @@ namespace Title.GUI {
     public partial class FrmMonAn : DevExpress.XtraEditors.XtraForm {
         public MonAn monAn = new MonAn();
         Configuration config = new Configuration();
-
+        string maMon;
         public FrmMonAn(string maMon) {
             InitializeComponent();
-            SetMonAn(maMon);
+            this.maMon = maMon;
+            if (maMon != "add")
+            {
+                SetMonAn(maMon);
+            }
+            
         }
+
+        
+
 
         public void SetMonAn(string maMon) {
             this.monAn.MaMon = maMon;
@@ -53,6 +61,7 @@ namespace Title.GUI {
 
         public void LoadData() {
             LoadLookUpEditNhomMon();
+            if(maMon != "add")
             LoadTextBox();
         }
 
@@ -76,11 +85,33 @@ namespace Title.GUI {
         }
 
         private void simpleButtonSave_Click(object sender, EventArgs e) {
-            int res = Bus.UpdateMonAn(monAn);
+            if (maMon != "add")
+            {
+                int res = Bus.UpdateMonAn(monAn);
+            }
+            else {
+                DataTable dt = new DataTable();
+                dt = Bus.GetMaMonNext();
+                string tenMon = this.textEditTenMon.Text;
+                string maNhom = this.lookUpEditNhomMon.Text;
+                decimal donGia = int.Parse(this.textEditDonGia.Text);
+                int soLuong = int.Parse(this.textEditSoLuong.Text);
+                string hinhAnh = this.textEditHinhAnh.Text;
+                MonAn monAn = new MonAn(maMon, tenMon, maNhom, donGia, soLuong, hinhAnh);
+                //monAn.MaMon = dt.Rows[0]["MaMon"].ToString();
+                int res = Bus.InsertMonAn(monAn);
+                if (res != -1)
+                    MessageBox.Show("Them thanh cong");
+                else MessageBox.Show("Khong thanh cong");
+            
+            }
+            this.Close();
         }
 
         private void simpleButtonCancel_Click(object sender, EventArgs e) {
+            if (maMon != "add")
             LoadTextBox();
+            this.Close();
         }
 
         private void simpleButtonDelete_Click(object sender, EventArgs e) {
@@ -88,6 +119,12 @@ namespace Title.GUI {
             if (dialogResult == DialogResult.Yes) {
                 int res = Bus.DeleteMonAn(this.monAn.MaMon);
            }
+            this.Close();
+        }
+
+        private void textEditDonGia_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

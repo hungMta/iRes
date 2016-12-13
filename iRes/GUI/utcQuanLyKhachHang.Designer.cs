@@ -27,6 +27,14 @@
             this.khachHangBindingSource = new System.Windows.Forms.BindingSource();
             this.iResDatabaseDataSet1 = new Title.iResDatabaseDataSet1();
             this.gridViewKhachHang = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMaKH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTenKH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSoLanAn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTongTien = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPhanLoaiKH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.khachHangTableAdapter = new Title.iResDatabaseDataSet1TableAdapters.KhachHangTableAdapter();
             this.panelTextBox = new System.Windows.Forms.Panel();
             this.cbxPhanLoai = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -84,12 +92,77 @@
             // 
             // gridViewKhachHang
             // 
+            this.gridViewKhachHang.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMaKH,
+            this.colTenKH,
+            this.colSDT,
+            this.colEmail,
+            this.colSoLanAn,
+            this.colTongTien,
+            this.colPhanLoaiKH,
+            this.colDiaChi});
             this.gridViewKhachHang.GridControl = this.gridControlKhachHang;
             this.gridViewKhachHang.Name = "gridViewKhachHang";
             this.gridViewKhachHang.OptionsBehavior.Editable = false;
             this.gridViewKhachHang.OptionsFind.AlwaysVisible = true;
             this.gridViewKhachHang.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             this.gridViewKhachHang.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewKhachHang_FocusedRowChanged);
+            // 
+            // colMaKH
+            // 
+            this.colMaKH.FieldName = "MaKH";
+            this.colMaKH.Name = "colMaKH";
+            this.colMaKH.Visible = true;
+            this.colMaKH.VisibleIndex = 0;
+            // 
+            // colTenKH
+            // 
+            this.colTenKH.FieldName = "TenKH";
+            this.colTenKH.Name = "colTenKH";
+            this.colTenKH.Visible = true;
+            this.colTenKH.VisibleIndex = 1;
+            // 
+            // colSDT
+            // 
+            this.colSDT.FieldName = "SDT";
+            this.colSDT.Name = "colSDT";
+            this.colSDT.Visible = true;
+            this.colSDT.VisibleIndex = 3;
+            // 
+            // colEmail
+            // 
+            this.colEmail.FieldName = "Email";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.Visible = true;
+            this.colEmail.VisibleIndex = 4;
+            // 
+            // colSoLanAn
+            // 
+            this.colSoLanAn.FieldName = "SoLanAn";
+            this.colSoLanAn.Name = "colSoLanAn";
+            this.colSoLanAn.Visible = true;
+            this.colSoLanAn.VisibleIndex = 5;
+            // 
+            // colTongTien
+            // 
+            this.colTongTien.FieldName = "TongTien";
+            this.colTongTien.Name = "colTongTien";
+            this.colTongTien.Visible = true;
+            this.colTongTien.VisibleIndex = 6;
+            // 
+            // colPhanLoaiKH
+            // 
+            this.colPhanLoaiKH.FieldName = "PhanLoai";
+            this.colPhanLoaiKH.Name = "colPhanLoaiKH";
+            this.colPhanLoaiKH.Visible = true;
+            this.colPhanLoaiKH.VisibleIndex = 7;
+            // 
+            // colDiaChi
+            // 
+            this.colDiaChi.FieldName = "DiaChi";
+            this.colDiaChi.Name = "colDiaChi";
+            this.colDiaChi.Visible = true;
+            this.colDiaChi.VisibleIndex = 2;
             // 
             // khachHangTableAdapter
             // 
@@ -280,6 +353,13 @@
         private iResDatabaseDataSet1 iResDatabaseDataSet1;
         private iResDatabaseDataSet1TableAdapters.KhachHangTableAdapter khachHangTableAdapter;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewKhachHang;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaKH;
+        private DevExpress.XtraGrid.Columns.GridColumn colTenKH;
+        private DevExpress.XtraGrid.Columns.GridColumn colSDT;
+        private DevExpress.XtraGrid.Columns.GridColumn colEmail;
+        private DevExpress.XtraGrid.Columns.GridColumn colSoLanAn;
+        private DevExpress.XtraGrid.Columns.GridColumn colTongTien;
+        private DevExpress.XtraGrid.Columns.GridColumn colPhanLoaiKH;
         private System.Windows.Forms.Panel panelTextBox;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl9;
@@ -296,6 +376,7 @@
         private DevExpress.XtraEditors.TextEdit textEditDiaChi;
         private DevExpress.XtraEditors.TextEdit textEditTen;
         private DevExpress.XtraEditors.TextEdit textEditMaKH;
+        private DevExpress.XtraGrid.Columns.GridColumn colDiaChi;
         private DevExpress.XtraEditors.ComboBoxEdit cbxPhanLoai;
     }
 }

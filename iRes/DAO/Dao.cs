@@ -185,7 +185,7 @@ namespace Title.DAO {
             SqlParameter[] para = new SqlParameter[] {
                 new SqlParameter("@"+config.HOA_DON_MA_HOA_DON,maHoaDon),
             };
-            return DataProvider.GetDataByParameter(config.PROC_GET_INFO_HOADON, para);
+            return DataProvider.GetDataByParameter(config.PROC_INFO_HOA_DON, para);
         }
 
         public static int EditHoaDon(HoaDon hoaDon)
